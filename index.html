@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Standorte mit roten Kreisen</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <style>#map { height: 600px; width: 100%; }</style>
+</head>
+<body>
+  <h2>Standorte</h2>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([51.0, 10.0], 6);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    fetch('koordinaten.php')
+      .then(res => res.json())
+      .then(data => {
+        data.forEach(loc => {
+          L.circle([loc.latitude, loc.longitude], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 1000 // Radius in meter
+          }).addTo(map)
+            .bindPopup(loc.name);
+        });
+      });
+  </script>
+</body>
+</html>

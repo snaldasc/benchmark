@@ -16,5 +16,14 @@
     "description": "Bench at Hamburgs Yacht Harbour with beautiful view on the Elbe and passsing Cargoships",
     "type": "Bank",
     "tags": ["water", "harbour", "elbe"]
+  },
+  {
+    "name": "Bench at small street in the Forest",
+    "latitude": 50.7711111,
+    "longitude": 15.7675000,
+    "image": "bench3.jpg",
+    "description": "A bench at a small street infront of an Forest",
+    "type": "Bank",
+    "tags": ["forest", "town", "street"]
   }
 ]

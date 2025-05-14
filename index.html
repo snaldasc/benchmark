@@ -30,7 +30,8 @@
             attribution: '&copy; OpenStreetMap-Mitwirkende'
         }).addTo(map);
 
-        fetch('koordinaten.php')
+        // Lade Standortdaten von GitHub
+        fetch('https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json')
             .then(res => res.json())
             .then(data => {
                 data.forEach(loc => {
@@ -41,6 +42,9 @@
                         radius: 100
                     }).addTo(map);
                 });
+            })
+            .catch(error => {
+                console.error("Fehler beim Laden der Standortdaten:", error);
             });
     </script>
 </body>

@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Benchmark</title>
+  <title>Karte mit Standorten</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link
     rel="stylesheet"
@@ -18,91 +18,84 @@
       font-family: sans-serif;
       padding: 1em;
     }
-    #filters {
-      margin-bottom: 20px;
-    }
-    #categorySelect {
-      margin-right: 10px;
+    #filterContainer {
+      margin-bottom: 1em;
     }
   </style>
 </head>
 <body>
-  <h2>Benchmark</h2>
-  
-  <!-- Filter-Optionen -->
-  <div id="filters">
-    <label for="categorySelect">Filter:</label>
-    <select id="categorySelect">
-      <option value="all">Alle anzeigen</option>
-      <option value="water">water</option>
-      <option value="harbour">harbour</option>
+  <h2>Standorte mit roten Kreisen</h2>
+
+  <!-- Filter Dropdown -->
+  <div id="filterContainer">
+    <label for="categoryFilter">Kategorie filtern:</label>
+    <select id="categoryFilter">
+      <option value="all">Alle</option>
+      <option value="Bank">Bank</option>
+      <option value="Park">Park</option>
+      <option value="Museum">Museum</option>
     </select>
   </div>
 
   <div id="map"></div>
 
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    crossorigin=""
-  ></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script>
     const map = L.map('map').setView([53.5716, 9.6740], 14);
-
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap-Mitwirkende'
     }).addTo(map);
 
-    let locationMarkers = [];  // Array, um die Marker zu speichern
-    let locationsData = [];    // Array für alle Standorte
+    let circles = [];
+    let allLocations = [];
 
+    // Daten laden
     fetch('https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json')
       .then(response => {
-        if (!response.ok) {
-          throw new Error('Standortdaten konnten nicht geladen werden.');
-        }
+        if (!response.ok) throw new Error('Standortdaten konnten nicht geladen werden.');
         return response.json();
       })
       .then(data => {
-        locationsData = data;
-        // Initiale Anzeige der Marker
-        locationsData.forEach(loc => {
-          const circle = L.circle([loc.latitude, loc.longitude], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 5  // radius in meter
-          }).addTo(map);
-
-          // Speichern des Markers mit dem zugehörigen Standort
-          locationMarkers.push({
-            marker: circle,
-            category: loc.type
-          });
-        });
+        allLocations = data;
+        renderLocations(allLocations);
       })
       .catch(err => {
         console.error('Fehler beim Laden oder Verarbeiten der Daten:', err);
       });
 
-    // Filter für Kategorie
-    document.getElementById('categorySelect').addEventListener('change', (e) => {
-      const selectedCategory = e.target.value;
-      filterMarkersByCategory(selectedCategory);
-    });
+    function renderLocations(locations) {
+      // Vorherige Marker entfernen
+      circles.forEach(c => map.removeLayer(c));
+      circles = [];
 
-    // Funktion, um Marker basierend auf der Kategorie zu filtern
-    function filterMarkersByCategory(selectedCategory) {
-      locationMarkers.forEach(markerObj => {
-        const { marker, category } = markerObj;
+      locations.forEach(loc => {
+        const popupContent = `
+          <strong>${loc.name}</strong><br>
+          <p>${loc.description}</p>
+          <img src="${loc.image}" alt="${loc.name}" style="width:200px;height:auto;">
+        `;
 
-        // Alle Marker anzeigen, wenn 'all' ausgewählt ist
-        if (selectedCategory === 'all' || category === selectedCategory) {
-          marker.addTo(map);
-        } else {
-          map.removeLayer(marker); // Marker ausblenden, wenn die Kategorie nicht passt
-        }
+        const circle = L.circle([loc.latitude, loc.longitude], {
+          color: 'red',
+          fillColor: '#f03',
+          fillOpacity: 0.5,
+          radius: 30
+        }).addTo(map).bindPopup(popupContent);
+
+        circles.push(circle);
       });
     }
+
+    // Filterfunktion
+    document.getElementById('categoryFilter').addEventListener('change', (e) => {
+      const selected = e.target.value;
+      if (selected === 'all') {
+        renderLocations(allLocations);
+      } else {
+        const filtered = allLocations.filter(loc => loc.type === selected);
+        renderLocations(filtered);
+      }
+    });
   </script>
 </body>
 </html>

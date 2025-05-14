@@ -1,0 +1,9 @@
+{
+  "name": "Spot Scout",
+  "short_name": "SpotScout",
+  "theme_color": "#2196f3",
+  "background_color": "#003966",
+  "display": "browser",
+  "scope": "/",
+  "start_url": "/"
+}

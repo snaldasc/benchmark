@@ -40,19 +40,21 @@
 
   <!-- Filter-Optionen -->
   <div id="filters">
-    <label for="categorySelect">Filter:</label>
+    <label for="categorySelect">Filter nach Kategorie:</label>
     <select id="categorySelect">
-      <option value="all">All</option>
-      <option value="Bank">Bench</option>
+      <option value="all">Alle</option>
+      <option value="Bank">Bank</option>
       <option value="Park">Park</option>
       <option value="Museum">Museum</option>
     </select>
 
-    <label for="filterSelect">Location Filter:</label>
+    <label for="filterSelect">Filter nach Tags:</label>
     <select id="filterSelect">
-      <option value="all">Show all</option>
-      <option value="water">Water</option>
-      <option value="harbour">Harbour</option>
+      <option value="all">Alle anzeigen</option>
+      <option value="water">Wasser</option>
+      <option value="harbour">Hafen</option>
+      <option value="historisch">Historisch</option>
+      <option value="kulturell">Kulturell</option>
     </select>
   </div>
 
@@ -83,7 +85,7 @@
             radius: 300
           }).addTo(map);
 
-          const popupContent = `
+          const popupContent = ` 
             <h3>${loc.name}</h3>
             <p>${loc.description}</p>
             <img src="${loc.image}" alt="${loc.name}" style="width: 200px; height: auto;">
@@ -96,6 +98,7 @@
           const listItem = document.createElement('li');
           listItem.textContent = loc.name;
           listItem.dataset.category = loc.type;
+          listItem.dataset.tags = loc.tags.join(','); // tags als String speichern
           listItem.dataset.name = loc.name.toLowerCase();
           listItem.dataset.description = loc.description.toLowerCase();
 
@@ -114,17 +117,19 @@
     // Filter für Kategorie (Aussehen)
     document.getElementById('categorySelect').addEventListener('change', (e) => {
       const selectedCategory = e.target.value;
-      filterLocations(selectedCategory, document.getElementById('filterSelect').value);
+      const selectedTags = document.getElementById('filterSelect').value;
+      filterLocations(selectedCategory, selectedTags);
     });
 
-    // Filter für Standort (Name/Beschreibung)
+    // Filter für Tags (Wasser, Hafen, etc.)
     document.getElementById('filterSelect').addEventListener('change', (e) => {
-      const selectedFilter = e.target.value;
-      filterLocations(document.getElementById('categorySelect').value, selectedFilter);
+      const selectedTags = e.target.value;
+      const selectedCategory = document.getElementById('categorySelect').value;
+      filterLocations(selectedCategory, selectedTags);
     });
 
-    // Funktion, die Standorte basierend auf Kategorie und Textfilter anzeigt
-    function filterLocations(selectedCategory, selectedFilter) {
+    // Funktion, die Standorte basierend auf Kategorie und Tags filtert
+    function filterLocations(selectedCategory, selectedTags) {
       locationMarkers.forEach(markerObj => {
         const { loc, circle } = markerObj;
         let show = true;
@@ -134,8 +139,8 @@
           show = false;
         }
 
-        // Filter nach Beschreibung oder Typ (Wenn ein spezieller Filter wie 'water' oder 'harbour' gewählt wurde)
-        if (selectedFilter !== 'all' && !loc.description.toLowerCase().includes(selectedFilter.toLowerCase()) && !loc.type.toLowerCase().includes(selectedFilter.toLowerCase())) {
+        // Filter nach Tags (Wasser, Hafen etc.)
+        if (selectedTags !== 'all' && !loc.tags.includes(selectedTags)) {
           show = false;
         }
 
@@ -151,7 +156,7 @@
       const listItems = document.querySelectorAll('#locationList li');
       listItems.forEach(item => {
         const category = item.dataset.category;
-        const name = item.dataset.name;
+        const tags = item.dataset.tags;
         const description = item.dataset.description;
 
         let show = true;
@@ -161,8 +166,8 @@
           show = false;
         }
 
-        // Filter nach Beschreibung
-        if (selectedFilter !== 'all' && !description.includes(selectedFilter.toLowerCase())) {
+        // Filter nach Tags
+        if (selectedTags !== 'all' && !tags.includes(selectedTags)) {
           show = false;
         }
 

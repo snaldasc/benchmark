@@ -16,14 +16,5 @@
     "description": "Bench at Hamburgs Yacht Harbour with beautiful view on the Elbe and passsing Cargoships",
     "type": "Bank",
     "tags": ["water", "harbour"]
-  },
-  {
-    "name": "Ort C",
-    "latitude": 50.110924,
-    "longitude": 8.682127,
-    "image": "https://example.com/ortc.jpg",
-    "description": "Ort C ist bekannt für seine historische Architektur.",
-    "type": "Bank",
-    "tags": ["historisch", "kulturell"]
   }
 ]

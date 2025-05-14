@@ -3,7 +3,7 @@
   "short_name": "SpotScout",
   "theme_color": "#2196f3",
   "background_color": "#003966",
-  "display": "browser",
+  "display": "standalone",
   "scope": "/",
   "start_url": "/"
 }

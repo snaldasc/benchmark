@@ -1,96 +1,122 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Benchmark</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    crossorigin=""
+  />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h2>Benchmark</h2>
+  <header>
+    <h1>Benchmark</h1>
+    <button id="menuToggle">☰</button>
+  </header>
 
-  <!-- Tag-Filter -->
-  <div id="filterContainer">
-    <label for="tagFilter">Tag filtern:</label>
-    <select id="tagFilter">
-      <option value="all">Alle</option>
-    </select>
-  </div>
+  <nav id="sideMenu" class="hidden">
+    <input type="text" id="searchInput" placeholder="🔍 Nach Tags suchen..." />
+    <ul id="locationList"></ul>
+    <button id="resetMap">📍 Zurück zur Position</button>
+    <hr />
+    <button id="submitLocation">➕ Location einreichen</button>
+  </nav>
 
-  <div id="map"></div>
+  <main>
+    <div id="map"></div>
+  </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script>
     const map = L.map('map').setView([53.5716, 9.6740], 14);
+    let userLatLng = null;
+    let markers = [];
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap-Mitwirkende'
     }).addTo(map);
 
-    let circles = [];
-    let allLocations = [];
+    // Menü toggeln
+    document.getElementById("menuToggle").addEventListener("click", () => {
+      document.getElementById("sideMenu").classList.toggle("hidden");
+    });
 
-    fetch('https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json')
-      .then(response => {
-        if (!response.ok) throw new Error('Standortdaten konnten nicht geladen werden.');
-        return response.json();
-      })
+    // Eigene Position
+    navigator.geolocation.getCurrentPosition(
+      pos => {
+        userLatLng = [pos.coords.latitude, pos.coords.longitude];
+        map.setView(userLatLng, 14);
+      },
+      () => console.log("Standort nicht verfügbar.")
+    );
+
+    // Daten laden
+    fetch("https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json")
+      .then(res => res.json())
       .then(data => {
-        allLocations = data;
-        renderLocations(allLocations);
-        populateTagFilter(data);
-      })
-      .catch(err => {
-        console.error('Fehler beim Laden oder Verarbeiten der Daten:', err);
+        renderMarkers(data);
+
+        // Suche
+        document.getElementById("searchInput").addEventListener("input", e => {
+          const q = e.target.value.toLowerCase();
+          const filtered = data.filter(loc =>
+            loc.tags.some(tag => tag.toLowerCase().includes(q)) ||
+            loc.description.toLowerCase().includes(q)
+          );
+          renderMarkers(filtered);
+        });
       });
 
-    function renderLocations(locations) {
-      circles.forEach(c => map.removeLayer(c));
-      circles = [];
+    // Marker rendern
+    function renderMarkers(locations) {
+      // Vorherige Marker entfernen
+      markers.forEach(m => map.removeLayer(m));
+      markers = [];
+
+      const list = document.getElementById("locationList");
+      list.innerHTML = "";
 
       locations.forEach(loc => {
+        const circle = L.circle([loc.latitude, loc.longitude], {
+          color: "red",
+          fillColor: "#f03",
+          fillOpacity: 0.5,
+          radius: 5
+        }).addTo(map);
+
         const popupContent = `
           <strong>${loc.name}</strong><br>
+          <img src="${loc.image}" alt="${loc.name}" style="width:100%;max-width:200px;"><br>
           <p>${loc.description}</p>
-          <img src="${loc.image}" alt="${loc.name}" class="popup-image">
         `;
+        circle.bindPopup(popupContent);
+        markers.push(circle);
 
-        const circle = L.circle([loc.latitude, loc.longitude], {
-          color: 'red',
-          fillColor: '#f03',
-          fillOpacity: 0.5,
-          radius: 5   
-        }).addTo(map).bindPopup(popupContent);
-
-        circles.push(circle);
+        const li = document.createElement("li");
+        li.textContent = loc.name;
+        li.addEventListener("click", () => {
+          map.setView([loc.latitude, loc.longitude], 16);
+          circle.openPopup();
+        });
+        list.appendChild(li);
       });
     }
 
-    function populateTagFilter(data) {
-      const tagSet = new Set();
-      data.forEach(loc => {
-        (loc.tags || []).forEach(tag => tagSet.add(tag));
-      });
-
-      const tagFilter = document.getElementById('tagFilter');
-      tagSet.forEach(tag => {
-        const option = document.createElement('option');
-        option.value = tag;
-        option.textContent = tag;
-        tagFilter.appendChild(option);
-      });
-    }
-
-    document.getElementById('tagFilter').addEventListener('change', (e) => {
-      const selectedTag = e.target.value;
-      if (selectedTag === 'all') {
-        renderLocations(allLocations);
+    // Zoom reset
+    document.getElementById("resetMap").addEventListener("click", () => {
+      if (userLatLng) {
+        map.setView(userLatLng, 14);
       } else {
-        const filtered = allLocations.filter(loc =>
-          loc.tags && loc.tags.includes(selectedTag)
-        );
-        renderLocations(filtered);
+        map.setView([53.5716, 9.6740], 14);
       }
+    });
+
+    // Untermenü Location einreichen (Platzhalter)
+    document.getElementById("submitLocation").addEventListener("click", () => {
+      alert("Location-Formular wird in Zukunft integriert.");
     });
   </script>
 </body>

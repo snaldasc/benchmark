@@ -2,29 +2,13 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Benchmark</title> <!-- Website-Titel -->
+  <title>Benchmark</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    crossorigin=""
-  />
-  <style>
-    #map {
-      height: 600px;
-      width: 100%;
-    }
-    body {
-      font-family: sans-serif;
-      padding: 1em;
-    }
-    #filterContainer {
-      margin-bottom: 1em;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 </head>
 <body>
-  <h2>Benchmark</h2> <!-- Seitenüberschrift -->
+  <h2>Benchmark</h2>
 
   <!-- Tag-Filter -->
   <div id="filterContainer">
@@ -61,7 +45,6 @@
       });
 
     function renderLocations(locations) {
-      // Alte Marker entfernen
       circles.forEach(c => map.removeLayer(c));
       circles = [];
 
@@ -69,14 +52,14 @@
         const popupContent = `
           <strong>${loc.name}</strong><br>
           <p>${loc.description}</p>
-          <img src="${loc.image}" alt="${loc.name}" style="width:200px;height:auto;">
+          <img src="${loc.image}" alt="${loc.name}" class="popup-image">
         `;
 
         const circle = L.circle([loc.latitude, loc.longitude], {
           color: 'red',
           fillColor: '#f03',
           fillOpacity: 0.5,
-          radius: 3    <!-- radius in meter -->
+          radius: 30
         }).addTo(map).bindPopup(popupContent);
 
         circles.push(circle);
@@ -100,7 +83,6 @@
 
     document.getElementById('tagFilter').addEventListener('change', (e) => {
       const selectedTag = e.target.value;
-
       if (selectedTag === 'all') {
         renderLocations(allLocations);
       } else {

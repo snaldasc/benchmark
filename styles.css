@@ -1,209 +1,85 @@
-/* Grundlegendes Layout */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
+  font-family: sans-serif;
+  background-color: #121212;
+  color: #f1f1f1;
 }
 
 header {
-  background-color: #333;
+  background: #1e1e1e;
   color: white;
-  padding: 10px 20px;
+  padding: 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-h1 {
-  margin: 0;
-  font-size: 24px;
 }
 
 #menuToggle {
-  font-size: 30px;
-  cursor: pointer;
   background: none;
   border: none;
   color: white;
+  font-size: 1.5em;
+  cursor: pointer;
 }
 
-nav {
-  background-color: #f4f4f4;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 250px;
-  height: 100%;
-  z-index: 1;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
-  padding: 20px;
+#sideMenu {
+  background-color: #1a1a1a;
+  padding: 1em;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 80%;
+  max-width: 300px;
+  height: calc(100% - 60px);
   overflow-y: auto;
+  z-index: 999;
 }
 
-nav.hidden {
-  transform: translateX(100%);
-}
-
-nav.open {
-  transform: translateX(0);
-}
-
-nav a, nav button {
-  display: block;
-  margin: 10px 0;
-  padding: 10px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  text-align: center;
-  cursor: pointer;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-nav a:hover, nav button:hover {
-  background-color: #0056b3;
-}
-
-#sideMenu input, #sideMenu select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 20px;
-}
-
-main {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#map {
-  width: 100%;
-  height: 100%;
-}
-
-/* Standort-Liste */
-#locationList {
-  list-style-type: none;
-  padding: 0;
-}
-
-#locationList li {
-  margin: 10px 0;
-  cursor: pointer;
-}
-
-#locationList li:hover {
-  background-color: #f0f0f0;
-  padding: 5px;
-  border-radius: 4px;
-}
-
-/* Filter Dropdown */
-#tagSelect {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 20px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-/* Formular zum Einreichen eines Standorts */
-#submitForm {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-  margin: 20px auto;
-}
-
-#submitForm input, #submitForm button {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-#submitForm button {
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-#submitForm button:hover {
-  background-color: #0056b3;
-}
-
-#submitForm .hidden {
+#sideMenu.hidden {
   display: none;
 }
 
-#submitForm input[type="text"], #submitForm input[type="number"], #submitForm input[type="url"] {
-  width: calc(100% - 20px); /* Adjust for padding */
-}
-
-#cancelSubmit {
-  background-color: #f44336;
-}
-
-#cancelSubmit:hover {
-  background-color: #d32f2f;
-}
-
-/* Karte und Marker */
-.leaflet-container {
-  z-index: 0;
-}
-
-.leaflet-popup-content img {
+#sideMenu input {
   width: 100%;
-  height: auto;
-  max-width: 200px;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 4px;
 }
 
-/* Responsives Design */
-@media (max-width: 768px) {
-  nav {
-    width: 100%;
-    height: auto;
-  }
-
-  #map {
-    height: 400px;
-  }
-
-  #submitForm {
-    width: 90%;
-  }
-
-  #menuToggle {
-    font-size: 26px;
-  }
+#sideMenu ul {
+  list-style: none;
+  padding: 0;
 }
 
-@media (max-width: 480px) {
-  h1 {
-    font-size: 20px;
-  }
+#sideMenu li {
+  padding: 0.5em;
+  background: #333;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-  #submitForm input, #submitForm button {
-    font-size: 14px;
-  }
+#sideMenu li:hover {
+  background: #555;
+}
 
-  #tagSelect {
-    font-size: 14px;
-  }
+#map {
+  height: calc(100vh - 60px);
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
 }

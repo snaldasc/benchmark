@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Standorte mit roten Kreisen</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-  <style>#map { height: 600px; width: 100%; }</style>
+    <title>Standorte</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map { height: 600px; }
+    </style>
 </head>
 <body>
-  <h2>Standorte</h2>
-  <div id="map"></div>
+    <div id="map"></div>
 
-  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-  <script>
-    const map = L.map('map').setView([51.0, 10.0], 6);
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Karte initialisieren
+        var map = L.map('map').setView([53.5786, 9.6984], 13); // Zentrum auf Wedel
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+        // OpenStreetMap-Tiles hinzufügen
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap-Mitwirkende'
+        }).addTo(map);
 
-    fetch('koordinaten.php')
-      .then(res => res.json())
-      .then(data => {
-        data.forEach(loc => {
-          L.circle([loc.latitude, loc.longitude], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 1000 // Radius in meter
-          }).addTo(map)
-            .bindPopup(loc.name);
-        });
-      });
-  </script>
+        // Standortdaten abrufen und rote Kreise hinzufügen
+        fetch('koordinaten.php')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(function(standort) {
+                    L.circle([standort.latitude, standort.longitude], {
+                        color: 'red',
+                        fillColor: '#f03',
+                        fillOpacity: 0.5,
+                        radius: 200
+                    }).addTo(map);
+                });
+            });
+    </script>
 </body>
 </html>

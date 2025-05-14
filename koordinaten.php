@@ -1,6 +1,12 @@
 <?php
-$pdo = new PDO("mysql:host=localhost;dbname=karte", "user", "pass");
-$stmt = $pdo->query("SELECT name, latitude, longitude FROM locations");
-$locations = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo json_encode($locations);
+// Datenbankverbindung
+$pdo = new PDO('mysql:host=localhost;dbname=deine_datenbank', 'benutzername', 'passwort');
+
+// Abruf der Standortdaten
+$stmt = $pdo->query('SELECT latitude, longitude FROM standorte');
+$standorte = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Ausgabe als JSON
+header('Content-Type: application/json');
+echo json_encode($standorte);
 ?>

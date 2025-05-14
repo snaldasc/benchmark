@@ -1,51 +1,70 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <title>Standorte anzeigen</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-sA+e2tD8TD2xtwODXhdDqknL5mFf88oN1gDn7yZzK6A="
-      crossorigin=""
-    />
-    <style>
-        #map { height: 600px; width: 100%; }
-    </style>
+  <meta charset="UTF-8">
+  <title>Karte mit Standorten</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-sA+e2tD8TD2xtwODXhdDqknL5mFf88oN1gDn7yZzK6A="
+    crossorigin=""
+  />
+  <style>
+    #map {
+      height: 600px;
+      width: 100%;
+    }
+    body {
+      font-family: sans-serif;
+      padding: 1em;
+    }
+  </style>
 </head>
 <body>
-    <h2>Standorte mit roten Kreisen</h2>
-    <div id="map"></div>
+  <h2>Standorte mit roten Kreisen</h2>
+  <div id="map"></div>
 
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-o9N1j8MkE7+Yy9H91XuAxD4k5QgZbbxmgaLrxtxP/qk="
-      crossorigin=""
-    ></script>
-    <script>
-        const map = L.map('map').setView([53.5716, 9.6740], 14);
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-o9N1j8MkE7+Yy9H91XuAxD4k5QgZbbxmgaLrxtxP/qk="
+    crossorigin=""
+  >
+      
+  </script>
+    
+  <script>
+    // Karte initialisieren
+    const map = L.map('map').setView([53.5716, 9.6740], 14);
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap-Mitwirkende'
-        }).addTo(map);
+    // OpenStreetMap Layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap-Mitwirkende'
+    }).addTo(map);
 
-        // Lade Standortdaten von GitHub
-        fetch('https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json')
-            .then(res => res.json())
-            .then(data => {
-                data.forEach(loc => {
-                    L.circle([loc.latitude, loc.longitude], {
-                        color: 'red',
-                        fillColor: '#f03',
-                        fillOpacity: 0.5,
-                        radius: 100
-                    }).addTo(map);
-                });
-            })
-            .catch(error => {
-                console.error("Fehler beim Laden der Standortdaten:", error);
-            });
-    </script>
+    // Standortdaten von GitHub laden
+    fetch('https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Fehler beim Laden der Standortdaten.');
+        }
+        return response.json();
+      })
+      .then(data => {
+        data.forEach(loc => {
+          L.circle([loc.latitude, loc.longitude], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 100
+          }).addTo(map);
+        });
+      })
+      .catch(err => {
+        console.error('Fehler beim Verarbeiten der Daten:', err);
+      });
+  </script>
+
+    
 </body>
 </html>

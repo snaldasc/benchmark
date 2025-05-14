@@ -1,112 +1,85 @@
-:root {
-  --bg: #fff;
-  --text: #000;
-  --accent: #e63946;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #121212;
-    --text: #eee;
-    --accent: #ff6b6b;
-  }
-}
-
 body {
   margin: 0;
-  background-color: var(--bg);
-  color: var(--text);
   font-family: sans-serif;
+  background-color: #121212;
+  color: #f1f1f1;
 }
 
 header {
-  display: flex;
-  align-items: center;
-  background-color: var(--accent);
+  background: #1e1e1e;
   color: white;
   padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #menuToggle {
-  font-size: 1.5em;
   background: none;
   border: none;
   color: white;
-  margin-right: 1em;
+  font-size: 1.5em;
   cursor: pointer;
 }
 
 #sideMenu {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 75%;
-  max-width: 300px;
-  height: 100%;
-  background: var(--bg);
-  color: var(--text);
-  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  background-color: #1a1a1a;
   padding: 1em;
-  transition: left 0.3s ease;
-  z-index: 1000;
-}
-
-#sideMenu.open {
+  position: absolute;
+  top: 60px;
   left: 0;
+  width: 80%;
+  max-width: 300px;
+  height: calc(100% - 60px);
+  overflow-y: auto;
+  z-index: 999;
 }
 
-#locationList {
+#sideMenu.hidden {
+  display: none;
+}
+
+#sideMenu input {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 4px;
+}
+
+#sideMenu ul {
   list-style: none;
   padding: 0;
 }
 
-#locationList li {
-  margin: 0.5em 0;
+#sideMenu li {
+  padding: 0.5em;
+  background: #333;
+  margin-bottom: 5px;
+  border-radius: 4px;
   cursor: pointer;
+}
+
+#sideMenu li:hover {
+  background: #555;
 }
 
 #map {
-  height: 70vh;
+  height: calc(100vh - 60px);
   width: 100%;
-}
-
-#filters {
-  padding: 1em;
-  background-color: var(--bg);
-  display: flex;
-  gap: 1em;
-  align-items: center;
-}
-
-#submitForm {
-  background: var(--bg);
-  color: var(--text);
-  padding: 1em;
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 400px;
-  border: 1px solid var(--accent);
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  z-index: 1001;
-}
-
-#submitForm.hidden {
-  display: none;
-}
-
-input, textarea, select, button {
-  width: 100%;
-  margin-bottom: 0.5em;
-  padding: 0.5em;
-  box-sizing: border-box;
 }
 
 button {
-  background-color: var(--accent);
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 10px;
+  background-color: #333;
   color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
 }

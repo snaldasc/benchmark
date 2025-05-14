@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Karte mit Standorten</title>
+  <title>Karte mit Tag-Filter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link
     rel="stylesheet"
@@ -24,16 +24,13 @@
   </style>
 </head>
 <body>
-  <h2>Standorte mit roten Kreisen</h2>
+  <h2>Standorte mit Tag-Filter</h2>
 
-  <!-- Filter Dropdown -->
+  <!-- Tag-Filter -->
   <div id="filterContainer">
-    <label for="categoryFilter">Kategorie filtern:</label>
-    <select id="categoryFilter">
+    <label for="tagFilter">Tag filtern:</label>
+    <select id="tagFilter">
       <option value="all">Alle</option>
-      <option value="Bank">Bank</option>
-      <option value="Park">Park</option>
-      <option value="Museum">Museum</option>
     </select>
   </div>
 
@@ -49,7 +46,6 @@
     let circles = [];
     let allLocations = [];
 
-    // Daten laden
     fetch('https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json')
       .then(response => {
         if (!response.ok) throw new Error('Standortdaten konnten nicht geladen werden.');
@@ -58,13 +54,14 @@
       .then(data => {
         allLocations = data;
         renderLocations(allLocations);
+        populateTagFilter(data);
       })
       .catch(err => {
         console.error('Fehler beim Laden oder Verarbeiten der Daten:', err);
       });
 
     function renderLocations(locations) {
-      // Vorherige Marker entfernen
+      // Alte Marker entfernen
       circles.forEach(c => map.removeLayer(c));
       circles = [];
 
@@ -86,13 +83,30 @@
       });
     }
 
-    // Filterfunktion
-    document.getElementById('categoryFilter').addEventListener('change', (e) => {
-      const selected = e.target.value;
-      if (selected === 'all') {
+    function populateTagFilter(data) {
+      const tagSet = new Set();
+      data.forEach(loc => {
+        (loc.tags || []).forEach(tag => tagSet.add(tag));
+      });
+
+      const tagFilter = document.getElementById('tagFilter');
+      tagSet.forEach(tag => {
+        const option = document.createElement('option');
+        option.value = tag;
+        option.textContent = tag;
+        tagFilter.appendChild(option);
+      });
+    }
+
+    document.getElementById('tagFilter').addEventListener('change', (e) => {
+      const selectedTag = e.target.value;
+
+      if (selectedTag === 'all') {
         renderLocations(allLocations);
       } else {
-        const filtered = allLocations.filter(loc => loc.type === selected);
+        const filtered = allLocations.filter(loc =>
+          loc.tags && loc.tags.includes(selectedTag)
+        );
         renderLocations(filtered);
       }
     });

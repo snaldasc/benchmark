@@ -1,79 +1,112 @@
+:root {
+  --bg: #fff;
+  --text: #000;
+  --accent: #e63946;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #eee;
+    --accent: #ff6b6b;
+  }
+}
+
 body {
-  font-family: sans-serif;
-  padding: 1em;
   margin: 0;
-  background-color: white;
-  color: #222;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
 }
 
-h2 {
-  font-size: 1.5em;
-  text-align: center;
-  margin-bottom: 1em;
-}
-
-#filterContainer {
+header {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5em;
-  margin-bottom: 1em;
-  padding: 0 1em;
+  align-items: center;
+  background-color: var(--accent);
+  color: white;
+  padding: 1em;
 }
 
-#tagFilter {
-  font-size: 1em;
-  padding: 0.4em;
-  min-width: 120px;
+#menuToggle {
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: white;
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+#sideMenu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  max-width: 300px;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  padding: 1em;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+#sideMenu.open {
+  left: 0;
+}
+
+#locationList {
+  list-style: none;
+  padding: 0;
+}
+
+#locationList li {
+  margin: 0.5em 0;
+  cursor: pointer;
 }
 
 #map {
   height: 70vh;
   width: 100%;
-  border: 1px solid #ccc;
 }
 
-.popup-image {
+#filters {
+  padding: 1em;
+  background-color: var(--bg);
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+#submitForm {
+  background: var(--bg);
+  color: var(--text);
+  padding: 1em;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 1001;
+}
+
+#submitForm.hidden {
+  display: none;
+}
+
+input, textarea, select, button {
   width: 100%;
-  max-width: 200px;
-  height: auto;
-  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  box-sizing: border-box;
 }
 
-/* Mobile Optimierung */
-@media (max-width: 600px) {
-  h2 {
-    font-size: 1.2em;
-  }
-
-  #filterContainer {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #map {
-    height: 65vh;
-  }
-}
-
-/* 🌙 Dark Mode */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #f0f0f0;
-  }
-
-  #filterContainer {
-    background-color: #1e1e1e;
-  }
-
-  #tagFilter {
-    background-color: #2a2a2a;
-    color: #f0f0f0;
-    border: 1px solid #555;
-  }
-
-  #map {
-    border: 1px solid #444;
-  }
+button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
 }

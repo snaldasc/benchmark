@@ -2,9 +2,13 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Benchmark</title>
+  <title>Karte mit Standorten</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    crossorigin=""
+  />
   <style>
     #map {
       height: 600px;
@@ -17,161 +21,87 @@
     #filters {
       margin-bottom: 20px;
     }
-    #filterSelect, #categorySelect {
+    #categorySelect {
       margin-right: 10px;
-    }
-    ul {
-      padding: 0;
-      list-style: none;
-    }
-    li {
-      cursor: pointer;
-      padding: 5px;
-      margin: 3px;
-      background-color: #f0f0f0;
-    }
-    li:hover {
-      background-color: #ddd;
     }
   </style>
 </head>
 <body>
-  <h2>Benchmark</h2>
-
+  <h2>Standorte mit roten Kreisen</h2>
+  
   <!-- Filter-Optionen -->
   <div id="filters">
     <label for="categorySelect">Filter nach Kategorie:</label>
     <select id="categorySelect">
-      <option value="all">Alle</option>
+      <option value="all">Alle anzeigen</option>
       <option value="Bank">Bank</option>
       <option value="Park">Park</option>
       <option value="Museum">Museum</option>
     </select>
-
-    <label for="filterSelect">Filter nach Tags:</label>
-    <select id="filterSelect">
-      <option value="all">Alle anzeigen</option>
-      <option value="water">Wasser</option>
-      <option value="harbour">Hafen</option>
-      <option value="historisch">Historisch</option>
-      <option value="kulturell">Kulturell</option>
-    </select>
   </div>
-
-  <ul id="locationList"></ul>
 
   <div id="map"></div>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    crossorigin=""
+  ></script>
   <script>
     const map = L.map('map').setView([53.5716, 9.6740], 14);
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap-Mitwirkende'
     }).addTo(map);
 
-    let locations = [];  // Array für die Standorte
-    let locationMarkers = []; // Array für Marker
+    let locationMarkers = [];  // Array, um die Marker zu speichern
+    let locationsData = [];    // Array für alle Standorte
 
-    // Standorte laden
     fetch('https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Standortdaten konnten nicht geladen werden.');
+        }
+        return response.json();
+      })
       .then(data => {
-        locations = data;
-        locations.forEach(loc => {
+        locationsData = data;
+        // Initiale Anzeige der Marker
+        locationsData.forEach(loc => {
           const circle = L.circle([loc.latitude, loc.longitude], {
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
-            radius: 300
+            radius: 5  // radius in meter
           }).addTo(map);
 
-          const popupContent = ` 
-            <h3>${loc.name}</h3>
-            <p>${loc.description}</p>
-            <img src="${loc.image}" alt="${loc.name}" style="width: 200px; height: auto;">
-          `;
-          circle.bindPopup(popupContent);
-
-          locationMarkers.push({ loc, circle });
-
-          // Standort in der Liste anzeigen
-          const listItem = document.createElement('li');
-          listItem.textContent = loc.name;
-          listItem.dataset.category = loc.type;
-          listItem.dataset.tags = loc.tags.join(','); // tags als String speichern
-          listItem.dataset.name = loc.name.toLowerCase();
-          listItem.dataset.description = loc.description.toLowerCase();
-
-          listItem.addEventListener('click', () => {
-            map.setView([loc.latitude, loc.longitude], 14);
-            circle.openPopup();
+          // Speichern des Markers mit dem zugehörigen Standort
+          locationMarkers.push({
+            marker: circle,
+            category: loc.type
           });
-
-          document.getElementById('locationList').appendChild(listItem);
         });
       })
       .catch(err => {
-        console.error('Fehler beim Laden der Daten:', err);
+        console.error('Fehler beim Laden oder Verarbeiten der Daten:', err);
       });
 
-    // Filter für Kategorie (Aussehen)
+    // Filter für Kategorie
     document.getElementById('categorySelect').addEventListener('change', (e) => {
       const selectedCategory = e.target.value;
-      const selectedTags = document.getElementById('filterSelect').value;
-      filterLocations(selectedCategory, selectedTags);
+      filterMarkersByCategory(selectedCategory);
     });
 
-    // Filter für Tags (Wasser, Hafen, etc.)
-    document.getElementById('filterSelect').addEventListener('change', (e) => {
-      const selectedTags = e.target.value;
-      const selectedCategory = document.getElementById('categorySelect').value;
-      filterLocations(selectedCategory, selectedTags);
-    });
-
-    // Funktion, die Standorte basierend auf Kategorie und Tags filtert
-    function filterLocations(selectedCategory, selectedTags) {
+    // Funktion, um Marker basierend auf der Kategorie zu filtern
+    function filterMarkersByCategory(selectedCategory) {
       locationMarkers.forEach(markerObj => {
-        const { loc, circle } = markerObj;
-        let show = true;
+        const { marker, category } = markerObj;
 
-        // Filter nach Kategorie
-        if (selectedCategory !== 'all' && loc.type !== selectedCategory) {
-          show = false;
-        }
-
-        // Filter nach Tags (Wasser, Hafen etc.)
-        if (selectedTags !== 'all' && !loc.tags.includes(selectedTags)) {
-          show = false;
-        }
-
-        // Marker anzeigen oder ausblenden
-        if (show) {
-          circle.addTo(map);  // Marker anzeigen
+        // Alle Marker anzeigen, wenn 'all' ausgewählt ist
+        if (selectedCategory === 'all' || category === selectedCategory) {
+          marker.addTo(map);
         } else {
-          map.removeLayer(circle);  // Marker ausblenden
+          map.removeLayer(marker); // Marker ausblenden, wenn die Kategorie nicht passt
         }
-      });
-
-      // Filtere die Standort-Liste nach Kategorie und Filter
-      const listItems = document.querySelectorAll('#locationList li');
-      listItems.forEach(item => {
-        const category = item.dataset.category;
-        const tags = item.dataset.tags;
-        const description = item.dataset.description;
-
-        let show = true;
-
-        // Filter nach Kategorie
-        if (selectedCategory !== 'all' && category !== selectedCategory) {
-          show = false;
-        }
-
-        // Filter nach Tags
-        if (selectedTags !== 'all' && !tags.includes(selectedTags)) {
-          show = false;
-        }
-
-        item.style.display = show ? '' : 'none';
       });
     }
   </script>

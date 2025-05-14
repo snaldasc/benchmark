@@ -1,20 +1,20 @@
 [
   {
-    "name": "Ort A",
+    "name": "Bench at water Elbe",
     "latitude": 53.5716087,
     "longitude": 9.6740014,
     "image": "https://example.com/orta.jpg",
     "description": "Bench at Hamburgs Yacht Harbour with beautiful view on the Elbe and passing Cargoships",
     "type": "Bank",   
-    "tags": ["water", "harbour"]  
+    "tags": ["water", "harbour", "elbe"]  
   },
   {
-    "name": "Ort B",
+    "name": "Bench at water Elbe 2",
     "latitude": 53.5715442,
     "longitude": 9.6743027,
     "image": "https://example.com/ortb.jpg",
     "description": "Bench at Hamburgs Yacht Harbour with beautiful view on the Elbe and passsing Cargoships",
     "type": "Bank",
-    "tags": ["water", "harbour"]
+    "tags": ["water", "harbour", "elbe"]
   }
 ]

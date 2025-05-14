@@ -20,9 +20,9 @@
   <nav id="sideMenu" class="hidden">
     <input type="text" id="searchInput" placeholder="🔍 Nach Tags suchen..." />
     <ul id="locationList"></ul>
-    <button id="resetMap">📍 Zurück zur Position</button>
+    <button id="resetMap">📍 back to your position</button>
     <hr />
-    <button id="submitLocation">➕ Location einreichen</button>
+    <button id="submitLocation">➕ submit location</button>
   </nav>
 
   <main>
@@ -50,7 +50,7 @@
         userLatLng = [pos.coords.latitude, pos.coords.longitude];
         map.setView(userLatLng, 14);
       },
-      () => console.log("Standort nicht verfügbar.")
+      () => console.log("position not available")
     );
 
     // Daten laden

@@ -2,6 +2,8 @@ body {
   font-family: sans-serif;
   padding: 1em;
   margin: 0;
+  background-color: white;
+  color: #222;
 }
 
 h2 {
@@ -51,5 +53,27 @@ h2 {
 
   #map {
     height: 65vh;
+  }
+}
+
+/* 🌙 Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #f0f0f0;
+  }
+
+  #filterContainer {
+    background-color: #1e1e1e;
+  }
+
+  #tagFilter {
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+    border: 1px solid #555;
+  }
+
+  #map {
+    border: 1px solid #444;
   }
 }

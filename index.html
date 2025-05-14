@@ -20,20 +20,19 @@
   </header>
 
   <nav id="sideMenu" class="hidden">
-    <label for="tagFilter">Filter nach Tags:</label>
-    <select id="tagFilter">
-      <option value="">Alle Tags</option>
-      <!-- Dynamische Optionen werden hier geladen -->
-    </select>
+    <input type="text" id="searchInput" placeholder="🔍 Nach Tags suchen..." />
     <ul id="locationList"></ul>
-    <button id="resetMap">📍 zurück zur Position</button>
+    <button id="resetMap">📍 back to your position</button>
     <hr />
+<!--     <button id="submitLocation">➕ submit location</button> -->
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLJKF-C_VVNV0OK-bEY7d_JMTqMHZUXyd4rtz-PTOwwyyU7w/viewform?usp=sharing" target="_blank">
-      <button>Location einreichen</button>
+      <button>submit location</button>
     </a>
     <a href="https://buymeacoffee.com/spotscout" target="_blank">
-      <button>Unterstütze uns</button>
+      <button>be a supporter</button>
     </a>
+
+    
   </nav>
 
   <main>
@@ -61,7 +60,7 @@
         userLatLng = [pos.coords.latitude, pos.coords.longitude];
         map.setView(userLatLng, 14);
       },
-      () => console.log("Position nicht verfügbar")
+      () => console.log("position not available")
     );
 
     // Daten laden
@@ -70,15 +69,13 @@
       .then(data => {
         renderMarkers(data);
 
-        // Filter Dropdown initialisieren
-        initializeTagFilter(data);
-
-        // Filter anwenden
-        document.getElementById("tagFilter").addEventListener("change", e => {
-          const selectedTag = e.target.value.toLowerCase();
-          const filtered = selectedTag 
-            ? data.filter(loc => loc.tags.some(tag => tag.toLowerCase() === selectedTag))
-            : data;
+        // Suche
+        document.getElementById("searchInput").addEventListener("input", e => {
+          const q = e.target.value.toLowerCase();
+          const filtered = data.filter(loc =>
+            loc.tags.some(tag => tag.toLowerCase().includes(q)) ||
+            loc.description.toLowerCase().includes(q)
+          );
           renderMarkers(filtered);
         });
       });
@@ -118,34 +115,18 @@
       });
     }
 
-    // Tag-Filter initialisieren
-    function initializeTagFilter(data) {
-      const tagFilter = document.getElementById("tagFilter");
-      const allTags = new Set();
-      
-      // Alle Tags sammeln
-      data.forEach(loc => {
-        loc.tags.forEach(tag => {
-          allTags.add(tag.toLowerCase());
-        });
-      });
-
-      // Dropdown-Optionen füllen
-      allTags.forEach(tag => {
-        const option = document.createElement("option");
-        option.value = tag;
-        option.textContent = tag;
-        tagFilter.appendChild(option);
-      });
-    }
-
-    // Zoom zurücksetzen
+    // Zoom reset
     document.getElementById("resetMap").addEventListener("click", () => {
       if (userLatLng) {
         map.setView(userLatLng, 14);
       } else {
         map.setView([40, 10], 14);
       }
+    });
+
+    // Untermenü Location einreichen (Platzhalter)
+    document.getElementById("submitLocation").addEventListener("click", () => {
+      alert("Location-Formular wird in Zukunft integriert.");
     });
   </script>
 </body>

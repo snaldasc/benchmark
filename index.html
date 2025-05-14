@@ -51,8 +51,8 @@
     <label for="filterSelect">Location Filter:</label>
     <select id="filterSelect">
       <option value="all">Show all</option>
-      <option value="water">water</option>
-      <option value="harbour">harbour</option>
+      <option value="water">Water</option>
+      <option value="harbour">Harbour</option>
     </select>
   </div>
 
@@ -125,12 +125,34 @@
 
     // Funktion, die Standorte basierend auf Kategorie und Textfilter anzeigt
     function filterLocations(selectedCategory, selectedFilter) {
+      locationMarkers.forEach(markerObj => {
+        const { loc, circle } = markerObj;
+        let show = true;
+
+        // Filter nach Kategorie
+        if (selectedCategory !== 'all' && loc.type !== selectedCategory) {
+          show = false;
+        }
+
+        // Filter nach Beschreibung oder Typ (Wenn ein spezieller Filter wie 'water' oder 'harbour' gewählt wurde)
+        if (selectedFilter !== 'all' && !loc.description.toLowerCase().includes(selectedFilter.toLowerCase()) && !loc.type.toLowerCase().includes(selectedFilter.toLowerCase())) {
+          show = false;
+        }
+
+        // Marker anzeigen oder ausblenden
+        if (show) {
+          circle.addTo(map);  // Marker anzeigen
+        } else {
+          map.removeLayer(circle);  // Marker ausblenden
+        }
+      });
+
+      // Filtere die Standort-Liste nach Kategorie und Filter
       const listItems = document.querySelectorAll('#locationList li');
-      
       listItems.forEach(item => {
+        const category = item.dataset.category;
         const name = item.dataset.name;
         const description = item.dataset.description;
-        const category = item.dataset.category;
 
         let show = true;
 
@@ -139,11 +161,8 @@
           show = false;
         }
 
-        // Filter nach Name oder Beschreibung
-        if (selectedFilter === 'name' && !name.includes('')) {
-          show = false;
-        }
-        if (selectedFilter === 'description' && !description.includes('')) {
+        // Filter nach Beschreibung
+        if (selectedFilter !== 'all' && !description.includes(selectedFilter.toLowerCase())) {
           show = false;
         }
 

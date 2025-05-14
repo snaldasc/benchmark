@@ -13,10 +13,12 @@ navigator.geolocation.getCurrentPosition((position) => {
   console.warn("Standort nicht verfügbar.");
 });
 
+// Berechne Abstand
 function getDistance(a, b) {
   return a.distanceTo(b);
 }
 
+// Popup-Inhalt für Marker
 function createPopupContent(loc) {
   return `
     <strong>${loc.name}</strong><br />
@@ -25,6 +27,7 @@ function createPopupContent(loc) {
   `;
 }
 
+// Marker rendern
 function renderMarkers(locations) {
   document.getElementById("locationList").innerHTML = "";
   locations.forEach((loc) => {
@@ -46,6 +49,7 @@ function renderMarkers(locations) {
   });
 }
 
+// Filter anwenden
 function applyFilter() {
   const tag = document.getElementById("tagSelect").value;
   const filtered = tag === "all"
@@ -54,13 +58,16 @@ function applyFilter() {
   renderMarkers(filtered);
 }
 
+// Event-Listener für den Filter
 document.getElementById("tagSelect").addEventListener("change", applyFilter);
 
+// Daten laden
 fetch("https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json")
   .then((r) => r.json())
   .then((data) => {
     allLocations = data;
     if (userLatLng) {
+      // Sortiere die Standorte nach Entfernung vom Benutzer
       allLocations.sort((a, b) => {
         return getDistance(userLatLng, L.latLng(a.latitude, a.longitude)) -
                getDistance(userLatLng, L.latLng(b.latitude, b.longitude));
@@ -76,15 +83,20 @@ menuToggle.addEventListener("click", () => {
   sideMenu.classList.toggle("open");
 });
 
-// Submit-Formular
+// Submit-Formular öffnen
 document.getElementById("openSubmitForm").addEventListener("click", () => {
   document.getElementById("submitForm").classList.remove("hidden");
 });
+
+// Formular abbrechen
 document.getElementById("cancelSubmit").addEventListener("click", () => {
   document.getElementById("submitForm").classList.add("hidden");
 });
+
+// Formular absenden
 document.getElementById("locationForm").addEventListener("submit", (e) => {
   e.preventDefault();
+  
   const loc = {
     name: document.getElementById("name").value,
     description: document.getElementById("description").value,
@@ -93,6 +105,7 @@ document.getElementById("locationForm").addEventListener("submit", (e) => {
     image: document.getElementById("image").value,
     tags: document.getElementById("tags").value.split(",").map(t => t.trim())
   };
+  
   allLocations.push(loc);
   applyFilter();
   document.getElementById("submitForm").classList.add("hidden");

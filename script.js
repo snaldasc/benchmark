@@ -1,19 +1,26 @@
-const map = L.map("map").setView([53.5716, 9.674], 14);
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution: "&copy; OpenStreetMap-Mitwirkende",
-}).addTo(map);
-
+const map = L.map('map').setView([53.5716, 9.674], 14);
 let userLatLng = null;
 let allLocations = [];
 
-// Hole Geoposition
-navigator.geolocation.getCurrentPosition((position) => {
-  userLatLng = L.latLng(position.coords.latitude, position.coords.longitude);
-}, () => {
-  console.warn("Standort nicht verfügbar.");
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap-Mitwirkende'
+}).addTo(map);
+
+// Menü toggeln
+document.getElementById("menuToggle").addEventListener("click", () => {
+  document.getElementById("sideMenu").classList.toggle("open");
 });
 
-// Berechne Abstand
+// Geolocation
+navigator.geolocation.getCurrentPosition(
+  pos => {
+    userLatLng = L.latLng(pos.coords.latitude, pos.coords.longitude);
+    map.setView(userLatLng, 14);
+  },
+  () => console.warn("Standort nicht verfügbar.")
+);
+
+// Distanzen berechnen
 function getDistance(a, b) {
   return a.distanceTo(b);
 }
@@ -30,7 +37,7 @@ function createPopupContent(loc) {
 // Marker rendern
 function renderMarkers(locations) {
   document.getElementById("locationList").innerHTML = "";
-  locations.forEach((loc) => {
+  locations.forEach(loc => {
     const marker = L.circle([loc.latitude, loc.longitude], {
       color: "red",
       fillColor: "#f03",
@@ -52,61 +59,69 @@ function renderMarkers(locations) {
 // Filter anwenden
 function applyFilter() {
   const tag = document.getElementById("tagSelect").value;
-  const filtered = tag === "all"
-    ? allLocations
-    : allLocations.filter((l) => l.tags.includes(tag));
+  const filtered = tag === "all" ? allLocations : allLocations.filter(l => l.tags.includes(tag));
   renderMarkers(filtered);
 }
 
-// Event-Listener für den Filter
+// Dropdown mit Tags füllen
+function populateTags(locations) {
+  const tags = new Set();
+  locations.forEach(loc => loc.tags.forEach(tag => tags.add(tag)));
+  const tagSelect = document.getElementById("tagSelect");
+  tags.forEach(tag => {
+    const option = document.createElement("option");
+    option.value = tag;
+    option.textContent = tag;
+    tagSelect.appendChild(option);
+  });
+}
+
 document.getElementById("tagSelect").addEventListener("change", applyFilter);
 
 // Daten laden
 fetch("https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json")
-  .then((r) => r.json())
-  .then((data) => {
+  .then(res => res.json())
+  .then(data => {
     allLocations = data;
+    populateTags(data);
     if (userLatLng) {
-      // Sortiere die Standorte nach Entfernung vom Benutzer
-      allLocations.sort((a, b) => {
-        return getDistance(userLatLng, L.latLng(a.latitude, a.longitude)) -
-               getDistance(userLatLng, L.latLng(b.latitude, b.longitude));
-      });
+      allLocations.sort((a, b) => getDistance(userLatLng, L.latLng(a.latitude, a.longitude)) - getDistance(userLatLng, L.latLng(b.latitude, b.longitude)));
     }
     renderMarkers(allLocations);
-  });
+  })
+  .catch(err => console.error("Fehler beim Laden der Daten:", err));
 
-// Hamburger Menu
-const menuToggle = document.getElementById("menuToggle");
-const sideMenu = document.getElementById("sideMenu");
-menuToggle.addEventListener("click", () => {
-  sideMenu.classList.toggle("open");
+document.getElementById("resetMap").addEventListener("click", () => {
+  if (userLatLng) {
+    map.setView(userLatLng, 14);
+  }
 });
 
-// Submit-Formular öffnen
 document.getElementById("openSubmitForm").addEventListener("click", () => {
   document.getElementById("submitForm").classList.remove("hidden");
 });
 
-// Formular abbrechen
 document.getElementById("cancelSubmit").addEventListener("click", () => {
   document.getElementById("submitForm").classList.add("hidden");
 });
 
-// Formular absenden
-document.getElementById("locationForm").addEventListener("submit", (e) => {
+// Standort einreichen
+document.getElementById("locationForm").addEventListener("submit", e => {
   e.preventDefault();
-  
-  const loc = {
+
+  const newLocation = {
     name: document.getElementById("name").value,
     description: document.getElementById("description").value,
     latitude: parseFloat(document.getElementById("latitude").value),
     longitude: parseFloat(document.getElementById("longitude").value),
     image: document.getElementById("image").value,
-    tags: document.getElementById("tags").value.split(",").map(t => t.trim())
+    tags: document.getElementById("tags").value.split(",").map(tag => tag.trim()),
   };
-  
-  allLocations.push(loc);
+
+  allLocations.push(newLocation);
+  renderMarkers(allLocations);
   applyFilter();
+
   document.getElementById("submitForm").classList.add("hidden");
+  document.getElementById("locationForm").reset();
 });

@@ -2,13 +2,9 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Karte mit Standorten</title>
+  <title>Karte mit Kategorien und Filtern</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    crossorigin=""
-  />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     #map {
       height: 600px;
@@ -18,43 +14,142 @@
       font-family: sans-serif;
       padding: 1em;
     }
+    #filters {
+      margin-bottom: 20px;
+    }
+    #filterSelect, #categorySelect {
+      margin-right: 10px;
+    }
+    ul {
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      cursor: pointer;
+      padding: 5px;
+      margin: 3px;
+      background-color: #f0f0f0;
+    }
+    li:hover {
+      background-color: #ddd;
+    }
   </style>
 </head>
 <body>
-  <h2>Standorte mit roten Kreisen</h2>
+  <h2>Standorte mit Kategorien und Filtern</h2>
+
+  <!-- Filter-Optionen -->
+  <div id="filters">
+    <label for="categorySelect">Kategorie auswählen:</label>
+    <select id="categorySelect">
+      <option value="all">Alle Kategorien</option>
+      <option value="Bank">Bank</option>
+      <option value="Park">Park</option>
+      <option value="Museum">Museum</option>
+    </select>
+
+    <label for="filterSelect">Filter nach Standort:</label>
+    <select id="filterSelect">
+      <option value="all">Alle anzeigen</option>
+      <option value="name">Nach Name</option>
+      <option value="description">Nach Beschreibung</option>
+    </select>
+  </div>
+
+  <ul id="locationList"></ul>
+
   <div id="map"></div>
 
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    crossorigin=""
-  ></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     const map = L.map('map').setView([53.5716, 9.6740], 14);
-
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap-Mitwirkende'
     }).addTo(map);
 
+    let locations = [];  // Array für die Standorte
+    let locationMarkers = []; // Array für Marker
+
+    // Standorte laden
     fetch('https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Standortdaten konnten nicht geladen werden.');
-        }
-        return response.json();
-      })
+      .then(response => response.json())
       .then(data => {
-        data.forEach(loc => {
-          L.circle([loc.latitude, loc.longitude], {
+        locations = data;
+        locations.forEach(loc => {
+          const circle = L.circle([loc.latitude, loc.longitude], {
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
-            radius: 5      <!-- radius in meter -->
+            radius: 300
           }).addTo(map);
+
+          const popupContent = `
+            <h3>${loc.name}</h3>
+            <p>${loc.description}</p>
+            <img src="${loc.image}" alt="${loc.name}" style="width: 200px; height: auto;">
+          `;
+          circle.bindPopup(popupContent);
+
+          locationMarkers.push({ loc, circle });
+
+          // Standort in der Liste anzeigen
+          const listItem = document.createElement('li');
+          listItem.textContent = loc.name;
+          listItem.dataset.category = loc.type;
+          listItem.dataset.name = loc.name.toLowerCase();
+          listItem.dataset.description = loc.description.toLowerCase();
+
+          listItem.addEventListener('click', () => {
+            map.setView([loc.latitude, loc.longitude], 14);
+            circle.openPopup();
+          });
+
+          document.getElementById('locationList').appendChild(listItem);
         });
       })
       .catch(err => {
-        console.error('Fehler beim Laden oder Verarbeiten der Daten:', err);
+        console.error('Fehler beim Laden der Daten:', err);
       });
+
+    // Filter für Kategorie (Aussehen)
+    document.getElementById('categorySelect').addEventListener('change', (e) => {
+      const selectedCategory = e.target.value;
+      filterLocations(selectedCategory, document.getElementById('filterSelect').value);
+    });
+
+    // Filter für Standort (Name/Beschreibung)
+    document.getElementById('filterSelect').addEventListener('change', (e) => {
+      const selectedFilter = e.target.value;
+      filterLocations(document.getElementById('categorySelect').value, selectedFilter);
+    });
+
+    // Funktion, die Standorte basierend auf Kategorie und Textfilter anzeigt
+    function filterLocations(selectedCategory, selectedFilter) {
+      const listItems = document.querySelectorAll('#locationList li');
+      
+      listItems.forEach(item => {
+        const name = item.dataset.name;
+        const description = item.dataset.description;
+        const category = item.dataset.category;
+
+        let show = true;
+
+        // Filter nach Kategorie
+        if (selectedCategory !== 'all' && category !== selectedCategory) {
+          show = false;
+        }
+
+        // Filter nach Name oder Beschreibung
+        if (selectedFilter === 'name' && !name.includes('')) {
+          show = false;
+        }
+        if (selectedFilter === 'description' && !description.includes('')) {
+          show = false;
+        }
+
+        item.style.display = show ? '' : 'none';
+      });
+    }
   </script>
 </body>
 </html>

@@ -1,0 +1,55 @@
+body {
+  font-family: sans-serif;
+  padding: 1em;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+#filterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em;
+  margin-bottom: 1em;
+  padding: 0 1em;
+}
+
+#tagFilter {
+  font-size: 1em;
+  padding: 0.4em;
+  min-width: 120px;
+}
+
+#map {
+  height: 70vh;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.popup-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-top: 0.5em;
+}
+
+/* Mobile Optimierung */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.2em;
+  }
+
+  #filterContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #map {
+    height: 65vh;
+  }
+}

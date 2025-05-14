@@ -6,8 +6,6 @@ CREATE TABLE IF NOT EXISTS locations (
 );
 
 INSERT INTO locations (name, latitude, longitude) VALUES
-('Bank 1', 53,5716087, 9,6740014),
-('Ort B', 53,5715442, 9,6743027),
+('Bank 1', 53.5716087, 9.6740014),
+('Ort B', 53.5715442, 9.6743027),
 ('Ort C', 50.110924, 8.682127);
-
-

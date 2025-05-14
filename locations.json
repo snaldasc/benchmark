@@ -1,9 +1,9 @@
 [
   {
-    "name": "Bank 1",
+    "name": "Ort A",
     "latitude": 53.5716087,
     "longitude": 9.6740014,
-    "image": "bank1",
+    "image": "https://example.com/orta.jpg",
     "description": "Bench at Hamburgs Yacht Harbour with beautiful view on the Elbe and passing Cargoships",
     "type": "Bank",   
     "tags": ["water", "harbour"]  
@@ -24,6 +24,6 @@
     "image": "https://example.com/ortc.jpg",
     "description": "Ort C ist bekannt für seine historische Architektur.",
     "type": "Bank",
-    "tags": ["historisch", "kulturell"]  // Tags für Aussehen
+    "tags": ["historisch", "kulturell"]
   }
 ]

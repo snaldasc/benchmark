@@ -1,11 +1,12 @@
-/* Seite und Grundlayout */
+/* Grundlegendes Layout */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
 }
 
 header {
@@ -19,8 +20,13 @@ header {
   z-index: 2;
 }
 
-#menuToggle {
+h1 {
+  margin: 0;
   font-size: 24px;
+}
+
+#menuToggle {
+  font-size: 30px;
   cursor: pointer;
   background: none;
   border: none;
@@ -44,6 +50,10 @@ nav {
 
 nav.hidden {
   transform: translateX(100%);
+}
+
+nav.open {
+  transform: translateX(0);
 }
 
 nav a, nav button {
@@ -81,4 +91,119 @@ main {
   height: 100%;
 }
 
-/* Weitere Anpassungen für den Body und die Karte */
+/* Standort-Liste */
+#locationList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#locationList li {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+#locationList li:hover {
+  background-color: #f0f0f0;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+/* Filter Dropdown */
+#tagSelect {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Formular zum Einreichen eines Standorts */
+#submitForm {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+#submitForm input, #submitForm button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#submitForm button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#submitForm button:hover {
+  background-color: #0056b3;
+}
+
+#submitForm .hidden {
+  display: none;
+}
+
+#submitForm input[type="text"], #submitForm input[type="number"], #submitForm input[type="url"] {
+  width: calc(100% - 20px); /* Adjust for padding */
+}
+
+#cancelSubmit {
+  background-color: #f44336;
+}
+
+#cancelSubmit:hover {
+  background-color: #d32f2f;
+}
+
+/* Karte und Marker */
+.leaflet-container {
+  z-index: 0;
+}
+
+.leaflet-popup-content img {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+}
+
+/* Responsives Design */
+@media (max-width: 768px) {
+  nav {
+    width: 100%;
+    height: auto;
+  }
+
+  #map {
+    height: 400px;
+  }
+
+  #submitForm {
+    width: 90%;
+  }
+
+  #menuToggle {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  #submitForm input, #submitForm button {
+    font-size: 14px;
+  }
+
+  #tagSelect {
+    font-size: 14px;
+  }
+}

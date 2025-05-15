@@ -25,5 +25,50 @@
     "description": "A bench at a small street infront of an Forest",
     "type": "Bank",
     "tags": ["forest", "town", "street"]
+  },
+  {
+    "name": "Fummelfelsen / lovers rock",
+    "latitude": 50,633646,
+    "longitude": 6,400134,
+    "image": "fummelfelsen.jpg",
+    "description": "This cliff is a beautiful place where people enjoy making out. Watch out for the height and the loose dirt",
+    "type": "other",
+    "tags": ["forest", "water", "hill", "cliff"]
+  },
+  {
+    "name": "Rock with view",
+    "latitude": 50,6313953,
+    "longitude": 6,4131169,
+    "image": "rockincliff.jpg",
+    "description": "Rock with a beautiful view on the water - may be a bit difficult to find",
+    "type": "other",
+    "tags": ["forest", "water", "picknick", "cliff"]
+  },
+  {
+    "name": "Bench in forest water view",
+    "latitude": 50,6266661,
+    "longitude": 6,3992782,
+    "image": "bencheifel.jpg",
+    "description": "Beautiful view down a hill in a forest on the water",
+    "type": "bench",
+    "tags": ["forest", "water"]
+  },
+  {
+    "name": "Bench Worbelescheed",
+    "latitude": 50,5824818,
+    "longitude": 6,3225809,
+    "image": "bankscheede.jpg",
+    "description": "Beautiful bench in the middle of nowhere",
+    "type": "bench",
+    "tags": ["field"]
+  },
+  {
+    "name": "Cosler kreuz",
+    "latitude": 50,628498,
+    "longitude": 6,2686,
+    "image": "townbench.jpg",
+    "description": "A nice bench in the crossing of 2 streets in a small town",
+    "type": "bench",
+    "tags": ["town", "field"]
   }
 ]

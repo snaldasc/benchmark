@@ -31,10 +31,11 @@ header {
   background-color: #1a1a1a;
   padding: 1em;
   position: absolute;
-  top: 60px;
+  top: 100px;
   left: 0;
   width: 80%;
   max-width: 300px;
+  max-height: 80%;
   height: calc(100% - 60px);
   overflow-y: auto;
   z-index: 999;

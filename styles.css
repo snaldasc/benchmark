@@ -83,3 +83,11 @@ button {
 button:hover {
   background-color: #555;
 }
+
+#locationCount {
+  font-size: 1rem; /* z. B. kleiner als normal */
+  font-weight: bold;
+}
+header h1:last-of-type {
+  font-size: 1.2rem;
+}

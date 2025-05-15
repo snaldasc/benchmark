@@ -1,4 +1,8 @@
 const map = L.map("map").setView([53.5716, 9.674], 14);
+const map = L.map('map', {
+  zoomControl: false  // Deaktiviert die Zoom-Tasten (+/-)
+});
+
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap-Mitwirkende",
 }).addTo(map);

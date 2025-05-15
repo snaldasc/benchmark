@@ -10,35 +10,37 @@
     crossorigin=""
   />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-
   <link rel="stylesheet" href="styles.css" />
 
-<!-- PushAlert -->
-<script type="text/javascript">
-        (function(d, t) {
-                var g = d.createElement(t),
-                s = d.getElementsByTagName(t)[0];
-                g.src = "https://cdn.pushalert.co/integrate_0499cf29ad644996d9398435d3801c7e.js";
-                s.parentNode.insertBefore(g, s);
-        }(document, "script"));
-</script>
-<!-- End PushAlert -->
-
-  
+  <!-- PushAlert -->
+  <script type="text/javascript">
+    (function(d, t) {
+      var g = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+      g.src = "https://cdn.pushalert.co/integrate_0499cf29ad644996d9398435d3801c7e.js";
+      s.parentNode.insertBefore(g, s);
+    }(document, "script"));
+  </script>
+  <!-- End PushAlert -->
 </head>
 <body>
   <header>
     <h1>SpotScout</h1>
     <button id="menuToggle">☰</button>
-  <h1>8 locations available</h1>      <!-- need to update the lcoations available manually -->
+    <h1><span id="locationCount">0</span> locations available</h1>
   </header>
 
   <nav id="sideMenu" class="hidden">
     <label for="tagFilter">Filter Tags:</label>
     <select id="tagFilter">
       <option value="">All</option>
-      <!-- Dynamische Optionen werden hier geladen -->
     </select>
+
+    <label for="typeFilter">Filter Type:</label>
+    <select id="typeFilter">
+      <option value="">All</option>
+    </select>
+
     <ul id="locationList"></ul>
     <button id="resetMap">📍 back to your position</button>
     <hr />
@@ -64,12 +66,10 @@
       attribution: '&copy; OpenStreetMap-Mitwirkende'
     }).addTo(map);
 
-    // Menü toggeln
     document.getElementById("menuToggle").addEventListener("click", () => {
       document.getElementById("sideMenu").classList.toggle("hidden");
     });
 
-    // Eigene Position
     navigator.geolocation.getCurrentPosition(
       pos => {
         userLatLng = [pos.coords.latitude, pos.coords.longitude];
@@ -78,28 +78,36 @@
       () => console.log("Position nicht verfügbar")
     );
 
-    // Daten laden
     fetch("https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json")
       .then(res => res.json())
       .then(data => {
         renderMarkers(data);
-
-        // Filter Dropdown initialisieren
         initializeTagFilter(data);
+        initializeTypeFilter(data);
+        updateLocationCount(data.length);
 
-        // Filter anwenden
-        document.getElementById("tagFilter").addEventListener("change", e => {
-          const selectedTag = e.target.value.toLowerCase();
-          const filtered = selectedTag 
-            ? data.filter(loc => loc.tags.some(tag => tag.toLowerCase() === selectedTag))
-            : data;
+        const tagFilter = document.getElementById("tagFilter");
+        const typeFilter = document.getElementById("typeFilter");
+
+        function applyFilters() {
+          const selectedTag = tagFilter.value.toLowerCase();
+          const selectedType = typeFilter.value.toLowerCase();
+
+          const filtered = data.filter(loc => {
+            const tagMatch = !selectedTag || loc.tags.some(tag => tag.toLowerCase() === selectedTag);
+            const typeMatch = !selectedType || loc.type.toLowerCase() === selectedType;
+            return tagMatch && typeMatch;
+          });
+
           renderMarkers(filtered);
-        });
+          updateLocationCount(filtered.length);
+        }
+
+        tagFilter.addEventListener("change", applyFilters);
+        typeFilter.addEventListener("change", applyFilters);
       });
 
-    // Marker rendern
     function renderMarkers(locations) {
-      // Vorherige Marker entfernen
       markers.forEach(m => map.removeLayer(m));
       markers = [];
 
@@ -132,19 +140,16 @@
       });
     }
 
-    // Tag-Filter initialisieren
     function initializeTagFilter(data) {
       const tagFilter = document.getElementById("tagFilter");
       const allTags = new Set();
-      
-      // Alle Tags sammeln
+
       data.forEach(loc => {
         loc.tags.forEach(tag => {
           allTags.add(tag.toLowerCase());
         });
       });
 
-      // Dropdown-Optionen füllen
       allTags.forEach(tag => {
         const option = document.createElement("option");
         option.value = tag;
@@ -153,7 +158,28 @@
       });
     }
 
-    // Zoom zurücksetzen
+    function initializeTypeFilter(data) {
+      const typeFilter = document.getElementById("typeFilter");
+      const allTypes = new Set();
+
+      data.forEach(loc => {
+        if (loc.type) {
+          allTypes.add(loc.type.toLowerCase());
+        }
+      });
+
+      allTypes.forEach(type => {
+        const option = document.createElement("option");
+        option.value = type;
+        option.textContent = type;
+        typeFilter.appendChild(option);
+      });
+    }
+
+    function updateLocationCount(count) {
+      document.getElementById("locationCount").textContent = count;
+    }
+
     document.getElementById("resetMap").addEventListener("click", () => {
       if (userLatLng) {
         map.setView(userLatLng, 14);

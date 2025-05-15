@@ -1,75 +1,7 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <title>SpotScout</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    crossorigin=""
-  />
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- PushAlert -->
-  <script type="text/javascript">
-    (function(d, t) {
-      var g = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-      g.src = "https://cdn.pushalert.co/integrate_0499cf29ad644996d9398435d3801c7e.js";
-      s.parentNode.insertBefore(g, s);
-    }(document, "script"));
-  </script>
-  <!-- End PushAlert -->
-</head>
-
-<body>
-  <header>
-    <h1>SpotScout</h1>
-    <button id="menuToggle">☰</button>
-    <h1><span id="locationCount">0</span> locations available</h1>
-  </header>
-
-  <div id="menuOverlay" class="hidden"></div>
-
-  <nav id="sideMenu" class="hidden">
-    <label for="tagFilter">Filter Tags:</label>
-    <select id="tagFilter">
-      <option value="">All</option>
-    </select>
-
-    <label for="typeFilter">Filter Type:</label>
-    <select id="typeFilter">
-      <option value="">All</option>
-    </select>
-
-    <ul id="locationList"></ul>
-    <button id="resetMap">📍 back to your position</button>
-    <hr />
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLJKF-C_VVNV0OK-bEY7d_JMTqMHZUXyd4rtz-PTOwwyyU7w/viewform?usp=dialog" target="_blank">
-      <button>submit location</button>
-    </a>
-    <a href="https://buymeacoffee.com/spotscout" target="_blank">
-      <button>be a supporter</button>
-    </a>
-  </nav>
-
-  <main>
-    <div id="map"></div>
-  </main>
-
-  <!-- Modal muss im DOM vorhanden sein, bevor JS ausgeführt wird -->
-  <div id="imageModal" class="hidden">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImg" />
-  </div>
-
-  <!-- Leaflet & dein JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
     const map = L.map('map').setView([53.5716, 9.6740], 14);
-    map.zoomControl.remove(); // Jetzt korrekt nach Definition von map
+    map.zoomControl.remove();
 
     let userLatLng = null;
     let markers = [];
@@ -177,7 +109,6 @@
     function initializeTagFilter(data) {
       const tagFilter = document.getElementById("tagFilter");
       const allTags = new Set();
-
       data.forEach(loc => loc.tags.forEach(tag => allTags.add(tag.toLowerCase())));
       allTags.forEach(tag => {
         const option = document.createElement("option");
@@ -190,7 +121,6 @@
     function initializeTypeFilter(data) {
       const typeFilter = document.getElementById("typeFilter");
       const allTypes = new Set();
-
       data.forEach(loc => loc.type && allTypes.add(loc.type.toLowerCase()));
       allTypes.forEach(type => {
         const option = document.createElement("option");
@@ -246,6 +176,5 @@
     modalImg.addEventListener("click", () => {
       modalImg.classList.toggle("zoomed");
     });
-  </script>
-</body>
-</html>
+  });
+</script>

@@ -147,13 +147,14 @@ const marker = L.marker([loc.latitude, loc.longitude], { icon: redIcon }).addTo(
         const googleMapsLink = `https://www.google.com/maps/dir/?api=1&destination=${loc.latitude},${loc.longitude}`;
 
         const popupContent = `
-          <strong>${loc.name}</strong><br>
-          <img src="${loc.image}" alt="${loc.name}" style="width:100%;max-width:200px;"><br>
-          <p>${loc.description}</p>
-          <a href="${googleMapsLink}" target="_blank" style="color:blue; font-weight:bold; text-decoration:underline;">
-            ➤ Route in Google Maps
-          </a>
-        `;
+  <strong>${loc.name}</strong><br>
+  <img src="${loc.image}" alt="${loc.name}" class="popup-img" style="width:100%;max-width:200px;cursor:pointer;"><br>
+  <p>${loc.description}</p>
+  <a href="${googleMapsLink}" target="_blank" style="color:blue; font-weight:bold; text-decoration:underline;">
+    ➤ Route in Google Maps
+  </a>
+`;
+
 
         marker.bindPopup(popupContent);
         markers.push(marker);
@@ -220,5 +221,11 @@ const marker = L.marker([loc.latitude, loc.longitude], { icon: redIcon }).addTo(
       }
     });
   </script>
+<div id="imageModal" class="modal hidden">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg" />
+</div>
+
+  
 </body>
 </html>

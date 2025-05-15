@@ -69,6 +69,7 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap-Mitwirkende'
     }).addTo(map);
+    map.zoomControl.remove();
 
     document.getElementById("menuToggle").addEventListener("click", () => {
       document.getElementById("sideMenu").classList.toggle("hidden");
@@ -79,7 +80,7 @@
       pos => {
         userLatLng = [pos.coords.latitude, pos.coords.longitude];
         map.setView(userLatLng, 14);
-
+        
         // Benutzer-Standort anzeigen
         userMarker = L.marker(userLatLng, {
           icon: L.icon({

@@ -111,7 +111,15 @@ header h1:last-of-type {
   max-height: 80%;
   border: 3px solid white;
   border-radius: 10px;
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
 }
+
+.modal img.zoomed {
+  transform: scale(1.5);
+  cursor: zoom-out;
+}
+
 
 .hidden {
   display: none;

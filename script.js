@@ -102,41 +102,47 @@ document.getElementById("locationForm").addEventListener("submit", (e) => {
 // Modal-Elemente referenzieren
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
-const closeBtn = document.querySelector(".modal .close");
+const closeBtn = document.querySelector("#imageModal .close");
 
-// Event-Delegation für Popup-Bilder
+// Wenn ein Popup-Bild geklickt wird, öffne Modal
 document.addEventListener("click", e => {
   if (e.target.classList.contains("popup-img")) {
     modal.classList.remove("hidden");
+    modal.style.display = "block";
     modalImg.src = e.target.src;
+    modalImg.classList.remove("zoomed");
   }
 });
 
-// Schließen des Modals
-closeBtn.addEventListener("click", () => {
-  modal.classList.add("hidden");
-});
-
-// Zoom-Funktion
+// Klick auf Bild zum Zoomen / Vergrößern
 modalImg.addEventListener("click", () => {
   modalImg.classList.toggle("zoomed");
 });
 
-// ESC- und Klick-außerhalb-Schließen
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closeModal();
-  }
-});
-
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    closeModal();
-  }
-});
-
-function closeModal() {
+// Modal schließen
+closeBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
+  modal.style.display = "none";
   modalImg.classList.remove("zoomed");
   modalImg.src = "";
-}
+});
+
+// Klick außerhalb des Bildes schließt Modal
+modal.addEventListener("click", e => {
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+    modal.style.display = "none";
+    modalImg.classList.remove("zoomed");
+    modalImg.src = "";
+  }
+});
+
+// ESC-Taste schließt Modal
+window.addEventListener("keydown", e => {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    modal.classList.add("hidden");
+    modal.style.display = "none";
+    modalImg.classList.remove("zoomed");
+    modalImg.src = "";
+  }
+});

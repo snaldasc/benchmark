@@ -107,38 +107,46 @@
         typeFilter.addEventListener("change", applyFilters);
       });
 
-    function renderMarkers(locations) {
-      markers.forEach(m => map.removeLayer(m));
-      markers = [];
+    // Marker rendern
+function renderMarkers(locations) {
+  // Vorherige Marker entfernen
+  markers.forEach(m => map.removeLayer(m));
+  markers = [];
 
-      const list = document.getElementById("locationList");
-      list.innerHTML = "";
+  const list = document.getElementById("locationList");
+  list.innerHTML = "";
 
-      locations.forEach(loc => {
-        const circle = L.circle([loc.latitude, loc.longitude], {
-          color: "red",
-          fillColor: "#f03",
-          fillOpacity: 0.5,
-          radius: 10          <!-- radius in meter -->
-        }).addTo(map);
+  locations.forEach(loc => {
+    const circle = L.circle([loc.latitude, loc.longitude], {
+      color: "red",
+      fillColor: "#f03",
+      fillOpacity: 0.5,
+      radius: 5
+    }).addTo(map);
 
-        const popupContent = `
-          <strong>${loc.name}</strong><br>
-          <img src="${loc.image}" alt="${loc.name}" style="width:100%;max-width:200px;"><br>
-          <p>${loc.description}</p>
-        `;
-        circle.bindPopup(popupContent);
-        markers.push(circle);
+    const googleMapsLink = `https://www.google.com/maps/dir/?api=1&destination=${loc.latitude},${loc.longitude}`;
 
-        const li = document.createElement("li");
-        li.textContent = loc.name;
-        li.addEventListener("click", () => {
-          map.setView([loc.latitude, loc.longitude], 16);
-          circle.openPopup();
-        });
-        list.appendChild(li);
-      });
-    }
+    const popupContent = `
+      <strong>${loc.name}</strong><br>
+      <img src="${loc.image}" alt="${loc.name}" style="width:100%;max-width:200px;"><br>
+      <p>${loc.description}</p>
+      <a href="${googleMapsLink}" target="_blank" style="color:blue; font-weight:bold; text-decoration:underline;">
+        ➤ Route in Google Maps
+      </a>
+    `;
+
+    circle.bindPopup(popupContent);
+    markers.push(circle);
+
+    const li = document.createElement("li");
+    li.textContent = loc.name;
+    li.addEventListener("click", () => {
+      map.setView([loc.latitude, loc.longitude], 16);
+      circle.openPopup();
+    });
+    list.appendChild(li);
+  });
+}
 
     function initializeTagFilter(data) {
       const tagFilter = document.getElementById("tagFilter");

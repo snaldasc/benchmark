@@ -17,67 +17,122 @@
     "type": "bench",
     "tags": ["water", "harbour", "elbe"]
   },
+  [
   {
     "name": "Bench at small street in the Forest",
+    "description": "A bench at a small street infront of an Forest",
     "latitude": 50.7711111,
     "longitude": 15.7675,
-    "image": "bench3.PNG",
-    "description": "A bench at a small street in front of a forest",
-    "type": "bench",
-    "tags": ["forest", "town", "street"]
+    "tags": ["forest", "town", "street"],
+    "image": "bench3.jpg",
+    "type": "bench"
   },
   {
     "name": "Fummelfelsen / lovers rock",
+    "description": "This cliff is a beautiful place where people enjoy making out. Watch out for the height and the loose dirt",
     "latitude": 50.633646,
     "longitude": 6.400134,
-    "image": "fummelfelsen.jpg",
-    "description": "This cliff is a beautiful place where people enjoy making out. Watch out for the height and the loose dirt",
-    "type": "other",
-    "tags": ["forest", "water", "hill", "cliff"]
+    "tags": ["water", "hill", "cliff", "forest"],
+    "image": "no",
+    "type": "other"
   },
   {
-    "name": "Rock with view",
+    "name": "RockwithView",
+    "description": "Rock with a beautiful view on the water - may be a bit difficult to find",
     "latitude": 50.6313953,
     "longitude": 6.4131169,
-    "image": "rockincliff.jpg",
-    "description": "Rock with a beautiful view on the water - may be a bit difficult to find",
-    "type": "other",
-    "tags": ["forest", "water", "picknick", "cliff"]
+    "tags": ["forest", "cliff", "picknick"],
+    "image": "rockincliff",
+    "type": "other"
   },
   {
     "name": "Bench in forest water view",
+    "description": "Beautiful view down a hill in a forest on the water",
     "latitude": 50.6266661,
     "longitude": 6.3992782,
-    "image": "bencheifel.jpg",
-    "description": "Beautiful view down a hill in a forest on the water",
-    "type": "bench",
-    "tags": ["forest", "water"]
+    "tags": ["water", "forest"],
+    "image": "bencheifel",
+    "type": "bench"
   },
   {
     "name": "Bench Worbelescheed",
+    "description": "Beautiful bench in the middle of nowhere",
     "latitude": 50.5824818,
     "longitude": 6.3225809,
-    "image": "bankscheede.jpg",
-    "description": "Beautiful bench in the middle of nowhere",
-    "type": "bench",
-    "tags": ["field"]
+    "tags": ["field"],
+    "image": "bankscheede",
+    "type": "bench"
   },
   {
-    "name": "Cosler kreuz",
+    "name": "cosler kreuz",
+    "description": "A nice bench in the crossing of 2 streets in a small town",
     "latitude": 50.628498,
     "longitude": 6.2686,
-    "image": "townbench.jpg",
-    "description": "A nice bench in the crossing of 2 streets in a small town",
-    "type": "bench",
-    "tags": ["town", "field"]
+    "tags": ["town", "field"],
+    "image": "townbench",
+    "type": "bench"
   },
   {
     "name": "Beach in Aachen",
+    "description": "This is a small beach noone knows and noone ever is. Perfekt for deeptalks with friends, swimming or chilling",
     "latitude": 50.6344444,
     "longitude": 6.4075,
+    "tags": ["beach", "water", "swimming", "forest", "lonely"],
     "image": "aachenstrand.jpeg",
-    "description": "This is a small beach noone knows and which is very lonely. Perfect for deeptalks with friends, swimming or chilling",
-    "type": "beach",
-    "tags": ["swimming", "forest", "lonely"]
+    "type": "beach"
+  },
+  {
+    "name": "beach at a sea",
+    "description": "Lonely sea in the middle of a forest, perfekt place to hang out and bbq with friends",
+    "latitude": 53.616119,
+    "longitude": 9.6965127,
+    "tags": ["lonely", "sea", "forest"],
+    "image": "none",
+    "type": "beach"
+  },
+  {
+    "name": "Bench in forest",
+    "description": "Lonely bench at the side of a forest. You can watch horses on the nearby field",
+    "latitude": 53.6170107,
+    "longitude": 9.6915562,
+    "tags": ["lonely", "forest", "field"],
+    "image": "benchholm.png",
+    "type": "bench"
+  },
+  {
+    "name": "giant bench",
+    "description": "This is a giant bench with a Beautiful view. You may need to climb to get up there",
+    "latitude": 47.6451582,
+    "longitude": 10.4327177,
+    "tags": ["field", "hills"],
+    "image": "giantbench.png",
+    "type": "bench"
+  },
+  {
+    "name": "Bench Buchenberg",
+    "description": "Bench with a Beautiful view on a hill in front of a field with cows",
+    "latitude": 47.7276217,
+    "longitude": 10.2308772,
+    "tags": ["hill", "field"],
+    "image": "benchbuchenberg.png",
+    "type": "bench"
+  },
+  {
+    "name": "Viewbench Korreite",
+    "description": "Wonderful bench with a beautiful view on the mountains, in winter or in summer the perfect place to fall in love",
+    "latitude": 47.6656791,
+    "longitude": 10.3914483,
+    "tags": ["date", "hills", "mountain", "viewpoint", "lonely"],
+    "image": "viewpointkorreite.png",
+    "type": "bench"
+  },
+  {
+    "name": "Bench Isny Bähnle",
+    "description": "Bench with a nice view on the fields",
+    "latitude": 47.7217352,
+    "longitude": 10.2459898,
+    "tags": ["fields", "lonely", "date"],
+    "image": "benchisnybähnle.png",
+    "type": "bench"
   }
 ]

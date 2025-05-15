@@ -97,3 +97,23 @@ document.getElementById("locationForm").addEventListener("submit", (e) => {
   applyFilter();
   document.getElementById("submitForm").classList.add("hidden");
 });
+
+
+// Modal-Elemente referenzieren
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".modal .close");
+
+// Event-Delegation für Popup-Bilder
+document.addEventListener("click", e => {
+  if (e.target.classList.contains("popup-img")) {
+    modal.classList.remove("hidden");
+    modalImg.src = e.target.src;
+  }
+});
+
+// Schließen des Modals
+closeBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
+

@@ -70,5 +70,14 @@
     "description": "A nice bench in the crossing of 2 streets in a small town",
     "type": "bench",
     "tags": ["town", "field"]
+  },
+  {
+    "name": "Beach in Aachen",
+    "latitude": 50.6344444,
+    "longitude": 6.4075,
+    "image": "aachenstrand.jpeg",
+    "description": "This is a small beach noone knows and noone ever is. Perfekt for deeptalks with friends, swimming or chilling",
+    "type": "beach",
+    "tags": ["swimming", "forest", "lonely"]
   }
 ]

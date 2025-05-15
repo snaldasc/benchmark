@@ -147,7 +147,7 @@ const marker = L.marker([loc.latitude, loc.longitude], { icon: redIcon }).addTo(
 
         const googleMapsLink = `https://www.google.com/maps/dir/?api=1&destination=${loc.latitude},${loc.longitude}`;
 
-        const popupContent = `
+       const popupContent = `
   <strong>${loc.name}</strong><br>
   <img src="${loc.image}" alt="${loc.name}" class="popup-img" style="width:100%;max-width:200px;cursor:pointer;"><br>
   <p>${loc.description}</p>
@@ -155,6 +155,7 @@ const marker = L.marker([loc.latitude, loc.longitude], { icon: redIcon }).addTo(
     ➤ Route in Google Maps
   </a>
 `;
+
 
 
         marker.bindPopup(popupContent);

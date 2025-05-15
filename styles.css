@@ -141,3 +141,6 @@ header h1:last-of-type {
   cursor: pointer;
 }
 
+.leaflet-control-zoom a {
+  outline: none;
+}

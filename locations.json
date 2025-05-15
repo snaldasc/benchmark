@@ -133,5 +133,32 @@
     "tags": ["fields", "lonely", "date"],
     "image": "benchisnybähnle.png",
     "type": "bench"
-  }
+  },
+  {
+  "name": "Vier Seen Blick",
+  "description": "Bench way up in the mountains. Here you can have a beautiful view to the lower land. You will be absolutely alone, up here noone comes",
+  "latitude": 50.1087236,
+  "longitude": 7.1257229,
+  "tags": ["hill", "mountain", "water", "high", "town", "lonely"],
+  "image": "vierseenbench.png",
+  "type": "bench"
+},
+{
+  "name": "Death scare / Todesangst",
+  "description": "This bench is hard to find but the view and the loneliness is worth the way but be careful",
+  "latitude": 50.1060048,
+  "longitude": 7.1356526,
+  "tags": ["high", "mountain", "lonely", "peace", "forest"],
+  "image": "deathscarebench.png",
+  "type": "bench"
+},
+{
+  "name": "Bench \"Schöne Aussicht\"",
+  "description": "This bench is way up high in the mountains. Thats why its very lonely and you wont be disturbed here. The perfect place to enjoy the sunset on the horizon which you can perfectly see while sitting on the bench. But be aware you need to go down all the way again. To find it, follow the \"Schöne Aussicht\" signs on the trail",
+  "latitude": 50.1144313,
+  "longitude": 7.1440312,
+  "tags": ["lonely", "mountain", "train"],
+  "image": "viewbench.png",
+  "type": "bench"
+}
 ]

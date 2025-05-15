@@ -151,3 +151,9 @@ window.addEventListener("keydown", e => {
     modalImg.src = "";
   }
 });
+document.querySelectorAll('.leaflet-control-zoom a').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const scrollTop = window.scrollY;
+    setTimeout(() => window.scrollTo(0, scrollTop), 0);
+  });
+});

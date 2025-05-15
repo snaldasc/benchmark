@@ -140,17 +140,3 @@ function closeModal() {
   modalImg.classList.remove("zoomed");
   modalImg.src = "";
 }
-
-
-const overlay = document.getElementById("menuOverlay");
-
-document.getElementById("menuToggle").addEventListener("click", () => {
-  const menu = document.getElementById("sideMenu");
-  menu.classList.toggle("hidden");
-  overlay.classList.toggle("hidden");
-});
-
-overlay.addEventListener("click", () => {
-  document.getElementById("sideMenu").classList.add("hidden");
-  overlay.classList.add("hidden");
-});

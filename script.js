@@ -1,4 +1,4 @@
-const map = L.map("map").setView([53.5716, 9.674], 14);
+const map = L.map("map").setView([53,2867733, 10,3841666], 14);
 const map = L.map('map', {
   zoomControl: false  // Deaktiviert die Zoom-Tasten (+/-)
 });

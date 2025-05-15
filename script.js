@@ -117,3 +117,26 @@ closeBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
 });
 
+// Zoom-Funktion
+modalImg.addEventListener("click", () => {
+  modalImg.classList.toggle("zoomed");
+});
+
+// ESC- und Klick-außerhalb-Schließen
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeModal();
+  }
+});
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
+function closeModal() {
+  modal.classList.add("hidden");
+  modalImg.classList.remove("zoomed");
+  modalImg.src = "";
+}

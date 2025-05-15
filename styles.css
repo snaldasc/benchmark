@@ -134,3 +134,8 @@ header h1:last-of-type {
   font-weight: bold;
   cursor: pointer;
 }
+@media (max-width: 600px) {
+  .modal img.zoomed {
+    transform: scale(1.2);
+  }
+}

@@ -20,17 +20,18 @@
       g.src = "https://cdn.pushalert.co/integrate_0499cf29ad644996d9398435d3801c7e.js";
       s.parentNode.insertBefore(g, s);
     }(document, "script"));
-
   </script>
   <!-- End PushAlert -->
 </head>
+
 <body>
   <header>
     <h1>SpotScout</h1>
     <button id="menuToggle">☰</button>
     <h1><span id="locationCount">0</span> locations available</h1>
   </header>
-<div id="menuOverlay" class="hidden"></div>
+
+  <div id="menuOverlay" class="hidden"></div>
 
   <nav id="sideMenu" class="hidden">
     <label for="tagFilter">Filter Tags:</label>
@@ -58,29 +59,35 @@
     <div id="map"></div>
   </main>
 
+  <!-- Modal muss im DOM vorhanden sein, bevor JS ausgeführt wird -->
+  <div id="imageModal" class="hidden">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg" />
+  </div>
+
+  <!-- Leaflet & dein JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script>
     const map = L.map('map').setView([53.5716, 9.6740], 14);
+    map.zoomControl.remove(); // Jetzt korrekt nach Definition von map
+
     let userLatLng = null;
     let markers = [];
-    let userMarker = null;  // Variable für den Benutzer-Standortmarker
+    let userMarker = null;
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap-Mitwirkende'
     }).addTo(map);
-    map.zoomControl.remove();
 
     document.getElementById("menuToggle").addEventListener("click", () => {
       document.getElementById("sideMenu").classList.toggle("hidden");
     });
 
-    // Eigene Position ermitteln und Marker setzen
     navigator.geolocation.getCurrentPosition(
       pos => {
         userLatLng = [pos.coords.latitude, pos.coords.longitude];
         map.setView(userLatLng, 14);
-        
-        // Benutzer-Standort anzeigen
+
         userMarker = L.marker(userLatLng, {
           icon: L.icon({
             iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
@@ -125,9 +132,7 @@
         typeFilter.addEventListener("change", applyFilters);
       });
 
-    // Marker rendern
     function renderMarkers(locations) {
-      // Entferne vorhandene Marker
       markers.forEach(m => map.removeLayer(m));
       markers = [];
 
@@ -136,29 +141,25 @@
 
       locations.forEach(loc => {
         const redIcon = L.icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
+          iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+          shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+          iconSize: [25, 41],
+          iconAnchor: [12, 41],
+          popupAnchor: [1, -34],
+          shadowSize: [41, 41]
+        });
 
-const marker = L.marker([loc.latitude, loc.longitude], { icon: redIcon }).addTo(map);
-
+        const marker = L.marker([loc.latitude, loc.longitude], { icon: redIcon }).addTo(map);
 
         const googleMapsLink = `https://www.google.com/maps/dir/?api=1&destination=${loc.latitude},${loc.longitude}`;
-
-       const popupContent = `
-  <strong>${loc.name}</strong><br>
-  <img src="${loc.image}" alt="${loc.name}" class="popup-img" style="width:100%;max-width:200px;cursor:pointer;"><br>
-  <p>${loc.description}</p>
-  <a href="${googleMapsLink}" target="_blank" style="color:blue; font-weight:bold; text-decoration:underline;">
-    ➤ Route in Google Maps
-  </a>
-`;
-
-
+        const popupContent = `
+          <strong>${loc.name}</strong><br>
+          <img src="${loc.image}" alt="${loc.name}" class="popup-img" style="width:100%;max-width:200px;cursor:pointer;"><br>
+          <p>${loc.description}</p>
+          <a href="${googleMapsLink}" target="_blank" style="color:blue; font-weight:bold; text-decoration:underline;">
+            ➤ Route in Google Maps
+          </a>
+        `;
 
         marker.bindPopup(popupContent);
         markers.push(marker);
@@ -173,17 +174,11 @@ const marker = L.marker([loc.latitude, loc.longitude], { icon: redIcon }).addTo(
       });
     }
 
-    // Tag-Filter initialisieren
     function initializeTagFilter(data) {
       const tagFilter = document.getElementById("tagFilter");
       const allTags = new Set();
 
-      data.forEach(loc => {
-        loc.tags.forEach(tag => {
-          allTags.add(tag.toLowerCase());
-        });
-      });
-
+      data.forEach(loc => loc.tags.forEach(tag => allTags.add(tag.toLowerCase())));
       allTags.forEach(tag => {
         const option = document.createElement("option");
         option.value = tag;
@@ -192,17 +187,11 @@ const marker = L.marker([loc.latitude, loc.longitude], { icon: redIcon }).addTo(
       });
     }
 
-    // Type-Filter initialisieren
     function initializeTypeFilter(data) {
       const typeFilter = document.getElementById("typeFilter");
       const allTypes = new Set();
 
-      data.forEach(loc => {
-        if (loc.type) {
-          allTypes.add(loc.type.toLowerCase());
-        }
-      });
-
+      data.forEach(loc => loc.type && allTypes.add(loc.type.toLowerCase()));
       allTypes.forEach(type => {
         const option = document.createElement("option");
         option.value = type;
@@ -211,12 +200,10 @@ const marker = L.marker([loc.latitude, loc.longitude], { icon: redIcon }).addTo(
       });
     }
 
-    // Aktualisiert die Anzeige der Anzahl der Locations
     function updateLocationCount(count) {
       document.getElementById("locationCount").textContent = count;
     }
 
-    // Zoom zurücksetzen
     document.getElementById("resetMap").addEventListener("click", () => {
       if (userLatLng) {
         map.setView(userLatLng, 14);
@@ -225,53 +212,40 @@ const marker = L.marker([loc.latitude, loc.longitude], { icon: redIcon }).addTo(
       }
     });
 
+    // Modal-Logik
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.querySelector("#imageModal .close");
 
-    // Modal-Bildlogik
-const modal = document.getElementById("imageModal");
-const modalImg = document.getElementById("modalImg");
-const closeBtn = document.querySelector("#imageModal .close");
+    document.addEventListener("click", (e) => {
+      if (e.target.classList.contains("popup-img")) {
+        modal.style.display = "block";
+        modal.classList.remove("hidden");
+        modalImg.src = e.target.src;
+        modalImg.classList.remove("zoomed");
+        document.body.style.overflow = "hidden";
+      }
+    });
 
-// Öffne Modal bei Klick auf popup-img
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("popup-img")) {
-    modal.style.display = "block";
-    modal.classList.remove("hidden");
-    modalImg.src = e.target.src;
-    modalImg.classList.remove("zoomed");
-    document.body.style.overflow = "hidden";
-  }
-});
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+      modal.classList.add("hidden");
+      modalImg.classList.remove("zoomed");
+      document.body.style.overflow = "";
+    };
 
-// Schließe Modal bei Klick auf X oder außerhalb des Bildes
-closeBtn.onclick = () => {
-  modal.style.display = "none";
-  modal.classList.add("hidden");
-  modalImg.classList.remove("zoomed");
-  document.body.style.overflow = "";
-};
+    modal.onclick = (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        modal.classList.add("hidden");
+        modalImg.classList.remove("zoomed");
+        document.body.style.overflow = "";
+      }
+    };
 
-modal.onclick = (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-    modal.classList.add("hidden");
-    modalImg.classList.remove("zoomed");
-    document.body.style.overflow = "";
-  }
-};
-
-// Zoom ein-/ausschalten durch Klick aufs Bild
-modalImg.addEventListener("click", () => {
-  modalImg.classList.toggle("zoomed");
-});
-
+    modalImg.addEventListener("click", () => {
+      modalImg.classList.toggle("zoomed");
+    });
   </script>
-
-  
-<div id="imageModal" class="hidden">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="modalImg" />
-</div>
-
-  
 </body>
 </html>

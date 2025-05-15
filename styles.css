@@ -91,3 +91,38 @@ button:hover {
 header h1:last-of-type {
   font-size: 1.2rem;
 }
+
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 80%;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal .close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}

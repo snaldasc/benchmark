@@ -1,126 +1,110 @@
-const map = L.map('map').setView([53.5716, 9.6740], 14);
-let userLatLng = null;
-let markers = [];
-let userMarker = null;
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap-Mitwirkende'
+const map = L.map("map").setView([53.5716, 9.674], 14);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "&copy; OpenStreetMap-Mitwirkende",
 }).addTo(map);
 
-navigator.geolocation.getCurrentPosition(
-  pos => {
-    userLatLng = [pos.coords.latitude, pos.coords.longitude];
-    map.setView(userLatLng, 14);
-    userMarker = L.marker(userLatLng).addTo(map)
-      .bindPopup("You are here")
-      .openPopup();
-  },
-  () => console.log("Position nicht verfügbar")
-);
+let userLatLng = null;
+let allLocations = [];
 
-fetch("https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json")
-  .then(res => res.json())
-  .then(data => {
-    renderMarkers(data);
-    initializeTagFilter(data);
-    initializeTypeFilter(data);
-    updateLocationCount(data.length);
+// Hole Geoposition
+navigator.geolocation.getCurrentPosition((position) => {
+  userLatLng = L.latLng(position.coords.latitude, position.coords.longitude);
+}, () => {
+  console.warn("Standort nicht verfügbar.");
+});
 
-    const tagFilter = document.getElementById("tagFilter");
-    const typeFilter = document.getElementById("typeFilter");
+function getDistance(a, b) {
+  return a.distanceTo(b);
+}
 
-    function applyFilters() {
-      const selectedTag = tagFilter.value.toLowerCase();
-      const selectedType = typeFilter.value.toLowerCase();
-
-      const filtered = data.filter(loc => {
-        const tagMatch = !selectedTag || loc.tags.some(tag => tag.toLowerCase() === selectedTag);
-        const typeMatch = !selectedType || loc.type.toLowerCase() === selectedType;
-        return tagMatch && typeMatch;
-      });
-
-      renderMarkers(filtered);
-      updateLocationCount(filtered.length);
-    }
-
-    tagFilter.addEventListener("change", applyFilters);
-    typeFilter.addEventListener("change", applyFilters);
-  });
+function createPopupContent(loc) {
+  return `
+    <strong>${loc.name}</strong><br />
+    <p>${loc.description}</p>
+    <img src="${loc.image}" alt="${loc.name}" style="max-width: 100%; height: auto;" />
+  `;
+}
 
 function renderMarkers(locations) {
-  markers.forEach(m => map.removeLayer(m));
-  markers = [];
-  const list = document.getElementById("locationList");
-  list.innerHTML = "";
-
-  locations.forEach(loc => {
-    const marker = L.marker([loc.latitude, loc.longitude], {
-      icon: L.icon({
-        iconUrl: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
-        iconSize: [32, 32],
-        iconAnchor: [16, 32]
-      })
+  document.getElementById("locationList").innerHTML = "";
+  locations.forEach((loc) => {
+    const marker = L.circle([loc.latitude, loc.longitude], {
+      color: "red",
+      fillColor: "#f03",
+      fillOpacity: 0.5,
+      radius: 100,
     }).addTo(map);
-
-    const googleMapsLink = `https://www.google.com/maps/dir/?api=1&destination=${loc.latitude},${loc.longitude}`;
-    const popupContent = `
-      <strong>${loc.name}</strong><br>
-      <img src="${loc.image}" alt="${loc.name}" class="popup-img" style="width:100%;max-width:200px;cursor:pointer;"><br>
-      <p>${loc.description}</p>
-      <a href="${googleMapsLink}" target="_blank" style="color:blue; font-weight:bold; text-decoration:underline;">
-        ➤ Route in Google Maps
-      </a>
-    `;
-    marker.bindPopup(popupContent);
-    markers.push(marker);
+    marker.bindPopup(createPopupContent(loc));
 
     const li = document.createElement("li");
     li.textContent = loc.name;
     li.addEventListener("click", () => {
-      map.setView([loc.latitude, loc.longitude], 16);
+      map.setView([loc.latitude, loc.longitude], 15);
       marker.openPopup();
     });
-    list.appendChild(li);
+    document.getElementById("locationList").appendChild(li);
   });
 }
 
-function initializeTagFilter(data) {
-  const tagFilter = document.getElementById("tagFilter");
-  const allTags = new Set();
-  data.forEach(loc => loc.tags.forEach(tag => allTags.add(tag.toLowerCase())));
-  allTags.forEach(tag => {
-    const option = document.createElement("option");
-    option.value = tag;
-    option.textContent = tag;
-    tagFilter.appendChild(option);
+function applyFilter() {
+  const tag = document.getElementById("tagSelect").value;
+  const filtered = tag === "all"
+    ? allLocations
+    : allLocations.filter((l) => l.tags.includes(tag));
+  renderMarkers(filtered);
+}
+
+document.getElementById("tagSelect").addEventListener("change", applyFilter);
+
+fetch("https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json")
+  .then((r) => r.json())
+  .then((data) => {
+    allLocations = data;
+    if (userLatLng) {
+      allLocations.sort((a, b) => {
+        return getDistance(userLatLng, L.latLng(a.latitude, a.longitude)) -
+               getDistance(userLatLng, L.latLng(b.latitude, b.longitude));
+      });
+    }
+    renderMarkers(allLocations);
   });
-}
 
-function initializeTypeFilter(data) {
-  const typeFilter = document.getElementById("typeFilter");
-  const allTypes = new Set();
-  data.forEach(loc => loc.type && allTypes.add(loc.type.toLowerCase()));
-  allTypes.forEach(type => {
-    const option = document.createElement("option");
-    option.value = type;
-    option.textContent = type;
-    typeFilter.appendChild(option);
-  });
-}
-
-function updateLocationCount(count) {
-  document.getElementById("locationCount").textContent = count;
-}
-
-document.getElementById("resetMap").addEventListener("click", () => {
-  map.setView(userLatLng || [40, 10], 14);
+// Hamburger Menu
+const menuToggle = document.getElementById("menuToggle");
+const sideMenu = document.getElementById("sideMenu");
+menuToggle.addEventListener("click", () => {
+  sideMenu.classList.toggle("open");
 });
 
-// Modal Logic
+// Submit-Formular
+document.getElementById("openSubmitForm").addEventListener("click", () => {
+  document.getElementById("submitForm").classList.remove("hidden");
+});
+document.getElementById("cancelSubmit").addEventListener("click", () => {
+  document.getElementById("submitForm").classList.add("hidden");
+});
+document.getElementById("locationForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const loc = {
+    name: document.getElementById("name").value,
+    description: document.getElementById("description").value,
+    latitude: parseFloat(document.getElementById("latitude").value),
+    longitude: parseFloat(document.getElementById("longitude").value),
+    image: document.getElementById("image").value,
+    tags: document.getElementById("tags").value.split(",").map(t => t.trim())
+  };
+  allLocations.push(loc);
+  applyFilter();
+  document.getElementById("submitForm").classList.add("hidden");
+});
+
+
+// Modal-Elemente referenzieren
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
 const closeBtn = document.querySelector(".modal .close");
 
+// Event-Delegation für Popup-Bilder
 document.addEventListener("click", e => {
   if (e.target.classList.contains("popup-img")) {
     modal.classList.remove("hidden");
@@ -128,16 +112,27 @@ document.addEventListener("click", e => {
   }
 });
 
+// Schließen des Modals
+closeBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
+
+// Zoom-Funktion
 modalImg.addEventListener("click", () => {
   modalImg.classList.toggle("zoomed");
 });
 
-closeBtn.addEventListener("click", closeModal);
-window.addEventListener("keydown", e => {
-  if (e.key === "Escape") closeModal();
+// ESC- und Klick-außerhalb-Schließen
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeModal();
+  }
 });
-modal.addEventListener("click", e => {
-  if (e.target === modal) closeModal();
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    closeModal();
+  }
 });
 
 function closeModal() {
@@ -145,39 +140,3 @@ function closeModal() {
   modalImg.classList.remove("zoomed");
   modalImg.src = "";
 }
-
-// Side Menu Toggle & History
-const menu = document.getElementById("sideMenu");
-const overlay = document.getElementById("menuOverlay");
-const menuToggle = document.getElementById("menuToggle");
-
-function openMenu() {
-  menu.classList.add("open");
-  overlay.classList.add("active");
-  history.pushState({ menuOpen: true }, "");
-}
-
-function closeMenu() {
-  menu.classList.remove("open");
-  overlay.classList.remove("active");
-}
-
-menuToggle.addEventListener("click", () => {
-  if (menu.classList.contains("open")) {
-    closeMenu();
-    history.back();
-  } else {
-    openMenu();
-  }
-});
-
-overlay.addEventListener("click", () => {
-  closeMenu();
-  history.back();
-});
-
-window.addEventListener("popstate", event => {
-  if (!event.state || !event.state.menuOpen) {
-    closeMenu();
-  }
-});

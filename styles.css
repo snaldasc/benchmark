@@ -23,16 +23,16 @@ header {
 }
 
 #sideMenu {
-  position: fixed;
-  top: 0;
+  background-color: #1a1a1a;
+  padding: 1em;
+  position: absolute;
+  top: 60px;
   left: 0;
-  width: 300px; /* oder deine gewünschte Breite */
-  height: 100vh; /* volle Höhe des Viewports */
-  background-color: white;
-  z-index: 1000;
-  overflow-y: auto; /* damit es scrollbar bleibt, aber nicht das Fenster verlässt */
-  padding: 1rem;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  width: 80%;
+  max-width: 300px;
+  height: calc(100% - 60px);
+  overflow-y: auto;
+  z-index: 999;
 }
 
 #sideMenu.hidden {
@@ -138,12 +138,4 @@ header h1:last-of-type {
   .modal img.zoomed {
     transform: scale(1.2);
   }
-}
-#menuOverlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.5);
-  z-index: 999;
 }

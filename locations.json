@@ -300,16 +300,6 @@
     "country": "Sweden"
   },
   {
-    "name": "Rock Garden Bench",
-    "latitude": 57.677922,
-    "longitude": 11.9526998,
-    "image": "rockgardenbench.png",
-    "description": "This bench offers a beautiful view on the nearby forest and rockland",
-    "type": "bench",
-    "tags": ["forest", "rock", "climbing", "lonely", "picknick"],
-    "country": "Sweden"
-  },
-  {
     "name": "RockwithView",
     "description": "Rock with a beautiful view on the water - may be a bit difficult to find",
     "latitude": 50.6313953,

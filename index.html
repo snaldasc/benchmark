@@ -239,46 +239,52 @@
 
 
       // Neuen Spot via Discord Webhook absenden
-      document.addEventListener("submit", async (e) => {
-        if (e.target.id === "spotForm") {
-          e.preventDefault();
-          const formData = new FormData(e.target);
-          const data = Object.fromEntries(formData.entries());
+     document.addEventListener("submit", async (e) => {
+  if (e.target.id === "spotForm") {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
 
-          const webhookUrl = "https://discord.com/api/webhooks/1372966787578069113/SwKAcsG_BEh3IuP6WHLOOUJI-flnZ-vbWamVuXhPO1CXTUUHsYnpH9RpEXEoB5UzELW5"; // Ersetze dies mit deiner tatsächlichen Webhook-URL
+    const webhookUrl = "https://discord.com/api/webhooks/DEIN_WEBHOOK_HIER"; // ← deine echte Webhook-URL
 
-          const payload = {
-            username: "SpotScout Bot",
-            embeds: [{
-              title: "📍 Neuer Spot eingereicht",
-              color: 0x00b0f4,
-              fields: [
-                { name: "Name", value: data.title },
-                { name: "Beschreibung", value: data.description || "-" },
-                { name: "Koordinaten", value: `${data.lat}, ${data.lng}` }
-              ],
-              footer: { text: "Eingereicht über SpotScout Map" }
-            }]
-          };
+    const payload = {
+      username: "SpotScout Bot",
+      embeds: [{
+        title: "📍 Neuer Spot eingereicht",
+        color: 0x00b0f4,
+        fields: [
+          { name: "Name", value: data.title || "-" },
+          { name: "Beschreibung", value: data.description || "-" },
+          { name: "Bild", value: data.image || "-" },
+          { name: "Tags", value: data.tags || "-" },
+          { name: "Typ", value: data.type || "-" },
+          { name: "Koordinaten", value: `${data.lat}, ${data.lng}` }
+        ],
+        ...(data.image ? { image: { url: data.image } } : {}),
+        footer: { text: "Eingereicht über SpotScout Map" }
+      }]
+    };
 
-          try {
-            const response = await fetch(webhookUrl, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(payload)
-            });
-
-            if (response.ok) {
-              alert("🎉 Danke! Dein Spot wurde gesendet.");
-            } else {
-              alert("❌ Fehler beim Senden. Bitte erneut versuchen.");
-            }
-          } catch (err) {
-            alert("❌ Verbindung fehlgeschlagen.");
-          }
-          map.closePopup();
-        }
+    try {
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
       });
+
+      if (response.ok) {
+        alert("🎉 Danke! Dein Spot wurde gesendet.");
+      } else {
+        alert("❌ Fehler beim Senden. Bitte erneut versuchen.");
+      }
+    } catch (err) {
+      alert("❌ Verbindung fehlgeschlagen.");
+    }
+
+    map.closePopup();
+  }
+});
+
 
       // ========== Modal Bildanzeige ==========
       const modal = document.getElementById("imageModal");

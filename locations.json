@@ -204,10 +204,10 @@
     "description": "Guter Spot zum Lunte fetzen",
     "latitude": 53.567944,
     "longitude": 9.721917,
-    "tags": ["Elbe River", "Container ships"],
+    "tags": ["Elbe River", "cargo ships"],
     "image": "none",
     "type": "bench",
-    "country": "DE"
+    "country": "Germany"
   },
   {
     "name": "Lake Michigan Strand",
@@ -227,7 +227,7 @@
     "tags": ["lighthouse", "sea", "food", "motorbike"],
     "image": "none",
     "type": "view",
-    "country": "DE"
+    "country": "Germany"
   },
   {
     "name": "Ljungheden forest bench",
@@ -257,17 +257,17 @@
     "tags": ["water", "view", "harbor"],
     "image": "none",
     "type": "view",
-    "country": "DE"
+    "country": "Germany"
   },
   {
     "name": "Neroberg",
     "description": "Schöner Aussichtspunkt",
     "latitude": 50.09835185529841,
     "longitude": 8.230122647555993,
-    "tags": ["viewpoint"],
+    "tags": ["view", "hill"],
     "image": "none",
     "type": "view",
-    "country": "DE"
+    "country": "Germany"
   },
   {
     "name": "Nordsee Blick",
@@ -277,7 +277,7 @@
     "tags": ["sea", "bench", "view"],
     "image": "none",
     "type": "bench",
-    "country": "DE"
+    "country": "Germany"
   },
   {
     "name": "Plesseturm",
@@ -287,7 +287,7 @@
     "tags": ["viewpoint", "hiking", "history"],
     "image": "none",
     "type": "view",
-    "country": "DE"
+    "country": "Germany"
   },
   {
     "name": "Rock Garden Bench",
@@ -299,4 +299,97 @@
     "tags": ["forest", "rock", "climbing", "lonely", "picknick"],
     "country": "Sweden"
   }
+  [
+  {
+    "name": "Rock Garden Bench",
+    "latitude": 57.677922,
+    "longitude": 11.9526998,
+    "image": "rockgardenbench.png",
+    "description": "This bench offers a beautiful view on the nearby forest and rockland",
+    "type": "bench",
+    "tags": ["forest", "rock", "climbing", "lonely", "picknick"],
+    "country": "Sweden"
+  },
+  {
+    "name": "RockwithView",
+    "description": "Rock with a beautiful view on the water - may be a bit difficult to find",
+    "latitude": 50.6313953,
+    "longitude": 6.4131169,
+    "tags": ["forest", "cliff", "picknick"],
+    "image": "rockincliff.png",
+    "type": "other",
+    "country": "Germany"
+  },
+  {
+    "name": "Sandstedt",
+    "description": "Bank am Strand",
+    "latitude": 53.36091670542629,
+    "longitude": 8.51172208786011,
+    "tags": ["beach", "bench"],
+    "image": "none",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Strandvägen view rock",
+    "latitude": 59.3199665,
+    "longitude": 18.0507276,
+    "image": "Strandvägen.png",
+    "description": "Here you can have a wonderful view on the Sea while siting on this scenic viewpoint",
+    "type": "picknick",
+    "tags": ["water", "cliff", "lonely", "rock"],
+    "country": "Sweden"
+  },
+  {
+    "name": "Stray Dog Bar und Restaurant",
+    "description": "Geiles Restaurant in der Nähe von Lake Michigan",
+    "latitude": 41.797310708928435,
+    "longitude": -86.74578845500947,
+    "tags": ["restaurant", "bar", "lake", "USA"],
+    "image": "none",
+    "type": "other",
+    "country": "US"
+  },
+  {
+    "name": "Tilas Stoll",
+    "description": "This is a bench with a table and lovely view on the sea in the forest of Filipstad",
+    "latitude": 59.747819,
+    "longitude": 14.2909655,
+    "tags": ["water", "beach", "forest", "lonely"],
+    "image": "benchtilasstoll",
+    "type": "bench",
+    "country": "Sweden"
+  },
+  {
+    "name": "Vier Seen Blick",
+    "description": "Bench way up in the mountains. Here you can have a beautiful view to the lower land. You will be absolutely alone, up here noone comes",
+    "latitude": 50.1087236,
+    "longitude": 7.1257229,
+    "tags": ["hill", "mountain", "water", "high", "town", "lonely"],
+    "image": "vierseenbench.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Vindskydd rock beach",
+    "latitude": 57.6666198,
+    "longitude": 11.9659246,
+    "image": "Vindskyddbeach.png",
+    "description": "Rocks at the side of a lake. Wonderful place to take a break or to have a picknick",
+    "type": "picknick",
+    "tags": ["rock", "beach", "lake", "water", "lonely", "forest"],
+    "country": "Sweden"
+  },
+  {
+    "name": "Viewbench Korreite",
+    "description": "Wonderful bench with a beautiful view on the mountains, in winter or in summer the perfect place to fall in love",
+    "latitude": 47.6656791,
+    "longitude": 10.3914483,
+    "tags": ["date", "hills", "mountain", "viewpoint", "lonely"],
+    "image": "viewpointkorreite.png",
+    "type": "bench",
+    "country": "Germany"
+  }
+]
+
 ]

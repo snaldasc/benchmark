@@ -27,7 +27,7 @@
     "tags": ["forest", "town", "street"],
     "image": "bench3.jpg",
     "type": "bench",
-    "country": "Czech Republic"
+    "country": "Poland"
   },
   {
     "name": "Fummelfelsen / lovers rock",
@@ -45,7 +45,7 @@
     "latitude": 50.6313953,
     "longitude": 6.4131169,
     "tags": ["forest", "cliff", "picknick"],
-    "image": "rockincliff",
+    "image": "rockincliff.png",
     "type": "other",
     "country": "Germany"
   },
@@ -55,7 +55,7 @@
     "latitude": 50.6266661,
     "longitude": 6.3992782,
     "tags": ["water", "forest"],
-    "image": "bencheifel",
+    "image": "bencheifel.png",
     "type": "bench",
     "country": "Germany"
   },
@@ -65,7 +65,7 @@
     "latitude": 50.5824818,
     "longitude": 6.3225809,
     "tags": ["field"],
-    "image": "bankscheede",
+    "image": "bankscheede.png",
     "type": "bench",
     "country": "Germany"
   },
@@ -75,7 +75,7 @@
     "latitude": 50.628498,
     "longitude": 6.2686,
     "tags": ["town", "field"],
-    "image": "townbench",
+    "image": "townbench.png",
     "type": "bench",
     "country": "Germany"
   },
@@ -273,7 +273,7 @@
     "name": "Vindskydd rock beach",
     "latitude": 57.6666198,
     "longitude": 11.9659246,
-    "image": "Vindskyddbeach",
+    "image": "Vindskyddbeach.png",
     "description": "Rocks at the side of a lake. Wonderful place to take a break or to have a picknick",
     "type": "picknick",
     "tags": ["rock", "beach", "lake", "water", "lonely", "forest"],
@@ -293,7 +293,7 @@
     "name": "Asbotorpsjön",
     "latitude": 58.4100247,
     "longitude": 13.819467,
-    "image": "asbotorpsjönlakeplaces",
+    "image": "asbotorpsjönlakeplaces.png",
     "description": "Lake with lots of places to sit and relax feel free to explore",
     "type": "picknick",
     "tags": ["water", "lake", "forest", "lonely", "date", "swimming"],

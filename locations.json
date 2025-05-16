@@ -173,8 +173,8 @@
 {
   "name": "Chimney Banks Bench",
   "description": "Bench with view in top of chimney bank, Rosedale, pickering.",
-  "latitude": 54,3452994,
-  "longitude": -0,8905213,
+  "latitude": 54.3452994,
+  "longitude": -0.8905213,
   "tags": ["countryside", "fields", "UK", "hill", "farm"],
   "image": "chimneybanksbench.png",
   "type": "bench"
@@ -185,7 +185,7 @@
   "latitude": 50.05560,
   "longitude": 8.13470,
   "tags": ["city", "winefields", "fields"],
-  "image": "chimneybanksbench.png",
+  "image": "nerotemple.png",
   "type": "bench"
 }
 ]

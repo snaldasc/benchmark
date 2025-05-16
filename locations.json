@@ -6,7 +6,8 @@
     "image": "https://example.com/orta.jpg",
     "description": "Bench at Hamburgs Yacht Harbour with beautiful view on the Elbe and passing Cargoships",
     "type": "bench",
-    "tags": ["water", "harbour", "elbe"]
+    "tags": ["water", "harbour", "elbe"],
+    "country": "Germany"
   },
   {
     "name": "Bench at water Elbe 2",
@@ -15,7 +16,8 @@
     "image": "https://example.com/ortb.jpg",
     "description": "Bench at Hamburgs Yacht Harbour with beautiful view on the Elbe and passing Cargoships",
     "type": "bench",
-    "tags": ["water", "harbour", "elbe"]
+    "tags": ["water", "harbour", "elbe"],
+    "country": "Germany"
   },
   {
     "name": "Bench at small street in the Forest",
@@ -24,7 +26,8 @@
     "longitude": 15.7675,
     "tags": ["forest", "town", "street"],
     "image": "bench3.jpg",
-    "type": "bench"
+    "type": "bench",
+    "country": "Czech Republic"
   },
   {
     "name": "Fummelfelsen / lovers rock",
@@ -33,7 +36,8 @@
     "longitude": 6.400134,
     "tags": ["water", "hill", "cliff", "forest"],
     "image": "no",
-    "type": "other"
+    "type": "other",
+    "country": "Germany"
   },
   {
     "name": "RockwithView",
@@ -42,7 +46,8 @@
     "longitude": 6.4131169,
     "tags": ["forest", "cliff", "picknick"],
     "image": "rockincliff",
-    "type": "other"
+    "type": "other",
+    "country": "Germany"
   },
   {
     "name": "Bench in forest water view",
@@ -51,7 +56,8 @@
     "longitude": 6.3992782,
     "tags": ["water", "forest"],
     "image": "bencheifel",
-    "type": "bench"
+    "type": "bench",
+    "country": "Germany"
   },
   {
     "name": "Bench Worbelescheed",
@@ -60,7 +66,8 @@
     "longitude": 6.3225809,
     "tags": ["field"],
     "image": "bankscheede",
-    "type": "bench"
+    "type": "bench",
+    "country": "Germany"
   },
   {
     "name": "cosler kreuz",
@@ -69,7 +76,8 @@
     "longitude": 6.2686,
     "tags": ["town", "field"],
     "image": "townbench",
-    "type": "bench"
+    "type": "bench",
+    "country": "Germany"
   },
   {
     "name": "Beach in Aachen",
@@ -78,7 +86,8 @@
     "longitude": 6.4075,
     "tags": ["beach", "water", "swimming", "forest", "lonely"],
     "image": "aachenstrand.jpeg",
-    "type": "beach"
+    "type": "beach",
+    "country": "Germany"
   },
   {
     "name": "beach at a sea",
@@ -87,7 +96,8 @@
     "longitude": 9.6965127,
     "tags": ["lonely", "sea", "forest"],
     "image": "none",
-    "type": "beach"
+    "type": "beach",
+    "country": "Germany"
   },
   {
     "name": "Bench in forest",
@@ -96,7 +106,8 @@
     "longitude": 9.6915562,
     "tags": ["lonely", "forest", "field"],
     "image": "benchholm.png",
-    "type": "bench"
+    "type": "bench",
+    "country": "Germany"
   },
   {
     "name": "giant bench",
@@ -105,7 +116,8 @@
     "longitude": 10.4327177,
     "tags": ["field", "hills"],
     "image": "giantbench.png",
-    "type": "bench"
+    "type": "bench",
+    "country": "Germany"
   },
   {
     "name": "Bench Buchenberg",
@@ -114,7 +126,8 @@
     "longitude": 10.2308772,
     "tags": ["hill", "field"],
     "image": "benchbuchenberg.png",
-    "type": "bench"
+    "type": "bench",
+    "country": "Germany"
   },
   {
     "name": "Viewbench Korreite",
@@ -123,7 +136,8 @@
     "longitude": 10.3914483,
     "tags": ["date", "hills", "mountain", "viewpoint", "lonely"],
     "image": "viewpointkorreite.png",
-    "type": "bench"
+    "type": "bench",
+    "country": "Germany"
   },
   {
     "name": "Bench Isny Bähnle",
@@ -132,62 +146,69 @@
     "longitude": 10.2459898,
     "tags": ["fields", "lonely", "date"],
     "image": "benchisnybähnle.png",
-    "type": "bench"
+    "type": "bench",
+    "country": "Germany"
   },
   {
-  "name": "Vier Seen Blick",
-  "description": "Bench way up in the mountains. Here you can have a beautiful view to the lower land. You will be absolutely alone, up here noone comes",
-  "latitude": 50.1087236,
-  "longitude": 7.1257229,
-  "tags": ["hill", "mountain", "water", "high", "town", "lonely"],
-  "image": "vierseenbench.png",
-  "type": "bench"
-},
-{
-  "name": "Death scare / Todesangst",
-  "description": "This bench is hard to find but the view and the loneliness is worth the way but be careful",
-  "latitude": 50.1060048,
-  "longitude": 7.1356526,
-  "tags": ["high", "mountain", "lonely", "peace", "forest"],
-  "image": "deathscarebench.png",
-  "type": "bench"
-},
-{
-  "name": "Bench \"Schöne Aussicht\"",
-  "description": "This bench is way up high in the mountains. Thats why its very lonely and you wont be disturbed here. The perfect place to enjoy the sunset on the horizon which you can perfectly see while sitting on the bench. But be aware you need to go down all the way again. To find it, follow the \"Schöne Aussicht\" signs on the trail",
-  "latitude": 50.1144313,
-  "longitude": 7.1440312,
-  "tags": ["lonely", "mountain", "train"],
-  "image": "viewbench.png",
-  "type": "bench"
-},
-{
-  "name": "Ightenhill Burnley bench",
-  "description": "Bench with view of Pendle hill",
-  "latitude": 53.799594,
-  "longitude": -2.2832261,
-  "tags": ["view", "hill", "not that scenic", "grass land", "farm", "countryside"],
-  "image": "ightenhillbench.png",
-  "type": "bench"
-},
-{
-  "name": "Chimney Banks Bench",
-  "description": "Bench with view in top of chimney bank, Rosedale, pickering.",
-  "latitude": 54.3452994,
-  "longitude": -0.8905213,
-  "tags": ["countryside", "fields", "UK", "hill", "farm"],
-  "image": "chimneybanksbench.png",
-  "type": "bench"
-},
-{
-  "name": "Neroberg Tempel",
-  "description": "Schöne Aussicht auf Wiesbaden und die Weinfelder",
-  "latitude": 50.05560,
-  "longitude": 8.13470,
-  "tags": ["city", "winefields", "fields"],
-  "image": "Nerobergtemple.jpg",
-  "type": "bench"
-},
+    "name": "Vier Seen Blick",
+    "description": "Bench way up in the mountains. Here you can have a beautiful view to the lower land. You will be absolutely alone, up here noone comes",
+    "latitude": 50.1087236,
+    "longitude": 7.1257229,
+    "tags": ["hill", "mountain", "water", "high", "town", "lonely"],
+    "image": "vierseenbench.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Death scare / Todesangst",
+    "description": "This bench is hard to find but the view and the loneliness is worth the way but be careful",
+    "latitude": 50.1060048,
+    "longitude": 7.1356526,
+    "tags": ["high", "mountain", "lonely", "peace", "forest"],
+    "image": "deathscarebench.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Bench \"Schöne Aussicht\"",
+    "description": "This bench is way up high in the mountains. Thats why its very lonely and you wont be disturbed here. The perfect place to enjoy the sunset on the horizon which you can perfectly see while sitting on the bench. But be aware you need to go down all the way again. To find it, follow the \"Schöne Aussicht\" signs on the trail",
+    "latitude": 50.1144313,
+    "longitude": 7.1440312,
+    "tags": ["lonely", "mountain", "train"],
+    "image": "viewbench.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Ightenhill Burnley bench",
+    "description": "Bench with view of Pendle hill",
+    "latitude": 53.799594,
+    "longitude": -2.2832261,
+    "tags": ["view", "hill", "not that scenic", "grass land", "farm", "countryside"],
+    "image": "ightenhillbench.png",
+    "type": "bench",
+    "country": "United Kingdom"
+  },
+  {
+    "name": "Chimney Banks Bench",
+    "description": "Bench with view in top of chimney bank, Rosedale, pickering.",
+    "latitude": 54.3452994,
+    "longitude": -0.8905213,
+    "tags": ["countryside", "fields", "UK", "hill", "farm"],
+    "image": "chimneybanksbench.png",
+    "type": "bench",
+    "country": "United Kingdom"
+  },
+  {
+    "name": "Neroberg Tempel",
+    "description": "Schöne Aussicht auf Wiesbaden und die Weinfelder",
+    "latitude": 50.05560,
+    "longitude": 8.13470,
+    "tags": ["city", "winefields", "fields"],
+    "image": "Nerobergtemple.jpg",
+    "type": "bench",
+    "country": "Germany"
+  },
   {
     "name": "Öresundsbron bench",
     "latitude": 55.5700058,
@@ -195,7 +216,8 @@
     "image": "öresundsbronbench.png",
     "description": "A beautiful bench at the beach with a view to the water",
     "type": "bench",
-    "tags": ["water", "beach"]
+    "tags": ["water", "beach"],
+    "country": "Sweden"
   },
   {
     "name": "Strandvägen view rock",
@@ -204,7 +226,8 @@
     "image": "Strandvägen.png",
     "description": "Here you can have a wonderful view on the Sea while siting on this scenic viewpoint",
     "type": "picknick",
-    "tags": ["water", "cliff", "lonely", "rock"]
+    "tags": ["water", "cliff", "lonely", "rock"],
+    "country": "Sweden"
   },
   {
     "name": "Rock Garden Bench",
@@ -213,7 +236,8 @@
     "image": "rockgardenbench.png",
     "description": "This bench offers a beautiful view on the nearby forest and rockland",
     "type": "bench",
-    "tags": ["forest", "rock", "climbing", "lonely", "picknick"]
+    "tags": ["forest", "rock", "climbing", "lonely", "picknick"],
+    "country": "Sweden"
   },
   {
     "name": "Änggarden bench",
@@ -222,7 +246,8 @@
     "image": "änggardenbench.png",
     "description": "A lonely bench in the middle of a forest with a view on a small lake",
     "type": "bench",
-    "tags": ["lonely", "water", "forest"]
+    "tags": ["lonely", "water", "forest"],
+    "country": "Sweden"
   },
   {
     "name": "Ljungheden forest bench",
@@ -231,7 +256,8 @@
     "image": "Ljunghedenforestbench.png",
     "description": "Lonely bench in the forest of Ljungheden with a view on a lake",
     "type": "bench",
-    "tags": ["water", "lake", "forest", "lonely"]
+    "tags": ["water", "lake", "forest", "lonely"],
+    "country": "Sweden"
   },
   {
     "name": "Ljungheden forest walk bench",
@@ -240,7 +266,8 @@
     "image": "ljunghedenforestwalkbench.png",
     "description": "One of many benches on this walk through the forest with a wonderful view on a swamp",
     "type": "bench",
-    "tags": ["forest", "swamp", "lonely"]
+    "tags": ["forest", "swamp", "lonely"],
+    "country": "Sweden"
   },
   {
     "name": "Vindskydd rock beach",
@@ -249,7 +276,8 @@
     "image": "Vindskyddbeach",
     "description": "Rocks at the side of a lake. Wonderful place to take a break or to have a picknick",
     "type": "picknick",
-    "tags": ["rock", "beach", "lake", "water", "lonely", "forest"]
+    "tags": ["rock", "beach", "lake", "water", "lonely", "forest"],
+    "country": "Sweden"
   },
   {
     "name": "Asbotorpsjön lake jetty",
@@ -258,7 +286,8 @@
     "image": "asbotorpsjönlake.png",
     "description": "Beautiful lake with lots of nice places to stay and fall in love. The jetty is a wonderful place to sit at the first date",
     "type": "jetty",
-    "tags": ["date", "water", "jetty", "lake", "forest", "lonely"]
+    "tags": ["date", "water", "jetty", "lake", "forest", "lonely"],
+    "country": "Sweden"
   },
   {
     "name": "Asbotorpsjön",
@@ -267,6 +296,7 @@
     "image": "asbotorpsjönlakeplaces",
     "description": "Lake with lots of places to sit and relax feel free to explore",
     "type": "picknick",
-    "tags": ["water", "lake", "forest", "lonely", "date", "swimming"]
-  }  
+    "tags": ["water", "lake", "forest", "lonely", "date", "swimming"],
+    "country": "Sweden"
+  }
 ]

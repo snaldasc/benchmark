@@ -30,6 +30,12 @@ function createPopupContent(loc) {
 
 function renderMarkers(locations) {
   document.getElementById("locationList").innerHTML = "";
+  map.eachLayer((layer) => {
+    if (layer instanceof L.Circle) {
+      map.removeLayer(layer);
+    }
+  });
+
   locations.forEach((loc) => {
     const marker = L.circle([loc.latitude, loc.longitude], {
       color: "red",
@@ -51,23 +57,38 @@ function renderMarkers(locations) {
 
 function applyFilter() {
   const tag = document.getElementById("tagSelect").value;
-  const filtered =
-    tag === "all"
-      ? allLocations
-      : allLocations.filter((l) => l.tags.includes(tag));
+  const country = document.getElementById("countrySelect").value;
+
+  const filtered = allLocations.filter((l) => {
+    const tagMatch = tag === "all" || l.tags.includes(tag);
+    const countryMatch = country === "all" || l.country === country;
+    return tagMatch && countryMatch;
+  });
+
   renderMarkers(filtered);
 }
 
-document
-  .getElementById("tagSelect")
-  .addEventListener("change", applyFilter);
+document.getElementById("tagSelect").addEventListener("change", applyFilter);
+document.getElementById("countrySelect").addEventListener("change", applyFilter);
 
-fetch(
-  "https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json"
-)
+function populateCountryDropdown(locations) {
+  const countrySelect = document.getElementById("countrySelect");
+  const countries = [...new Set(locations.map((l) => l.country))].sort();
+
+  countries.forEach((country) => {
+    const option = document.createElement("option");
+    option.value = country;
+    option.textContent = country;
+    countrySelect.appendChild(option);
+  });
+}
+
+fetch("https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json")
   .then((r) => r.json())
   .then((data) => {
     allLocations = data;
+    populateCountryDropdown(allLocations);
+
     if (userLatLng) {
       allLocations.sort((a, b) => {
         return (
@@ -87,17 +108,12 @@ menuToggle.addEventListener("click", () => {
 });
 
 // Formular öffnen/schließen
-document
-  .getElementById("openSubmitForm")
-  .addEventListener("click", () => {
-    document.getElementById("submitForm").classList.remove("hidden");
-  });
-
-document
-  .getElementById("cancelSubmit")
-  .addEventListener("click", () => {
-    document.getElementById("submitForm").classList.add("hidden");
-  });
+document.getElementById("openSubmitForm").addEventListener("click", () => {
+  document.getElementById("submitForm").classList.remove("hidden");
+});
+document.getElementById("cancelSubmit").addEventListener("click", () => {
+  document.getElementById("submitForm").classList.add("hidden");
+});
 
 document.getElementById("locationForm").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -107,10 +123,8 @@ document.getElementById("locationForm").addEventListener("submit", (e) => {
     latitude: parseFloat(document.getElementById("latitude").value),
     longitude: parseFloat(document.getElementById("longitude").value),
     image: document.getElementById("image").value,
-    tags: document
-      .getElementById("tags")
-      .value.split(",")
-      .map((t) => t.trim()),
+    tags: document.getElementById("tags").value.split(",").map((t) => t.trim()),
+    country: document.getElementById("country").value // Stelle sicher, dass dein Formular dieses Feld enthält
   };
   allLocations.push(loc);
   applyFilter();
@@ -122,35 +136,24 @@ const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
 const closeBtn = document.querySelector("#imageModal .close");
 
-// Öffne Modal bei Klick auf Bild mit Klasse popup-img
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("popup-img")) {
     modal.classList.remove("hidden");
     modal.style.display = "block";
     modalImg.src = e.target.src;
     modalImg.classList.remove("zoomed");
-    document.body.style.overflow = "hidden"; // Scrolling deaktivieren
+    document.body.style.overflow = "hidden";
   }
 });
 
-// Bild klicken = zoomen
 modalImg.addEventListener("click", () => {
   modalImg.classList.toggle("zoomed");
 });
 
-// Schließen-Button
-closeBtn.addEventListener("click", () => {
-  closeModal();
-});
-
-// Klick außerhalb des Bildes schließt das Modal
+closeBtn.addEventListener("click", () => closeModal());
 modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    closeModal();
-  }
+  if (e.target === modal) closeModal();
 });
-
-// ESC-Taste schließt das Modal
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
     closeModal();
@@ -162,5 +165,5 @@ function closeModal() {
   modal.style.display = "none";
   modalImg.classList.remove("zoomed");
   modalImg.src = "";
-  document.body.style.overflow = ""; // Scrolling wieder aktivieren
+  document.body.style.overflow = "";
 }

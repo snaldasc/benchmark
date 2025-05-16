@@ -199,16 +199,7 @@
     "type": "bench",
     "country": "United Kingdom"
   },
-  {
-    "name": "Neroberg Tempel",
-    "description": "Schöne Aussicht auf Wiesbaden und die Weinfelder",
-    "latitude": 50.05560,
-    "longitude": 8.13470,
-    "tags": ["city", "winefields", "fields"],
-    "image": "Nerobergtemple.jpg",
-    "type": "bench",
-    "country": "Germany"
-  },
+
   {
     "name": "Öresundsbron bench",
     "latitude": 55.5700058,

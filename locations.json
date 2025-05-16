@@ -160,5 +160,32 @@
   "tags": ["lonely", "mountain", "train"],
   "image": "viewbench.png",
   "type": "bench"
+},
+{
+  "name": "Ightenhill Burnley bench",
+  "description": "Bench with view of Pendle hill",
+  "latitude": 53.799594,
+  "longitude": -2.2832261,
+  "tags": ["view", "hill", "not that scenic", "grass land", "farm", "countryside"],
+  "image": "ightenhillbench.png",
+  "type": "bench"
+},
+{
+  "name": "Chimney Banks Bench",
+  "description": "Bench with view in top of chimney bank, Rosedale, pickering.",
+  "latitude": 54,3452994,
+  "longitude": -0,8905213,
+  "tags": ["countryside", "fields", "UK", "hill", "farm"],
+  "image": "chimneybanksbench.png",
+  "type": "bench"
+},
+{
+  "name": "Neroberg Tempel",
+  "description": "Schöne Aussicht auf Wiesbaden und die Weinfelder",
+  "latitude": 50.05560,
+  "longitude": 8.13470,
+  "tags": ["city", "winefields", "fields"],
+  "image": "chimneybanksbench.png",
+  "type": "bench"
 }
 ]

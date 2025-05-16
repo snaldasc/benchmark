@@ -139,3 +139,8 @@ header h1:last-of-type {
 .leaflet-control-zoom a {
   outline: none;
 }
+.leaflet-control-custom button {
+  font-size: 18px;
+  border: none;
+  background: none;
+}

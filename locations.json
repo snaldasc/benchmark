@@ -121,4 +121,182 @@
   },
   {
     "name": "beach at a sea",
-    "description": "Lonely sea in the middle of a forest, perfekt plac
+    "description": "Lonely sea in the middle of a forest, perfekt place to hang out and bbq with friends",
+    "latitude": 53.616119,
+    "longitude": 9.6965127,
+    "tags": ["lonely", "sea", "forest"],
+    "image": "none",
+    "type": "beach",
+    "country": "Germany"
+  },
+  {
+    "name": "Cave in the forest in Filipstad",
+    "description": "This is a nice cave with open roof to relax",
+    "latitude": 59.7477205,
+    "longitude": 14.290643,
+    "tags": ["cave", "lonely", "peaceful", "scenic"],
+    "image": "cavefillipstad.png",
+    "type": "cave",
+    "country": "Sweden"
+  },
+  {
+    "name": "Chimney Banks Bench",
+    "description": "Bench with view in top of chimney bank, Rosedale, pickering.",
+    "latitude": 54.3452994,
+    "longitude": -0.8905213,
+    "tags": ["countryside", "fields", "UK", "hill", "farm"],
+    "image": "chimneybanksbench.png",
+    "type": "bench",
+    "country": "United Kingdom"
+  },
+  {
+    "name": "cosler kreuz",
+    "description": "A nice bench in the crossing of 2 streets in a small town",
+    "latitude": 50.628498,
+    "longitude": 6.2686,
+    "tags": ["town", "field"],
+    "image": "townbench.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Death scare / Todesangst",
+    "description": "This bench is hard to find but the view and the loneliness is worth the way but be careful",
+    "latitude": 50.1060048,
+    "longitude": 7.1356526,
+    "tags": ["high", "mountain", "lonely", "peace", "forest"],
+    "image": "deathscarebench.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Fummelfelsen / lovers rock",
+    "description": "This cliff is a beautiful place where people enjoy making out. Watch out for the height and the loose dirt",
+    "latitude": 50.633646,
+    "longitude": 6.400134,
+    "tags": ["water", "hill", "cliff", "forest"],
+    "image": "no",
+    "type": "other",
+    "country": "Germany"
+  },
+  {
+    "name": "giant bench",
+    "description": "This is a giant bench with a Beautiful view. You may need to climb to get up there",
+    "latitude": 47.6451582,
+    "longitude": 10.4327177,
+    "tags": ["field", "hills"],
+    "image": "giantbench.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Ightenhill Burnley bench",
+    "description": "Bench with view of Pendle hill",
+    "latitude": 53.799594,
+    "longitude": -2.2832261,
+    "tags": ["view", "hill", "not that scenic", "grass land", "farm", "countryside"],
+    "image": "ightenhillbench.png",
+    "type": "bench",
+    "country": "United Kingdom"
+  },
+  {
+    "name": "Kifferbank Wedel",
+    "description": "Guter Spot zum Lunte fetzen",
+    "latitude": 53.567944,
+    "longitude": 9.721917,
+    "tags": ["Elbe River", "Container ships"],
+    "image": "none",
+    "type": "bench",
+    "country": "DE"
+  },
+  {
+    "name": "Lake Michigan Strand",
+    "description": "Strand vor Chicago mit Blick auf Lake Michigan",
+    "latitude": 41.67380486595912,
+    "longitude": -87.47129917144775,
+    "tags": ["beach", "lake", "USA"],
+    "image": "none",
+    "type": "beach",
+    "country": "US"
+  },
+  {
+    "name": "Leuchtturm Obereversand",
+    "description": "Blick auf die Nordsee mit Fischbude und Currywurst. Motorrad-Treff",
+    "latitude": 53.741690233485265,
+    "longitude": 8.515091581885704,
+    "tags": ["lighthouse", "sea", "food", "motorbike"],
+    "image": "none",
+    "type": "view",
+    "country": "DE"
+  },
+  {
+    "name": "Ljungheden forest bench",
+    "latitude": 57.6712908,
+    "longitude": 11.9619257,
+    "image": "Ljunghedenforestbench.png",
+    "description": "Lonely bench in the forest of Ljungheden with a view on a lake",
+    "type": "bench",
+    "tags": ["water", "lake", "forest", "lonely"],
+    "country": "Sweden"
+  },
+  {
+    "name": "Ljungheden forest walk bench",
+    "latitude": 57.6735665,
+    "longitude": 11.9598262,
+    "image": "ljunghedenforestwalkbench.png",
+    "description": "One of many benches on this walk through the forest with a wonderful view on a swamp",
+    "type": "bench",
+    "tags": ["forest", "swamp", "lonely"],
+    "country": "Sweden"
+  },
+  {
+    "name": "Mole Bremerhaven",
+    "description": "Schöne Sicht aufs Wasser",
+    "latitude": 53.53471464776036,
+    "longitude": 8.576154112815859,
+    "tags": ["water", "view", "harbor"],
+    "image": "none",
+    "type": "view",
+    "country": "DE"
+  },
+  {
+    "name": "Neroberg",
+    "description": "Schöner Aussichtspunkt",
+    "latitude": 50.09835185529841,
+    "longitude": 8.230122647555993,
+    "tags": ["viewpoint"],
+    "image": "none",
+    "type": "view",
+    "country": "DE"
+  },
+  {
+    "name": "Nordsee Blick",
+    "description": "Bänke auf dem Deich mit Blick auf die Nordsee",
+    "latitude": 53.546119826102746,
+    "longitude": 8.568574190139772,
+    "tags": ["sea", "bench", "view"],
+    "image": "none",
+    "type": "bench",
+    "country": "DE"
+  },
+  {
+    "name": "Plesseturm",
+    "description": "Der Plesseturm ist ein herrlicher Aussichtspunkt über den gesamten Werra-Meißner-Kreis und das perfekte Ziel für Wanderungen. Durch seine Geschichte und der Lage gilt er neben dem Wanfrieder Hafen als eines der Aushängeschilder der Stadt und verbindet Ost und West.",
+    "latitude": 51.19056929538056,
+    "longitude": 10.196304917335512,
+    "tags": ["viewpoint", "hiking", "history"],
+    "image": "none",
+    "type": "view",
+    "country": "DE"
+  },
+  {
+    "name": "Rock Garden Bench",
+    "latitude": 57.677922,
+    "longitude": 11.9526998,
+    "image": "rockgardenbench.png",
+    "description": "This bench offers a beautiful view on the nearby forest and rockland",
+    "type": "bench",
+    "tags": ["forest", "rock", "climbing", "lonely", "picknick"],
+    "country": "Sweden"
+  }
+]

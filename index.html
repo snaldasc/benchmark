@@ -69,9 +69,8 @@
       let markers = [];
       let userMarker = null;
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap-Mitwirkende'
-      }).addTo(map);
+      osmLayer.addTo(map);
+
       map.zoomControl.remove();
 
       document.getElementById("menuToggle").addEventListener("click", () => {

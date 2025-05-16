@@ -71,17 +71,7 @@ function applyFilter() {
 document.getElementById("tagSelect").addEventListener("change", applyFilter);
 document.getElementById("countrySelect").addEventListener("change", applyFilter);
 
-function populateCountryDropdown(locations) {
-  const countrySelect = document.getElementById("countrySelect");
-  const countries = [...new Set(locations.map((l) => l.country))].sort();
 
-  countries.forEach((country) => {
-    const option = document.createElement("option");
-    option.value = country;
-    option.textContent = country;
-    countrySelect.appendChild(option);
-  });
-}
 
 fetch("https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json")
   .then((r) => r.json())

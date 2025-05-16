@@ -298,8 +298,7 @@
     "type": "bench",
     "tags": ["forest", "rock", "climbing", "lonely", "picknick"],
     "country": "Sweden"
-  }
-  [
+  },
   {
     "name": "Rock Garden Bench",
     "latitude": 57.677922,
@@ -390,6 +389,5 @@
     "type": "bench",
     "country": "Germany"
   }
-]
 
 ]

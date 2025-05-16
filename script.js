@@ -1,7 +1,63 @@
+const osmLayer = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "&copy; OpenStreetMap-Mitwirkende"
+});
+
+const esriSatLayer = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+  attribution: "Tiles © Esri"
+});
+
+
+
+
+
 const map = L.map("map").setView([53.5716, 9.674], 14);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap-Mitwirkende",
 }).addTo(map);
+
+// Basislayer: Standard OSM und Esri Satellit
+const osmLayer = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "&copy; OpenStreetMap-Mitwirkende"
+});
+
+const esriSatLayer = L.tileLayer(
+  "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+  {
+    attribution: "Tiles © Esri"
+  }
+);
+
+// Standardlayer beim Start anzeigen
+osmLayer.addTo(map);
+
+// Aktueller Layer-Status
+let isSatellite = false;
+
+// Button zum Umschalten erstellen
+const toggleBtn = L.control({ position: "topright" });
+toggleBtn.onAdd = function () {
+  const div = L.DomUtil.create("div", "leaflet-bar leaflet-control leaflet-control-custom");
+  div.innerHTML = '<button id="toggleLayerBtn" title="Kartenansicht wechseln">🗺️</button>';
+  div.style.backgroundColor = "white";
+  div.style.padding = "5px";
+  div.style.cursor = "pointer";
+  return div;
+};
+toggleBtn.addTo(map);
+
+// Button-Funktionalität
+document.getElementById("toggleLayerBtn").addEventListener("click", () => {
+  if (isSatellite) {
+    map.removeLayer(esriSatLayer);
+    osmLayer.addTo(map);
+  } else {
+    map.removeLayer(osmLayer);
+    esriSatLayer.addTo(map);
+  }
+  isSatellite = !isSatellite;
+});
+
+
 
 let userLatLng = null;
 let allLocations = [];

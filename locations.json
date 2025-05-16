@@ -187,5 +187,86 @@
   "tags": ["city", "winefields", "fields"],
   "image": "Nerobergtemple.jpg",
   "type": "bench"
-}
+},
+  {
+    "name": "Öresundsbron bench",
+    "latitude": 55.5700058,
+    "longitude": 12.8968956,
+    "image": "öresundsbronbench.png",
+    "description": "A beautiful bench at the beach with a view to the water",
+    "type": "bench",
+    "tags": ["water", "beach"]
+  },
+  {
+    "name": "Strandvägen view rock",
+    "latitude": 59.3199665,
+    "longitude": 18.0507276,
+    "image": "Strandvägen.png",
+    "description": "Here you can have a wonderful view on the Sea while siting on this scenic viewpoint",
+    "type": "picknick",
+    "tags": ["water", "cliff", "lonely", "rock"]
+  },
+  {
+    "name": "Rock Garden Bench",
+    "latitude": 57.677922,
+    "longitude": 11.9526998,
+    "image": "rockgardenbench.png",
+    "description": "This bench offers a beautiful view on the nearby forest and rockland",
+    "type": "bench",
+    "tags": ["forest", "rock", "climbing", "lonely", "picknick"]
+  },
+  {
+    "name": "Änggarden bench",
+    "latitude": 57.6694093,
+    "longitude": 11.9619686,
+    "image": "änggardenbench.png",
+    "description": "A lonely bench in the middle of a forest with a view on a small lake",
+    "type": "bench",
+    "tags": ["lonely", "water", "forest"]
+  },
+  {
+    "name": "Ljungheden forest bench",
+    "latitude": 57.6712908,
+    "longitude": 11.9619257,
+    "image": "Ljunghedenforestbench.png",
+    "description": "Lonely bench in the forest of Ljungheden with a view on a lake",
+    "type": "bench",
+    "tags": ["water", "lake", "forest", "lonely"]
+  },
+  {
+    "name": "Ljungheden forest walk bench",
+    "latitude": 57.6735665,
+    "longitude": 11.9598262,
+    "image": "ljunghedenforestwalkbench.png",
+    "description": "One of many benches on this walk through the forest with a wonderful view on a swamp",
+    "type": "bench",
+    "tags": ["forest", "swamp", "lonely"]
+  },
+  {
+    "name": "Vindskydd rock beach",
+    "latitude": 57.6666198,
+    "longitude": 11.9659246,
+    "image": "Vindskyddbeach",
+    "description": "Rocks at the side of a lake. Wonderful place to take a break or to have a picknick",
+    "type": "picknick",
+    "tags": ["rock", "beach", "lake", "water", "lonely", "forest"]
+  },
+  {
+    "name": "Asbotorpsjön lake jetty",
+    "latitude": 58.4100247,
+    "longitude": 13.819467,
+    "image": "asbotorpsjönlake.png",
+    "description": "Beautiful lake with lots of nice places to stay and fall in love. The jetty is a wonderful place to sit at the first date",
+    "type": "jetty",
+    "tags": ["date", "water", "jetty", "lake", "forest", "lonely"]
+  },
+  {
+    "name": "Asbotorpsjön",
+    "latitude": 58.4100247,
+    "longitude": 13.819467,
+    "image": "asbotorpsjönlakeplaces",
+    "description": "Lake with lots of places to sit and relax feel free to explore",
+    "type": "picknick",
+    "tags": ["water", "lake", "forest", "lonely", "date", "swimming"]
+  }  
 ]

@@ -298,5 +298,118 @@
     "type": "picknick",
     "tags": ["water", "lake", "forest", "lonely", "date", "swimming"],
     "country": "Sweden"
-  }
+  },
+  {
+  "name": "Cave in the forest in Filipstad",
+  "description": "This is a nice cave with open roof to relax",
+  "latitude": 59.7477205,
+  "longitude": 14.290643,
+  "tags": ["cave", "lonely", "peaceful", "scenic"],
+  "image": "cavefillipstad.png",
+  "type": "cave",
+  "country": "Sweden"
+},
+{
+  "name": "Tilas Stoll",
+  "description": "This is a bench with a table and lovely view on the sea in the forest of Filipstad",
+  "latitude": 59.747819,
+  "longitude": 14.2909655,
+  "tags": ["water", "beach", "forest", "lonely"],
+  "image": "benchtilasstoll",
+  "type": "bench",
+  "country": "Sweden"
+},
+{
+  "name": "Kifferbank Wedel",
+  "description": "Guter Spot zum Lunte fetzen",
+  "latitude": 53.567944,
+  "longitude": 9.721917,
+  "tags": ["Elbe River", "Container ships"],
+  "image": "none",
+  "type": "bench",
+  "country": "DE"
+},
+  {
+  "name": "Neroberg",
+  "description": "Schöner Aussichtspunkt",
+  "latitude": 50.09835185529841,
+  "longitude": 8.230122647555993,
+  "tags": ["viewpoint"],
+  "image": "none",
+  "type": "view",
+  "country": "DE"
+},
+{
+  "name": "Leuchtturm Obereversand",
+  "description": "Blick auf die Nordsee mit Fischbude und Currywurst. Motorrad-Treff",
+  "latitude": 53.741690233485265,
+  "longitude": 8.515091581885704,
+  "tags": ["lighthouse", "sea", "food", "motorbike"],
+  "image": "none",
+  "type": "view",
+  "country": "DE"
+},
+{
+  "name": "Sandstedt",
+  "description": "Bank am Strand",
+  "latitude": 53.36091670542629,
+  "longitude": 8.51172208786011,
+  "tags": ["beach", "bench"],
+  "image": "none",
+  "type": "bench",
+  "country": "DE"
+},
+{
+  "name": "Mole Bremerhaven",
+  "description": "Schöne Sicht aufs Wasser",
+  "latitude": 53.53471464776036,
+  "longitude": 8.576154112815859,
+  "tags": ["water", "view", "harbor"],
+  "image": "none",
+  "type": "view",
+  "country": "DE"
+},
+{
+  "name": "Nordsee Blick",
+  "description": "Bänke auf dem Deich mit Blick auf die Nordsee",
+  "latitude": 53.546119826102746,
+  "longitude": 8.568574190139772,
+  "tags": ["sea", "bench", "view"],
+  "image": "none",
+  "type": "bench",
+  "country": "DE"
+},
+{
+  "name": "Lake Michigan Strand",
+  "description": "Strand vor Chicago mit Blick auf Lake Michigan",
+  "latitude": 41.67380486595912,
+  "longitude": -87.47129917144775,
+  "tags": ["beach", "lake", "USA"],
+  "image": "none",
+  "type": "beach",
+  "country": "US"
+},
+{
+  "name": "Stray Dog Bar und Restaurant",
+  "description": "Geiles Restaurant in der Nähe von Lake Michigan",
+  "latitude": 41.797310708928435,
+  "longitude": -86.74578845500947,
+  "tags": ["restaurant", "bar", "lake", "USA"],
+  "image": "none",
+  "type": "other",
+  "country": "US"
+},
+{
+  "name": "Plesseturm",
+  "description": "Der Plesseturm ist ein herrlicher Aussichtspunkt über den gesamten Werra-Meißner-Kreis und das perfekte Ziel für Wanderungen. Durch seine Geschichte und der Lage gilt er neben dem Wanfrieder Hafen als eines der Aushängeschilder der Stadt und verbindet Ost und West.",
+  "latitude": 51.19056929538056,
+  "longitude": 10.196304917335512,
+  "tags": ["viewpoint", "hiking", "history"],
+  "image": "none",
+  "type": "view",
+  "country": "DE"
+}
+
+  
+
 ]

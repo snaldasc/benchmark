@@ -318,7 +318,7 @@
   "tags": ["Elbe River", "Container ships"],
   "image": "none",
   "type": "bench",
-  "country": "DE"
+  "country": "Germany"
 },
   {
   "name": "Neroberg",
@@ -328,7 +328,7 @@
   "tags": ["viewpoint"],
   "image": "none",
   "type": "view",
-  "country": "DE"
+  "country": "Germany"
 },
 {
   "name": "Leuchtturm Obereversand",
@@ -338,7 +338,7 @@
   "tags": ["lighthouse", "sea", "food", "motorbike"],
   "image": "none",
   "type": "view",
-  "country": "DE"
+  "country": "Germany"
 },
 {
   "name": "Sandstedt",
@@ -348,7 +348,7 @@
   "tags": ["beach", "bench"],
   "image": "none",
   "type": "bench",
-  "country": "DE"
+  "country": "Germany"
 },
 {
   "name": "Mole Bremerhaven",
@@ -358,7 +358,7 @@
   "tags": ["water", "view", "harbor"],
   "image": "none",
   "type": "view",
-  "country": "DE"
+  "country": "Germany"
 },
 {
   "name": "Nordsee Blick",
@@ -368,7 +368,7 @@
   "tags": ["sea", "bench", "view"],
   "image": "none",
   "type": "bench",
-  "country": "DE"
+  "country": "Germany"
 },
 {
   "name": "Lake Michigan Strand",
@@ -398,7 +398,7 @@
   "tags": ["viewpoint", "hiking", "history"],
   "image": "none",
   "type": "view",
-  "country": "DE"
+  "country": "Germany"
 }
 
   

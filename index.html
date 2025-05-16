@@ -35,15 +35,14 @@
 
   <nav id="sideMenu" class="hidden">
     <label for="tagFilter">Filter Tags:</label>
-    <select id="tagFilter"><option value="">All</option></select>
-  <br>
+    <select id="tagFilter"><option value="all">All</option></select>
+    <br>
     <label for="typeFilter">Filter Type:</label>
-    <select id="typeFilter"><option value="">All</option></select>
- <br>
+    <select id="typeFilter"><option value="all">All</option></select>
+    <br>
     <label for="countrySelect">Filter Country:</label> 
-    <select id="countrySelect"><option value="">All</option>    </select>
+    <select id="countrySelect"><option value="all">All</option></select>
 
-    
     <ul id="locationList"></ul>
     <button id="resetMap">📍 back to your position</button>
     <hr />
@@ -103,19 +102,24 @@
           renderMarkers(data);
           initializeTagFilter(data);
           initializeTypeFilter(data);
+          initializeCountryFilter(data);
+
           updateLocationCount(data.length);
 
           const tagFilter = document.getElementById("tagFilter");
           const typeFilter = document.getElementById("typeFilter");
+          const countryFilter = document.getElementById("countrySelect");
 
           function applyFilters() {
             const selectedTag = tagFilter.value.toLowerCase();
             const selectedType = typeFilter.value.toLowerCase();
+            const selectedCountry = countryFilter.value.toLowerCase();
 
             const filtered = data.filter(loc => {
-              const tagMatch = !selectedTag || loc.tags.some(tag => tag.toLowerCase() === selectedTag);
-              const typeMatch = !selectedType || loc.type.toLowerCase() === selectedType;
-              return tagMatch && typeMatch;
+              const tagMatch = selectedTag === "all" || loc.tags.some(tag => tag.toLowerCase() === selectedTag);
+              const typeMatch = selectedType === "all" || (loc.type && loc.type.toLowerCase() === selectedType);
+              const countryMatch = selectedCountry === "all" || (loc.country && loc.country.toLowerCase() === selectedCountry);
+              return tagMatch && typeMatch && countryMatch;
             });
 
             renderMarkers(filtered);
@@ -124,6 +128,7 @@
 
           tagFilter.addEventListener("change", applyFilters);
           typeFilter.addEventListener("change", applyFilters);
+          countryFilter.addEventListener("change", applyFilters);
         });
 
       function renderMarkers(locations) {
@@ -190,6 +195,22 @@
           option.value = type;
           option.textContent = type;
           typeFilter.appendChild(option);
+        });
+      }
+
+      function initializeCountryFilter(data) {
+        const countrySelect = document.getElementById("countrySelect");
+        const countries = new Set();
+
+        data.forEach(loc => {
+          if (loc.country) countries.add(loc.country);
+        });
+
+        Array.from(countries).sort().forEach(country => {
+          const option = document.createElement("option");
+          option.value = country.toLowerCase();
+          option.textContent = country;
+          countrySelect.appendChild(option);
         });
       }
 

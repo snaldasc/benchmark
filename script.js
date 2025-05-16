@@ -61,7 +61,7 @@ function applyFilter() {
 
   const filtered = allLocations.filter((l) => {
     const tagMatch = tag === "all" || l.tags.includes(tag);
-    const countryMatch = country === "all" || l.country === country;
+    const countryMatch = country === "all" || l.country.includes(country);
     return tagMatch && countryMatch;
   });
 

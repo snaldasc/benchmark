@@ -4,16 +4,93 @@
   <meta charset="UTF-8" />
   <title>SpotScout</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Leaflet Stylesheet -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    crossorigin=""
-  />
 
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+    }
+
+    header {
+      background: #282c34;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav {
+      background: #f0f0f0;
+      padding: 1rem;
+      max-width: 300px;
+      height: 100vh;
+      overflow-y: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    nav.hidden {
+      display: none;
+    }
+
+    main {
+      margin-left: 300px;
+      padding: 1rem;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 1rem;
+      display: block;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .filter-chip {
+      background: #ddd;
+      border-radius: 20px;
+      padding: 0.3rem 0.8rem;
+      cursor: pointer;
+    }
+
+    .filter-chip.active {
+      background: #007bff;
+      color: white;
+    }
+
+    #resetFilters {
+      margin-top: 1rem;
+      background: #ccc;
+      border: none;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: static;
+        height: auto;
+        max-width: 100%;
+      }
+
+      main {
+        margin-left: 0;
+      }
+    }
+  </style>
 
   <!-- PushAlert -->
   <script type="text/javascript">
@@ -27,31 +104,42 @@
 <body>
   <header>
     <h1>SpotScout</h1>
-    <button id="menuToggle">☰</button>
-    <button id="toggleLayer">🛰 Satellit an/aus</button>
-    <h1><span id="locationCount">0</span> locations available</h1>
+    <div>
+      <button id="menuToggle">☰ Menü</button>
+      <button id="toggleLayer">🛰 Satellit</button>
+    </div>
+    <h2><span id="locationCount">0</span> Orte gefunden</h2>
   </header>
 
-  <div id="menuOverlay" class="hidden"></div>
+  <nav id="sideMenu">
+    <input type="text" id="filterSearch" placeholder="🔍 Suche nach Tags, Typen, Ländern..." />
 
-  <nav id="sideMenu" class="hidden">
-    <label for="tagFilter">Filter Tags:</label>
-    <select id="tagFilter"><option value="all">All</option></select>
-    <br />
-    <label for="typeFilter">Filter Type:</label>
-    <select id="typeFilter"><option value="all">All</option></select>
-    <br />
-    <label for="countrySelect">Filter Country:</label> 
-    <select id="countrySelect"><option value="all">All</option></select>
+    <label>Filter Tags:</label>
+    <div class="filter-group" id="tagFilters">
+      <!-- Dynamisch generierte Chips -->
+    </div>
 
+    <label>Filter Typen:</label>
+    <div class="filter-group" id="typeFilters">
+      <!-- Dynamisch generierte Chips -->
+    </div>
+
+    <label>Filter Länder:</label>
+    <div class="filter-group" id="countryFilters">
+      <!-- Dynamisch generierte Chips -->
+    </div>
+
+    <button id="resetFilters">🔄 Filter zurücksetzen</button>
     <ul id="locationList"></ul>
-    <button id="resetMap">📍 back to your position</button>
+
     <hr />
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLJKF-C_VVNV0OK-bEY7d_JMTqMHZUXyd4rtz-PTOwwyyU7w/viewform?usp=dialog">
-      <button>submit location</button>
+
+    <button id="resetMap">📍 zurück zur Position</button>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLJKF-C_VVNV0OK-bEY7d_JMTqMHZUXyd4rtz-PTOwwyyU7w/viewform?usp=dialog" target="_blank">
+      <button>➕ Ort einreichen</button>
     </a>
     <a href="https://buymeacoffee.com/spotscout" target="_blank">
-      <button>be a supporter</button>
+      <button>💖 Unterstützer werden</button>
     </a>
   </nav>
 
@@ -61,14 +149,43 @@
 
   <!-- Leaflet Script -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  
-  <!-- Dein Script -->
   <script src="app.js"></script>
 
-  <!-- Modal für Bildanzeige -->
+  <!-- Modal -->
   <div id="imageModal" class="hidden">
     <span class="close">&times;</span>
     <img class="modal-content" id="modalImg" />
   </div>
+
+  <!-- Platz für deine UI-Logik -->
+  <script>
+    // Beispielhafte Dynamik für Filter
+    const tagFilters = ["urban", "rural", "coastal"];
+    const typeFilters = ["skatepark", "hill", "street"];
+    const countryFilters = ["Germany", "Austria", "Switzerland"];
+
+    function createChips(containerId, values) {
+      const container = document.getElementById(containerId);
+      values.forEach(value => {
+        const chip = document.createElement("span");
+        chip.className = "filter-chip";
+        chip.textContent = value;
+        chip.addEventListener("click", () => {
+          chip.classList.toggle("active");
+          // Hier Filterlogik aufrufen
+        });
+        container.appendChild(chip);
+      });
+    }
+
+    createChips("tagFilters", tagFilters);
+    createChips("typeFilters", typeFilters);
+    createChips("countryFilters", countryFilters);
+
+    document.getElementById("resetFilters").addEventListener("click", () => {
+      document.querySelectorAll(".filter-chip").forEach(chip => chip.classList.remove("active"));
+      // Reset-Logik hier aufrufen
+    });
+  </script>
 </body>
 </html>

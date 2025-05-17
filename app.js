@@ -228,16 +228,16 @@ document.addEventListener("DOMContentLoaded", function () {
             fields: [
               { name: "Name", value: data.title || "-" },
               { name: "Beschreibung", value: data.description || "-" },
-              { name: "Bild", value: data.image || "-" },
+              { name: "Bild-Link", value: data.image || "-" }, // nur als Text
               { name: "Tags", value: data.tags || "-" },
               { name: "Typ", value: data.type || "-" },
               { name: "Koordinaten", value: `${data.lat}, ${data.lng}` },
             ],
-            ...(data.image ? { image: { url: data.image } } : {}),
             footer: { text: "Eingereicht über SpotScout Map" },
           },
         ],
       };
+
 
       try {
         const response = await fetch(webhookUrl, {

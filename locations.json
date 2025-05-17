@@ -399,7 +399,67 @@
   "image": "plesseturm.png",
   "type": "view",
   "country": "Germany"
-}
+},
+  {
+    "name": "beautiful view in woods",
+    "description": "🇳🇱",
+    "latitude": 51.992259249370726,
+    "longitude": 6.2664341,
+    "image": "none",
+    "type": "other",
+    "tags": ["woods", "meer", "water"],
+    "country": "Netherlands"
+  },
+  {
+    "name": "Lost Place Cucina",
+    "description": "Lost place in Wedel",
+    "latitude": 53.584199555149425,
+    "longitude": 9.72881667342271,
+    "image": "none",
+    "type": "building lostplace",
+    "tags": ["Lostplace", "parkour"],
+    "country": "Germany"
+  },
+  {
+    "name": "Raucher Bank",
+    "description": "Hier wird immer gerauct",
+    "latitude": 53.586671081998176,
+    "longitude": 9.701625108718874,
+    "image": "none",
+    "type": "bank",
+    "tags": ["schule", "rauchen", "sportplatz"],
+    "country": "Germany"
+  },
+  {
+    "name": "Secret forbidden view",
+    "description": "This is a spot you can only reach with a bit of climbing. This spot is strictly forbidden but its beautiful",
+    "latitude": 53.571291184509086,
+    "longitude": 9.675291180541594,
+    "image": "none",
+    "type": "sitting illegal",
+    "tags": ["Elbe", "water", "cargoships", "river"],
+    "country": "Germany"
+  },
+  {
+    "name": "Small river auweiden",
+    "description": "",
+    "latitude": 53.5859483608103,
+    "longitude": 9.726317524830238,
+    "image": "none",
+    "type": "other",
+    "tags": ["river"],
+    "country": "Germany"
+  },
+  {
+    "name": "Zackelfall waterfall",
+    "description": "Beautiful waterfall in the middle of a forest",
+    "latitude": 50.813819422876584,
+    "longitude": 15.4967737197876,
+    "image": "zackelfall.png",
+    "type": "waterfall",
+    "tags": ["waterfall", "water", "forest"],
+    "country": "Germany"
+  }
 
   
 

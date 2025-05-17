@@ -402,10 +402,10 @@
 },
   {
     "name": "beautiful view in woods",
-    "description": "🇳🇱",
+    "description": "this place offers a beautiful view in the woods",
     "latitude": 51.992259249370726,
     "longitude": 6.2664341,
-    "image": "none",
+    "image": "viewinwoodsnt",
     "type": "other",
     "tags": ["woods", "meer", "water"],
     "country": "Netherlands"
@@ -422,7 +422,7 @@
   },
   {
     "name": "Raucher Bank",
-    "description": "Hier wird immer gerauct",
+    "description": "The spot where the whole school smokes",
     "latitude": 53.586671081998176,
     "longitude": 9.701625108718874,
     "image": "none",
@@ -442,11 +442,11 @@
   },
   {
     "name": "Small river auweiden",
-    "description": "",
+    "description": "Beautiful small river in wedel Auweiden, perfect for taking a small bath or to relax with friends",
     "latitude": 53.5859483608103,
     "longitude": 9.726317524830238,
     "image": "none",
-    "type": "other",
+    "type": "beach",
     "tags": ["river"],
     "country": "Germany"
   },

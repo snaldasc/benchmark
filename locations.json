@@ -459,7 +459,17 @@
     "type": "waterfall",
     "tags": ["waterfall", "water", "forest"],
     "country": "Germany"
-  }
+  },
+  {
+  "name": "Just a beauty",
+  "description": "A quiet beautiful spot with a nice view on a lake in beautiful terraint. Perfect to relax, take a walk or enjoy the sunset.",
+  "latitude": 53.753291350181996,
+  "longitude": 9.664382480511506,
+  "image": "none",
+  "type": "viewpoint",
+  "tags": ["nature", "view", "relax", "walk"],
+  "country": "Germany"
+}
 
   
 

@@ -326,7 +326,7 @@
   "latitude": 50.09835185529841,
   "longitude": 8.230122647555993,
   "tags": ["viewpoint"],
-  "image": "none",
+  "image": "https://img3.oastatic.com/img2/81549489/834x417r/variant.jpg",
   "type": "view",
   "country": "Germany"
 },
@@ -336,7 +336,7 @@
   "latitude": 53.741690233485265,
   "longitude": 8.515091581885704,
   "tags": ["lighthouse", "sea", "food", "motorbike"],
-  "image": "none",
+  "image": "https://www.nord24.de/bilder/bei-einem-sonnenuntergang-sieht-der-leuchtturm-obereversand-43054m.jpg",
   "type": "view",
   "country": "Germany"
 },
@@ -346,7 +346,7 @@
   "latitude": 53.36091670542629,
   "longitude": 8.51172208786011,
   "tags": ["beach", "bench"],
-  "image": "none",
+  "image": "https://www.hundestrand.eu/wp-content/uploads/2014/06/Hundestrand-Sandstedt-2.jpg",
   "type": "bench",
   "country": "Germany"
 },
@@ -356,7 +356,7 @@
   "latitude": 53.53471464776036,
   "longitude": 8.576154112815859,
   "tags": ["water", "view", "harbor"],
-  "image": "none",
+  "image": "https://t1.pixers.pics/img-1fb6f67c/poster-leuchtturm-auf-der-mole.jpg?H4sIAAAAAAAAA3WOXW7EIAyEr0MkEpsEQsgB9nWPEBFwtmnzg4BtVz19iao-Vn6wZ6TxfPA8kl0IHB2ZIuyr9xvBsm5FpTFSWr-JIe-MqsbibgwRq_H8pOjiGVjdGl6LruV9J7hqh2r8siW52_jB3nIOaQRIXRPWV3lXlkvg9gQtCg04gDKDdTR7bYRtp1CnbA9vo6811vqlsAnHg-M11R-LROTyYshx3VmBOktbZu_hUcE_jb83lBTc7iAV9AKMBqMua7rdpeqF0UZNNFu7dEbaRQupSXjleif7AjkvNJBsSssPUM-DtjEBAAA=",
   "type": "view",
   "country": "Germany"
 },
@@ -366,7 +366,7 @@
   "latitude": 53.546119826102746,
   "longitude": 8.568574190139772,
   "tags": ["sea", "bench", "view"],
-  "image": "none",
+  "image": "nordseeblick.png",
   "type": "bench",
   "country": "Germany"
 },
@@ -396,7 +396,7 @@
   "latitude": 51.19056929538056,
   "longitude": 10.196304917335512,
   "tags": ["viewpoint", "hiking", "history"],
-  "image": "none",
+  "image": "plesseturm.png",
   "type": "view",
   "country": "Germany"
 }

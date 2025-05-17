@@ -399,8 +399,47 @@
   "image": "none",
   "type": "view",
   "country": "Germany"
-}
+},
+  {
+    "name": "Oeschinensee",
+    "latitude": 46.541444,
+    "longitude": 12.976139,
+    "image": "none",
+    "description": "Beautiful alpine lake surrounded by mountains.",
+    "type": "other",
+    "tags": ["lake", "mountains", "switzerland", "nature"],
+    "country": "Switzerland"
+  },
+  {
+    "name": "Öresund Bridge Viewpoint",
+    "latitude": 55.5663433,
+    "longitude": 12.8922807,
+    "image": "none",
+    "description": "Spot near the Öresund Bridge with a view over the sea.",
+    "type": "viewpoint",
+    "tags": ["bridge", "sea", "view", "denmark", "sweden"],
+    "country": "Sweden"
+  },
+  {
+    "name": "Bench in the Philippines",
+    "latitude": 13.0175931,
+    "longitude": 123.7136551,
+    "image": "none",
+    "description": "Lonely bench with scenic surroundings.",
+    "type": "bench",
+    "tags": ["bench", "philippines", "nature", "relax"],
+    "country": "Philippines"
+  },
+  {
+    "name": "Bench Spot Germany",
+    "latitude": 49.0898349,
+    "longitude": 9.7761137,
+    "image": "none",
+    "description": "Bench in a quiet area in Germany, possibly in nature.",
+    "type": "bench",
+    "tags": ["bench", "germany", "quiet", "nature"],
+    "country": "Germany"
+  }
 
-  
 
 ]

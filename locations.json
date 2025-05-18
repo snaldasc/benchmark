@@ -590,7 +590,18 @@
   "type": "beach",
   "tags": ["beach", "restaurant", "relax"],
   "country": "Romania"
+},
+  {
+  "name": "Öjberget",
+  "description": "Nice hill with a great view",
+  "latitude": 63.03590875902879,
+  "longitude": 21.574155092239383,
+  "image": "none",
+  "type": "hill",
+  "tags": ["hill", "view", "nature", "hike"],
+  "country": "Finland"
 }
+
 
  
 

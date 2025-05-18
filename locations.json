@@ -600,7 +600,18 @@
   "type": "hill",
   "tags": ["hill", "view", "nature", "hike"],
   "country": "Finland"
+},
+  {
+  "name": "A Chill Spot with Graffiti",
+  "description": "Relaxed place with graffiti. Might need some chairs.",
+  "latitude": 55.87240880405567,
+  "longitude": 12.341932654380798,
+  "image": "none",
+  "type": "urban spot",
+  "tags": ["graffiti", "chill", "urban", "streetart"],
+  "country": "Denmark"
 }
+
 
 
  

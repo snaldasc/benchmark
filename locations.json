@@ -620,7 +620,305 @@
   "type": "natural",
   "tags": ["dam", "waterfall", "bench", "water", "nature", "river"],
   "country": "Switzerland"
-}
+},
+  {
+    "name": "Kasavuoren kallio",
+    "latitude": 60.211570956939106,
+    "longitude": 24.682953357696537,
+    "image": "",
+    "description": "Great cliff to watch",
+    "type": "",
+    "tags": [],
+    "country": "Finland",
+    "user": "anonym"
+  },
+  {
+    "name": "Bank",
+    "latitude": 51.53601125400607,
+    "longitude": 7.8892672061920175,
+    "image": "",
+    "description": "Bank mit Blick auf Büderich",
+    "type": "bench",
+    "tags": [],
+    "country": "Germany",
+    "user": "anonym"
+  },
+  {
+    "name": "Inzing View",
+    "latitude": 47.26973216835548,
+    "longitude": 11.190519332885744,
+    "image": "",
+    "description": "A nice bank on top of a hill wich gives you a great view over the beautifull village of Inzing",
+    "type": "bench",
+    "tags": [],
+    "country": "Austria",
+    "user": "anonym"
+  },
+  {
+    "name": "Snack bench",
+    "latitude": 53.00336926114644,
+    "longitude": 9.270378202069601,
+    "image": "",
+    "description": "A bench to eat something while having a long drive. Right next to a parking loz",
+    "type": "bench",
+    "tags": ["Picknick", "break", "street"],
+    "country": "Germany",
+    "user": "Dasos"
+  },
+  {
+    "name": "Street break bench",
+    "latitude": 53.10876565961689,
+    "longitude": 9.142633303924283,
+    "image": "",
+    "description": "Bench at the side of a town street with nice trees and plants around it",
+    "type": "bench",
+    "tags": ["Street", "town", "city"],
+    "country": "Germany",
+    "user": "Dasos"
+  },
+  {
+    "name": "Street side Bench",
+    "latitude": 53.13253887824566,
+    "longitude": 9.078986328331089,
+    "image": "",
+    "description": "Bench at the side of a country side street infront of a monument surrounded by a piece of nature. Right next to a bus stop",
+    "type": "bench",
+    "tags": ["Busstop", "monument", "town"],
+    "country": "Germany",
+    "user": "Dasos"
+  },
+  {
+    "name": "Bench near Busstop",
+    "latitude": 53.14764196998772,
+    "longitude": 9.008005857372568,
+    "image": "",
+    "description": "Country side street bench right next to a busstation",
+    "type": "bench",
+    "tags": ["Street", "town", "city", "busstop"],
+    "country": "Germany",
+    "user": "Dasos"
+  },
+  {
+    "name": "Epic smoke spot near the road",
+    "latitude": 45.947523451107145,
+    "longitude": 16.782073569276665,
+    "image": "",
+    "description": "Overview of the road, forest behind (not that easy to enter)",
+    "type": "",
+    "tags": [],
+    "country": "Croatia",
+    "user": "anonym"
+  },
+  {
+    "name": "Little Skate Park",
+    "latitude": 51.103830886783435,
+    "longitude": 6.516163945198059,
+    "image": "",
+    "description": "just a skate park with some benches",
+    "type": "skatepark",
+    "tags": ["skatepark"],
+    "country": "Germany",
+    "user": "anonym"
+  },
+  {
+    "name": "Rhein view",
+    "latitude": 51.241969188983056,
+    "longitude": 6.76835060119629,
+    "image": "",
+    "description": "Just chill here",
+    "type": "",
+    "tags": [],
+    "country": "Germany",
+    "user": "anonym"
+  },
+  {
+    "name": "Great on summer's day",
+    "latitude": 52.046858173977014,
+    "longitude": -9.555285930109676,
+    "image": "",
+    "description": "Lake",
+    "type": "",
+    "tags": [],
+    "country": "Ireland",
+    "user": "anonym"
+  },
+  {
+    "name": "Hyvä rekkaspottaus mesta",
+    "latitude": 61.27280206109313,
+    "longitude": 24.351572289165997,
+    "image": "",
+    "description": "Good truck spotting spot",
+    "type": "spot",
+    "tags": ["Truck", "truckspotting"],
+    "country": "Finland",
+    "user": "anonym"
+  },
+  {
+    "name": "Hemochilli dokausmesta",
+    "latitude": 61.23347691977775,
+    "longitude": 24.433534294230416,
+    "image": "",
+    "description": "Better check that the owner doesn’t see",
+    "type": "spot",
+    "tags": ["Dokaus"],
+    "country": "Finland",
+    "user": "anonym"
+  },
+  {
+    "name": "Silta",
+    "latitude": 61.20342725309999,
+    "longitude": 24.48536776006222,
+    "image": "",
+    "description": "Down here and under the bridge structure",
+    "type": "",
+    "tags": [],
+    "country": "Finland",
+    "user": "anonym"
+  },
+  {
+    "name": "Tääl al hyvä spotti",
+    "latitude": 61.20331161678894,
+    "longitude": 24.488949179649353,
+    "image": "",
+    "description": "Title",
+    "type": "",
+    "tags": [],
+    "country": "Finland",
+    "user": "anonym"
+  },
+  {
+    "name": "Hemo chilli ranta",
+    "latitude": 61.17190956746966,
+    "longitude": 24.55204278230667,
+    "image": "",
+    "description": ".",
+    "type": "",
+    "tags": [],
+    "country": "Finland",
+    "user": "anonym"
+  },
+  {
+    "name": "New Pier",
+    "latitude": 50.69226810636804,
+    "longitude": -4.698929244575849,
+    "image": "",
+    "description": "Chill spot to Go to on a hot day",
+    "type": "",
+    "tags": [],
+    "country": "United Kingdom",
+    "user": "anonym"
+  },
+  {
+    "name": "City view",
+    "latitude": 48.202598090077984,
+    "longitude": 16.359131946990793,
+    "image": "",
+    "description": "Its on the mq rooftop its free. Its open till 21:30",
+    "type": "on a rooftop",
+    "tags": [],
+    "country": "Austria",
+    "user": "anonym"
+  },
+  {
+    "name": "The mound",
+    "latitude": 55.942572279200206,
+    "longitude": -3.3854842185974126,
+    "image": "",
+    "description": "Nice place to see planes",
+    "type": "",
+    "tags": [],
+    "country": "United Kingdom",
+    "user": ".nbphotography"
+  },
+  {
+    "name": "Multiple benches",
+    "latitude": 53.22074083528429,
+    "longitude": 8.92673073332977,
+    "image": "Multiplebenches.png",
+    "description": "Multiple benches with nearby stone figure art",
+    "type": "bench",
+    "tags": ["Art", "nature", "town"],
+    "country": "Germany",
+    "user": "Dasos"
+  },
+  {
+    "name": "Big bench",
+    "latitude": 53.22089928656171,
+    "longitude": 8.925651311794255,
+    "image": "bumblebeebench.png",
+    "description": "Big bench at bumblebee art",
+    "type": "bench",
+    "tags": ["Art", "peaceful"],
+    "country": "Germany",
+    "user": "Dasos"
+  },
+  {
+    "name": "Bench in park",
+    "latitude": 53.22022987981092,
+    "longitude": 8.931442199578271,
+    "image": "Benchinpark1lonely.png",
+    "description": "Beautiful bench in a big park. The park is very peaceful, has a playground near and many benches to sit down",
+    "type": "bench",
+    "tags": ["City", "town", "peace", "lonely"],
+    "country": "Germany",
+    "user": "Dasos"
+  },
+  {
+    "name": "Second bench at head of the park",
+    "latitude": 53.2199396,
+    "longitude": 8.9326626,
+    "image": "Benchinpark1lonely.png",
+    "description": "-",
+    "type": "",
+    "tags": [],
+    "country": "Germany",
+    "user": "Dasos"
+  },
+  {
+    "name": "Halda Ema",
+    "latitude": 49.83973332129052,
+    "longitude": 18.314664546218612,
+    "image": "",
+    "description": "A small mountain next to the city of Ostrava. It is a really cool and not too far spot. Next to the zoo of Ostrava. It is best to go here at sunset",
+    "type": "mountain",
+    "tags": ["Mountain"],
+    "country": "Czech Republic",
+    "user": "Halda ema"
+  },
+  {
+    "name": "Bench at countryside with lake",
+    "latitude": 47.37394191671656,
+    "longitude": 8.784160852574132,
+    "image": "",
+    "description": "Beautiful bench where you see the lake and countryside",
+    "type": "forest",
+    "tags": ["Lake"],
+    "country": "Switzerland",
+    "user": "Merjem"
+  },
+  {
+    "name": "Nice place to gooning",
+    "latitude": 55.630225845493236,
+    "longitude": 22.942391060220945,
+    "image": "",
+    "description": "Very good",
+    "type": "",
+    "tags": [],
+    "country": "Lithuania",
+    "user": "anonym"
+  },
+  {
+    "name": "Stabiler Strand",
+    "latitude": 54.6821609565192,
+    "longitude": 13.403577804565431,
+    "image": "",
+    "description": "Sand,Meer,Steine,wenig Menschen,Stabil",
+    "type": "strand",
+    "tags": ["Aufpassen bei Übernachtung (Platzverweis)"],
+    "country": "Germany",
+    "user": "anonym"
+  }
+
 
 
 

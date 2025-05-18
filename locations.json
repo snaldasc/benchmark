@@ -470,7 +470,117 @@
   "tags": ["nature", "view", "relax", "walk"],
   "country": "Germany"
 }
-
-  
+[
+  {
+    "name": "Spot am Uphuser Meer",
+    "description": "Nette Fläche zum Chillen. Kleine Schilfwanderung nötig. Zwei Campingstühle und eine Feuerstelle vorhanden.",
+    "latitude": 53.37539068987628,
+    "longitude": 7.272380590438844,
+    "image": "none",
+    "type": "lake hangout",
+    "tags": ["lake", "water", "fireplace", "chill", "nature"],
+    "country": "Germany"
+  },
+  {
+    "name": "Sigma",
+    "description": "Sigma sigma sigma spot. Lost my virginity here.",
+    "latitude": 54.987865889156296,
+    "longitude": -1.474241633781728,
+    "image": "none",
+    "type": "waterfall",
+    "tags": ["waterfall", "personal", "memory"],
+    "country": "United Kingdom"
+  },
+  {
+    "name": "Bench at Oeschinsee",
+    "description": "A beautiful bench with a perfect view on the mountains and the lake.",
+    "latitude": 46.50152701980851,
+    "longitude": 7.717251250404678,
+    "image": "OeschinseeBench",
+    "type": "bench",
+    "tags": ["lake", "mountain", "bench", "relax"],
+    "country": "Switzerland"
+  },
+  {
+    "name": "Top of Europe view",
+    "description": "A bench with a beautiful view to the mountains nearby a mountain house.",
+    "latitude": 46.60045541945017,
+    "longitude": 8.060606016003344,
+    "image": "berghausbaeregg.png",
+    "type": "bench",
+    "tags": ["mountain", "relaxing", "lonely", "peaceful", "scenic"],
+    "country": "Switzerland"
+  },
+  {
+    "name": "Small waterfall with view",
+    "description": "A small waterfall to refill your bottles and enjoy the view.",
+    "latitude": 46.60817660690947,
+    "longitude": 8.055311528404527,
+    "image": "waterfallwithview",
+    "type": "waterfall",
+    "tags": ["view", "scenic", "waterfall"],
+    "country": "Switzerland"
+  },
+  {
+    "name": "Trail bench to Berghaus",
+    "description": "This is a bench with scenic view on the way to the Berghaus.",
+    "latitude": 46.605733218876715,
+    "longitude": 8.055434868063452,
+    "image": "trailbenchberghaus.png",
+    "type": "bench",
+    "tags": ["mountain", "scenic"],
+    "country": "Switzerland"
+  },
+  {
+    "name": "Malmo Bridge View",
+    "description": "A bench with view on the bridge to Copenhagen.",
+    "latitude": 55.56631916977305,
+    "longitude": 12.892198562622072,
+    "image": "malmobridgebench",
+    "type": "bench",
+    "tags": ["bridge", "water", "scenic"],
+    "country": "Sweden"
+  },
+  {
+    "name": "Island view bench",
+    "description": "This bench has the view perfectly set to the big rocks in front of Ireland.",
+    "latitude": 53.96939076907421,
+    "longitude": -10.160157735877235,
+    "image": "irelandrockbench",
+    "type": "bench",
+    "tags": ["island", "water", "scenic"],
+    "country": "Ireland"
+  },
+  {
+    "name": "Amazing place in prague",
+    "description": "View of the entire city and Prague Castle behind you.",
+    "latitude": 50.09100527812739,
+    "longitude": 14.40384864807129,
+    "image": "none",
+    "type": "view",
+    "tags": ["city", "castle", "panorama"],
+    "country": "Czech Republic"
+  },
+  {
+    "name": "Trosky - Hill/Castle",
+    "description": "Beautiful view of the entire Český ráj, refreshments, castle tour.",
+    "latitude": 50.5162454240918,
+    "longitude": 15.231542140409148,
+    "image": "none",
+    "type": "view/castle/hill",
+    "tags": ["hill", "castle", "view"],
+    "country": "Czech Republic"
+  },
+  {
+    "name": "Cliff view",
+    "description": "This bench offers a beautiful view to the cliffs of Southerndown in Wales.",
+    "latitude": 51.442489268579855,
+    "longitude": -3.600307599527273,
+    "image": "Cliffbench",
+    "type": "bench",
+    "tags": ["cliff", "water", "scenic", "lonely", "peaceful", "date"],
+    "country": "United Kingdom"
+  }
+ 
 
 ]

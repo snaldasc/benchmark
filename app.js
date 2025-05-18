@@ -122,8 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <strong>${loc.name}</strong><br>
         <img src="${loc.image}" alt="${loc.name}" class="popup-img" style="width:100%;max-width:200px;cursor:pointer;"><br>
         <p>${loc.description}</p>
-        <br>
-        <p>${"submitted by:", loc.user}</p>
+        <p>"Submitted by"</p>
+        <p>${loc.user}</p>
         <a href="https://www.google.com/maps/dir/?api=1&destination=${loc.latitude},${loc.longitude}" target="_blank" style="color:blue;font-weight:bold;text-decoration:underline;">
           ➤ Route in Google Maps
         </a>

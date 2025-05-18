@@ -200,7 +200,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <strong>📌 Submit new Spot</strong><br>
         <input name="title" placeholder="Name" required style="width: 100%; margin: 4px 0;" /><br />
         <textarea name="description" placeholder="Description" style="width: 100%; margin: 4px 0;"></textarea><br />
-        <input name="image" placeholder="Bild-URL (optional)" style="width: 100%; margin: 4px 0;" /><br />
+        <input type="file" name="imageFile" accept="image/*" style="width: 100%; margin: 4px 0;" />
+
         <input name="tags" placeholder="Tags (z. B. view description, water, Skate, Lostplace, parkour)" style="width: 100%; margin: 4px 0;" /><br />
         <input name="type" placeholder="Type of location (z. B. bench, picknick, viewpoint etc.)" style="width: 100%; margin: 4px 0;" /><br />
  <input name="user" placeholder="your name (optional)" style="width: 100%; margin: 4px 0;"></textarea><br />
@@ -215,55 +216,86 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Neuen Spot via Discord Webhook absenden
-  document.addEventListener("submit", async (e) => {
-    if (e.target.id === "spotForm") {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-      const data = Object.fromEntries(formData.entries());
+document.addEventListener("submit", async (e) => {
+  if (e.target.id === "spotForm") {
+    e.preventDefault();
+    const formData = new FormData(e.target);
 
-      const webhookUrl = "https://discord.com/api/webhooks/1372966787578069113/SwKAcsG_BEh3IuP6WHLOOUJI-flnZ-vbWamVuXhPO1CXTUUHsYnpH9RpEXEoB5UzELW5";
+    const title = formData.get("title");
+    const description = formData.get("description");
+    const tags = formData.get("tags");
+    const type = formData.get("type");
+    const user = formData.get("user") || "-";
+    const lat = formData.get("lat");
+    const lng = formData.get("lng");
 
-      const payload = {
-        username: "SpotScout locations",
-        embeds: [
-          {
-            title: "📍 Neuer Spot eingereicht",
-            color: 0x00b0f4,
-            fields: [
-              { name: "Name", value: data.title || "-" },
-              { name: "Beschreibung", value: data.description || "-" },
-              { name: "Bild-Link", value: data.image || "-" }, // nur als Text
-              { name: "Tags", value: data.tags || "-" },
-              { name: "Typ", value: data.type || "-" },
-              { name: "Koordinaten", value: `${data.lat}, ${data.lng}` },
-  { name: "User", value: data.user },
-                 
-  ],
-            footer: { text: "Eingereicht über SpotScout Map" },
-          },
-        ],
-      };
+    let imageUrl = "-";
+    const imageFile = formData.get("imageFile");
 
+    if (imageFile && imageFile.size > 0) {
+      const uploadForm = new FormData();
+      uploadForm.append("image", imageFile);
 
       try {
-        const response = await fetch(webhookUrl, {
+        const uploadResponse = await fetch("https://api.imgbb.com/1/upload?key=f64bb7ebe09ca4cc1cb5fa32b550cf26", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
+          body: uploadForm,
         });
 
-        if (response.ok) {
-          alert("🎉 Danke! Dein Spot wurde gesendet.");
+        const uploadResult = await uploadResponse.json();
+        if (uploadResult.success) {
+          imageUrl = uploadResult.data.url;
         } else {
-          alert("❌ Fehler beim Senden. Bitte erneut versuchen.");
+          alert("⚠️ Bild konnte nicht hochgeladen werden.");
         }
       } catch (err) {
-        alert("❌ Verbindung fehlgeschlagen.");
+        alert("❌ Fehler beim Hochladen des Bildes.");
+        return;
       }
-
-      map.closePopup();
     }
-  });
+
+    const webhookUrl = "https://discord.com/api/webhooks/1372966787578069113/SwKAcsG_BEh3IuP6WHLOOUJI-flnZ-vbWamVuXhPO1CXTUUHsYnpH9RpEXEoB5UzELW5";
+
+    const payload = {
+      username: "SpotScout locations",
+      embeds: [
+        {
+          title: "📍 Neuer Spot eingereicht",
+          color: 0x00b0f4,
+          fields: [
+            { name: "Name", value: title || "-" },
+            { name: "Beschreibung", value: description || "-" },
+            { name: "Bild-Link", value: imageUrl },
+            { name: "Tags", value: tags || "-" },
+            { name: "Typ", value: type || "-" },
+            { name: "Koordinaten", value: `${lat}, ${lng}` },
+            { name: "User", value: user },
+          ],
+          footer: { text: "Eingereicht über SpotScout Map" },
+        },
+      ],
+    };
+
+    try {
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        alert("🎉 Danke! Dein Spot wurde gesendet.");
+      } else {
+        alert("❌ Fehler beim Senden. Bitte erneut versuchen.");
+      }
+    } catch (err) {
+      alert("❌ Verbindung fehlgeschlagen.");
+    }
+
+    map.closePopup();
+  }
+});
+
 
   // Modal Bildanzeige
   const modal = document.getElementById("imageModal");

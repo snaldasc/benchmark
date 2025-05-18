@@ -562,12 +562,598 @@
     "country": "Czech Republic"
   },
   {
+    "name": "Trosky - Hill/Castl[
+  {
+    "name": "Bench at water Elbe",
+    "latitude": 53.5716087,
+    "longitude": 9.6740014,
+    "image": "https://example.com/orta.jpg",
+    "description": "Bench at Hamburgs Yacht Harbour with beautiful view on the Elbe and passing Cargoships",
+    "type": "bench",
+    "tags": ["water", "harbour", "elbe"],
+    "country": "Germany"
+  },
+  {
+    "name": "Bench at water Elbe 2",
+    "latitude": 53.5715442,
+    "longitude": 9.6743027,
+    "image": "https://example.com/ortb.jpg",
+    "description": "Bench at Hamburgs Yacht Harbour with beautiful view on the Elbe and passing Cargoships",
+    "type": "bench",
+    "tags": ["water", "harbour", "elbe"],
+    "country": "Germany"
+  },
+  {
+    "name": "Bench at small street in the Forest",
+    "description": "A bench at a small street infront of an Forest",
+    "latitude": 50.7711111,
+    "longitude": 15.7675,
+    "tags": ["forest", "town", "street"],
+    "image": "bench3.jpg",
+    "type": "bench",
+    "country": "Poland"
+  },
+  {
+    "name": "Fummelfelsen / lovers rock",
+    "description": "This cliff is a beautiful place where people enjoy making out. Watch out for the height and the loose dirt",
+    "latitude": 50.633646,
+    "longitude": 6.400134,
+    "tags": ["water", "hill", "cliff", "forest"],
+    "image": "no",
+    "type": "other",
+    "country": "Germany"
+  },
+  {
+    "name": "RockwithView",
+    "description": "Rock with a beautiful view on the water - may be a bit difficult to find",
+    "latitude": 50.6313953,
+    "longitude": 6.4131169,
+    "tags": ["forest", "cliff", "picknick"],
+    "image": "rockincliff.png",
+    "type": "other",
+    "country": "Germany"
+  },
+  {
+    "name": "Bench in forest water view",
+    "description": "Beautiful view down a hill in a forest on the water",
+    "latitude": 50.6266661,
+    "longitude": 6.3992782,
+    "tags": ["water", "forest"],
+    "image": "bencheifel.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Bench Worbelescheed",
+    "description": "Beautiful bench in the middle of nowhere",
+    "latitude": 50.5824818,
+    "longitude": 6.3225809,
+    "tags": ["field"],
+    "image": "bankschweede.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "cosler kreuz",
+    "description": "A nice bench in the crossing of 2 streets in a small town",
+    "latitude": 50.628498,
+    "longitude": 6.2686,
+    "tags": ["town", "field"],
+    "image": "townbench.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Beach in Aachen",
+    "description": "This is a small beach noone knows and noone ever is. Perfekt for deeptalks with friends, swimming or chilling",
+    "latitude": 50.6344444,
+    "longitude": 6.4075,
+    "tags": ["beach", "water", "swimming", "forest", "lonely"],
+    "image": "aachenstrand.jpeg",
+    "type": "beach",
+    "country": "Germany"
+  },
+  {
+    "name": "beach at a sea",
+    "description": "Lonely sea in the middle of a forest, perfekt place to hang out and bbq with friends",
+    "latitude": 53.616119,
+    "longitude": 9.6965127,
+    "tags": ["lonely", "sea", "forest"],
+    "image": "none",
+    "type": "beach",
+    "country": "Germany"
+  },
+  {
+    "name": "Bench in forest",
+    "description": "Lonely bench at the side of a forest. You can watch horses on the nearby field",
+    "latitude": 53.6170107,
+    "longitude": 9.6915562,
+    "tags": ["lonely", "forest", "field"],
+    "image": "benchholm.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "giant bench",
+    "description": "This is a giant bench with a Beautiful view. You may need to climb to get up there",
+    "latitude": 47.6451582,
+    "longitude": 10.4327177,
+    "tags": ["field", "hills"],
+    "image": "giantbench.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Bench Buchenberg",
+    "description": "Bench with a Beautiful view on a hill in front of a field with cows",
+    "latitude": 47.7276217,
+    "longitude": 10.2308772,
+    "tags": ["hill", "field"],
+    "image": "benchbuchenberg.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Viewbench Korreite",
+    "description": "Wonderful bench with a beautiful view on the mountains, in winter or in summer the perfect place to fall in love",
+    "latitude": 47.6656791,
+    "longitude": 10.3914483,
+    "tags": ["date", "hills", "mountain", "viewpoint", "lonely"],
+    "image": "viewpointkorreite.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Bench Isny Bähnle",
+    "description": "Bench with a nice view on the fields",
+    "latitude": 47.7217352,
+    "longitude": 10.2459898,
+    "tags": ["fields", "lonely", "date"],
+    "image": "benchisnybähnle.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Vier Seen Blick",
+    "description": "Bench way up in the mountains. Here you can have a beautiful view to the lower land. You will be absolutely alone, up here noone comes",
+    "latitude": 50.1087236,
+    "longitude": 7.1257229,
+    "tags": ["hill", "mountain", "water", "high", "town", "lonely"],
+    "image": "vierseenbench.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Death scare / Todesangst",
+    "description": "This bench is hard to find but the view and the loneliness is worth the way but be careful",
+    "latitude": 50.1060048,
+    "longitude": 7.1356526,
+    "tags": ["high", "mountain", "lonely", "peace", "forest"],
+    "image": "deathscarebench.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Bench \"Schöne Aussicht\"",
+    "description": "This bench is way up high in the mountains. Thats why its very lonely and you wont be disturbed here. The perfect place to enjoy the sunset on the horizon which you can perfectly see while sitting on the bench. But be aware you need to go down all the way again. To find it, follow the \"Schöne Aussicht\" signs on the trail",
+    "latitude": 50.1144313,
+    "longitude": 7.1440312,
+    "tags": ["lonely", "mountain", "train"],
+    "image": "viewbench.png",
+    "type": "bench",
+    "country": "Germany"
+  },
+  {
+    "name": "Ightenhill Burnley bench",
+    "description": "Bench with view of Pendle hill",
+    "latitude": 53.799594,
+    "longitude": -2.2832261,
+    "tags": ["view", "hill", "not that scenic", "grass land", "farm", "countryside"],
+    "image": "ightenhillbench.png",
+    "type": "bench",
+    "country": "United Kingdom"
+  },
+  {
+    "name": "Chimney Banks Bench",
+    "description": "Bench with view in top of chimney bank, Rosedale, pickering.",
+    "latitude": 54.3452994,
+    "longitude": -0.8905213,
+    "tags": ["countryside", "fields", "UK", "hill", "farm"],
+    "image": "chimneybanksbench.png",
+    "type": "bench",
+    "country": "United Kingdom"
+  },
+
+  {
+    "name": "Öresundsbron bench",
+    "latitude": 55.5700058,
+    "longitude": 12.8968956,
+    "image": "öresundsbronbench.png",
+    "description": "A beautiful bench at the beach with a view to the water",
+    "type": "bench",
+    "tags": ["water", "beach"],
+    "country": "Sweden"
+  },
+  {
+    "name": "Strandvägen view rock",
+    "latitude": 59.3199665,
+    "longitude": 18.0507276,
+    "image": "Strandvägen.png",
+    "description": "Here you can have a wonderful view on the Sea while siting on this scenic viewpoint",
+    "type": "picknick",
+    "tags": ["water", "cliff", "lonely", "rock"],
+    "country": "Sweden"
+  },
+  {
+    "name": "Rock Garden Bench",
+    "latitude": 57.677922,
+    "longitude": 11.9526998,
+    "image": "rockgardenbench.png",
+    "description": "This bench offers a beautiful view on the nearby forest and rockland",
+    "type": "bench",
+    "tags": ["forest", "rock", "climbing", "lonely", "picknick"],
+    "country": "Sweden"
+  },
+  {
+    "name": "Änggarden bench",
+    "latitude": 57.6694093,
+    "longitude": 11.9619686,
+    "image": "änggardenbench.png",
+    "description": "A lonely bench in the middle of a forest with a view on a small lake",
+    "type": "bench",
+    "tags": ["lonely", "water", "forest"],
+    "country": "Sweden"
+  },
+  {
+    "name": "Ljungheden forest bench",
+    "latitude": 57.6712908,
+    "longitude": 11.9619257,
+    "image": "Ljunghedenforestbench.png",
+    "description": "Lonely bench in the forest of Ljungheden with a view on a lake",
+    "type": "bench",
+    "tags": ["water", "lake", "forest", "lonely"],
+    "country": "Sweden"
+  },
+  {
+    "name": "Ljungheden forest walk bench",
+    "latitude": 57.6735665,
+    "longitude": 11.9598262,
+    "image": "ljunghedenforestwalkbench.png",
+    "description": "One of many benches on this walk through the forest with a wonderful view on a swamp",
+    "type": "bench",
+    "tags": ["forest", "swamp", "lonely"],
+    "country": "Sweden"
+  },
+  {
+    "name": "Vindskydd rock beach",
+    "latitude": 57.6666198,
+    "longitude": 11.9659246,
+    "image": "Vindskyddbeach.png",
+    "description": "Rocks at the side of a lake. Wonderful place to take a break or to have a picknick",
+    "type": "picknick",
+    "tags": ["rock", "beach", "lake", "water", "lonely", "forest"],
+    "country": "Sweden"
+  },
+  {
+    "name": "Asbotorpsjön lake jetty",
+    "latitude": 58.4100247,
+    "longitude": 13.819467,
+    "image": "asbotorpsjönlake.png",
+    "description": "Beautiful lake with lots of nice places to stay and fall in love. The jetty is a wonderful place to sit at the first date",
+    "type": "jetty",
+    "tags": ["date", "water", "jetty", "lake", "forest", "lonely"],
+    "country": "Sweden"
+  },
+  {
+    "name": "Asbotorpsjön",
+    "latitude": 58.4100247,
+    "longitude": 13.819467,
+    "image": "asbotorpsjönlakeplaces.png",
+    "description": "Lake with lots of places to sit and relax feel free to explore",
+    "type": "picknick",
+    "tags": ["water", "lake", "forest", "lonely", "date", "swimming"],
+    "country": "Sweden"
+  },
+  {
+  "name": "Cave in the forest in Filipstad",
+  "description": "This is a nice cave with open roof to relax",
+  "latitude": 59.7477205,
+  "longitude": 14.290643,
+  "tags": ["cave", "lonely", "peaceful", "scenic"],
+  "image": "cavefillipstad.png",
+  "type": "cave",
+  "country": "Sweden"
+},
+{
+  "name": "Tilas Stoll",
+  "description": "This is a bench with a table and lovely view on the sea in the forest of Filipstad",
+  "latitude": 59.747819,
+  "longitude": 14.2909655,
+  "tags": ["water", "beach", "forest", "lonely"],
+  "image": "benchtilasstoll.png",
+  "type": "bench",
+  "country": "Sweden"
+},
+{
+  "name": "Kifferbank Wedel",
+  "description": "Guter Spot zum Lunte fetzen",
+  "latitude": 53.567944,
+  "longitude": 9.721917,
+  "tags": ["Elbe River", "Container ships"],
+  "image": "none",
+  "type": "bench",
+  "country": "Germany"
+},
+  {
+  "name": "Neroberg",
+  "description": "Schöner Aussichtspunkt",
+  "latitude": 50.09835185529841,
+  "longitude": 8.230122647555993,
+  "tags": ["viewpoint"],
+  "image": "https://img3.oastatic.com/img2/81549489/834x417r/variant.jpg",
+  "type": "view",
+  "country": "Germany"
+},
+{
+  "name": "Leuchtturm Obereversand",
+  "description": "Blick auf die Nordsee mit Fischbude und Currywurst. Motorrad-Treff",
+  "latitude": 53.741690233485265,
+  "longitude": 8.515091581885704,
+  "tags": ["lighthouse", "sea", "food", "motorbike"],
+  "image": "https://www.nord24.de/bilder/bei-einem-sonnenuntergang-sieht-der-leuchtturm-obereversand-43054m.jpg",
+  "type": "view",
+  "country": "Germany"
+},
+{
+  "name": "Sandstedt",
+  "description": "Bank am Strand",
+  "latitude": 53.36091670542629,
+  "longitude": 8.51172208786011,
+  "tags": ["beach", "bench"],
+  "image": "https://www.hundestrand.eu/wp-content/uploads/2014/06/Hundestrand-Sandstedt-2.jpg",
+  "type": "bench",
+  "country": "Germany"
+},
+{
+  "name": "Mole Bremerhaven",
+  "description": "Schöne Sicht aufs Wasser",
+  "latitude": 53.53471464776036,
+  "longitude": 8.576154112815859,
+  "tags": ["water", "view", "harbor"],
+  "image": "https://t1.pixers.pics/img-1fb6f67c/poster-leuchtturm-auf-der-mole.jpg?H4sIAAAAAAAAA3WOXW7EIAyEr0MkEpsEQsgB9nWPEBFwtmnzg4BtVz19iao-Vn6wZ6TxfPA8kl0IHB2ZIuyr9xvBsm5FpTFSWr-JIe-MqsbibgwRq_H8pOjiGVjdGl6LruV9J7hqh2r8siW52_jB3nIOaQRIXRPWV3lXlkvg9gQtCg04gDKDdTR7bYRtp1CnbA9vo6811vqlsAnHg-M11R-LROTyYshx3VmBOktbZu_hUcE_jb83lBTc7iAV9AKMBqMua7rdpeqF0UZNNFu7dEbaRQupSXjleif7AjkvNJBsSssPUM-DtjEBAAA=",
+  "type": "view",
+  "country": "Germany"
+},
+{
+  "name": "Nordsee Blick",
+  "description": "Bänke auf dem Deich mit Blick auf die Nordsee",
+  "latitude": 53.546119826102746,
+  "longitude": 8.568574190139772,
+  "tags": ["sea", "bench", "view"],
+  "image": "nordseeblick.png",
+  "type": "bench",
+  "country": "Germany"
+},
+{
+  "name": "Lake Michigan Strand",
+  "description": "Strand vor Chicago mit Blick auf Lake Michigan",
+  "latitude": 41.67380486595912,
+  "longitude": -87.47129917144775,
+  "tags": ["beach", "lake", "USA"],
+  "image": "none",
+  "type": "beach",
+  "country": "US"
+},
+{
+  "name": "Stray Dog Bar und Restaurant",
+  "description": "Geiles Restaurant in der Nähe von Lake Michigan",
+  "latitude": 41.797310708928435,
+  "longitude": -86.74578845500947,
+  "tags": ["restaurant", "bar", "lake", "USA"],
+  "image": "none",
+  "type": "other",
+  "country": "US"
+},
+{
+  "name": "Plesseturm",
+  "description": "Der Plesseturm ist ein herrlicher Aussichtspunkt über den gesamten Werra-Meißner-Kreis und das perfekte Ziel für Wanderungen. Durch seine Geschichte und der Lage gilt er neben dem Wanfrieder Hafen als eines der Aushängeschilder der Stadt und verbindet Ost und West.",
+  "latitude": 51.19056929538056,
+  "longitude": 10.196304917335512,
+  "tags": ["viewpoint", "hiking", "history"],
+  "image": "plesseturm.png",
+  "type": "view",
+  "country": "Germany"
+},
+  {
+    "name": "beautiful view in woods",
+    "description": "this place offers a beautiful view in the woods",
+    "latitude": 51.992259249370726,
+    "longitude": 6.2664341,
+    "image": "viewinwoodsnt.PNG",
+    "type": "other",
+    "tags": ["woods", "meer", "water"],
+    "country": "Netherlands"
+  },
+  {
+    "name": "Lost Place Cucina",
+    "description": "Lost place in Wedel",
+    "latitude": 53.584199555149425,
+    "longitude": 9.72881667342271,
+    "image": "none",
+    "type": "building lostplace",
+    "tags": ["Lostplace", "parkour"],
+    "country": "Germany"
+  },
+  {
+    "name": "Raucher Bank",
+    "description": "The spot where the whole school smokes",
+    "latitude": 53.586671081998176,
+    "longitude": 9.701625108718874,
+    "image": "none",
+    "type": "bank",
+    "tags": ["schule", "rauchen", "sportplatz"],
+    "country": "Germany"
+  },
+  {
+    "name": "Secret forbidden view",
+    "description": "This is a spot you can only reach with a bit of climbing. This spot is strictly forbidden but its beautiful",
+    "latitude": 53.571291184509086,
+    "longitude": 9.675291180541594,
+    "image": "none",
+    "type": "sitting illegal",
+    "tags": ["Elbe", "water", "cargoships", "river"],
+    "country": "Germany"
+  },
+  {
+    "name": "Small river auweiden",
+    "description": "Beautiful small river in wedel Auweiden, perfect for taking a small bath or to relax with friends",
+    "latitude": 53.5859483608103,
+    "longitude": 9.726317524830238,
+    "image": "none",
+    "type": "beach",
+    "tags": ["river"],
+    "country": "Germany"
+  },
+  {
+    "name": "Zackelfall waterfall",
+    "description": "Beautiful waterfall in the middle of a forest",
+    "latitude": 50.813819422876584,
+    "longitude": 15.4967737197876,
+    "image": "zackelfall.png",
+    "type": "waterfall",
+    "tags": ["waterfall", "water", "forest"],
+    "country": "Germany"
+  },
+  {
+  "name": "Just a beauty",
+  "description": "A quiet beautiful spot with a nice view on a lake in beautiful terraint. Perfect to relax, take a walk or enjoy the sunset.",
+  "latitude": 53.753291350181996,
+  "longitude": 9.664382480511506,
+  "image": "none",
+  "type": "viewpoint",
+  "tags": ["nature", "view", "relax", "walk"],
+  "country": "Germany"
+},
+
+  {
+    "name": "Spot am Uphuser Meer",
+    "description": "Nette Fläche zum Chillen. Kleine Schilfwanderung nötig. Zwei Campingstühle und eine Feuerstelle vorhanden.",
+    "latitude": 53.37539068987628,
+    "longitude": 7.272380590438844,
+    "image": "none",
+    "type": "lake hangout",
+    "tags": ["lake", "water", "fireplace", "chill", "nature"],
+    "country": "Germany"
+  },
+  {
+    "name": "Sigma",
+    "description": "Sigma sigma sigma spot. Lost my virginity here.",
+    "latitude": 54.987865889156296,
+    "longitude": -1.474241633781728,
+    "image": "none",
+    "type": "waterfall",
+    "tags": ["waterfall", "personal", "memory"],
+    "country": "United Kingdom"
+  },
+  {
+    "name": "Bench at Oeschinsee",
+    "description": "A beautiful bench with a perfect view on the mountains and the lake.",
+    "latitude": 46.50152701980851,
+    "longitude": 7.717251250404678,
+    "image": "OeschinseeBenct.png",
+    "type": "bench",
+    "tags": ["lake", "mountain", "bench", "relax"],
+    "country": "Switzerland"
+  },
+  {
+    "name": "Top of Europe view",
+    "description": "A bench with a beautiful view to the mountains nearby a mountain house.",
+    "latitude": 46.60045541945017,
+    "longitude": 8.060606016003344,
+    "image": "berghausbaeregg.png",
+    "type": "bench",
+    "tags": ["mountain", "relaxing", "lonely", "peaceful", "scenic"],
+    "country": "Switzerland"
+  },
+  {
+    "name": "Small waterfall with view",
+    "description": "A small waterfall to refill your bottles and enjoy the view.",
+    "latitude": 46.60817660690947,
+    "longitude": 8.055311528404527,
+    "image": "waterfallwithvieh.png",
+    "type": "waterfall",
+    "tags": ["view", "scenic", "waterfall"],
+    "country": "Switzerland"
+  },
+  {
+    "name": "Trail bench to Berghaus",
+    "description": "This is a bench with scenic view on the way to the Berghaus.",
+    "latitude": 46.605733218876715,
+    "longitude": 8.055434868063452,
+    "image": "trailbenchberghaus.png",
+    "type": "bench",
+    "tags": ["mountain", "scenic"],
+    "country": "Switzerland"
+  },
+  {
+    "name": "Malmo Bridge View",
+    "description": "A bench with view on the bridge to Copenhagen.",
+    "latitude": 55.56631916977305,
+    "longitude": 12.892198562622072,
+    "image": "malmobridgebench.png",
+    "type": "bench",
+    "tags": ["bridge", "water", "scenic"],
+    "country": "Sweden"
+  },
+  {
+    "name": "Island view bench",
+    "description": "This bench has the view perfectly set to the big rocks in front of Ireland.",
+    "latitude": 53.96939076907421,
+    "longitude": -10.160157735877235,
+    "image": "irelandrockbench.png",
+    "type": "bench",
+    "tags": ["island", "water", "scenic"],
+    "country": "Ireland"
+  },
+  {
+    "name": "Amazing place in prague",
+    "description": "View of the entire city and Prague Castle behind you.",
+    "latitude": 50.09100527812739,
+    "longitude": 14.40384864807129,
+    "image": "none",
+    "type": "view",
+    "tags": ["city", "castle", "panorama"],
+    "country": "Czech Republic"
+  },
+  {
     "name": "Trosky - Hill/Castle",
     "description": "Beautiful view of the entire Český ráj, refreshments, castle tour.",
     "latitude": 50.5162454240918,
     "longitude": 15.231542140409148,
     "image": "none",
-    "type": "view","castle","hill",
+    "type": "view",
+    "tags": ["hill", "castle", "view"],
+    "country": "Czech Republic"
+  },
+  {
+    "name": "Cliff view",
+    "description": "This bench offers a beautiful view to the cliffs of Southerndown in Wales.",
+    "latitude": 51.442489268579855,
+    "longitude": -3.600307599527273,
+    "image": "Cliffbench.png",
+    "type": "bench",
+    "tags": ["cliff", "water", "scenic", "lonely", "peaceful", "date"],
+    "country": "United Kingdom"
+  }
+ 
+
+]
+e",
+    "description": "Beautiful view of the entire Český ráj, refreshments, castle tour.",
+    "latitude": 50.5162454240918,
+    "longitude": 15.231542140409148,
+    "image": "none",
+    "type": "view",
     "tags": ["hill", "castle", "view"],
     "country": "Czech Republic"
   },

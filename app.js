@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const webhookUrl = "https://discord.com/api/webhooks/1372966787578069113/SwKAcsG_BEh3IuP6WHLOOUJI-flnZ-vbWamVuXhPO1CXTUUHsYnpH9RpEXEoB5UzELW5";
 
       const payload = {
-        username: "SpotScout Bot",
+        username: "SpotScout locations",
         embeds: [
           {
             title: "📍 Neuer Spot eingereicht",
@@ -235,7 +235,9 @@ document.addEventListener("DOMContentLoaded", function () {
               { name: "Tags", value: data.tags || "-" },
               { name: "Typ", value: data.type || "-" },
               { name: "Koordinaten", value: `${data.lat}, ${data.lng}` },
-            ],
+  { name: "User", value: data.user },
+                 
+  ],
             footer: { text: "Eingereicht über SpotScout Map" },
           },
         ],

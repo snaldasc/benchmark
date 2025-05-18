@@ -7,7 +7,8 @@
     "description": "Bench at Hamburgs Yacht Harbour with beautiful view on the Elbe and passing Cargoships",
     "type": "bench",
     "tags": ["water", "harbour", "elbe"],
-    "country": "Germany"
+    "country": "Germany",
+    "user": "Dasos"
   },
   {
     "name": "Bench at water Elbe 2",
@@ -17,7 +18,8 @@
     "description": "Bench at Hamburgs Yacht Harbour with beautiful view on the Elbe and passing Cargoships",
     "type": "bench",
     "tags": ["water", "harbour", "elbe"],
-    "country": "Germany"
+    "country": "Germany",
+    "user": "Dasos"
   },
   {
     "name": "Bench at small street in the Forest",
@@ -27,7 +29,8 @@
     "tags": ["forest", "town", "street"],
     "image": "bench3.jpg",
     "type": "bench",
-    "country": "Poland"
+    "country": "Poland",
+    "user": "Z"
   },
   {
     "name": "Fummelfelsen / lovers rock",
@@ -37,7 +40,8 @@
     "tags": ["water", "hill", "cliff", "forest"],
     "image": "no",
     "type": "other",
-    "country": "Germany"
+    "country": "Germany",
+"user": "Dasos"
   },
   {
     "name": "RockwithView",
@@ -47,7 +51,8 @@
     "tags": ["forest", "cliff", "picknick"],
     "image": "rockincliff.png",
     "type": "other",
-    "country": "Germany"
+    "country": "Germany",
+"user": "Dasos"
   },
   {
     "name": "Bench in forest water view",
@@ -57,7 +62,8 @@
     "tags": ["water", "forest"],
     "image": "bencheifel.png",
     "type": "bench",
-    "country": "Germany"
+    "country": "Germany",
+"user": "Dasos"
   },
   {
     "name": "Bench Worbelescheed",
@@ -67,7 +73,8 @@
     "tags": ["field"],
     "image": "bankschweede.png",
     "type": "bench",
-    "country": "Germany"
+    "country": "Germany",
+"user": "anonym"
   },
   {
     "name": "cosler kreuz",
@@ -77,7 +84,8 @@
     "tags": ["town", "field"],
     "image": "townbench.png",
     "type": "bench",
-    "country": "Germany"
+    "country": "Germany",  
+"user": "anonym"
   },
   {
     "name": "Beach in Aachen",
@@ -87,7 +95,8 @@
     "tags": ["beach", "water", "swimming", "forest", "lonely"],
     "image": "aachenstrand.jpeg",
     "type": "beach",
-    "country": "Germany"
+    "country": "Germany",
+"user": "Dasos"
   },
   {
     "name": "beach at a sea",
@@ -97,7 +106,8 @@
     "tags": ["lonely", "sea", "forest"],
     "image": "none",
     "type": "beach",
-    "country": "Germany"
+    "country": "Germany",
+"user": "Dasos"
   },
   {
     "name": "Bench in forest",
@@ -107,7 +117,8 @@
     "tags": ["lonely", "forest", "field"],
     "image": "benchholm.png",
     "type": "bench",
-    "country": "Germany"
+    "country": "Germany",
+"user": "Dasos"
   },
   {
     "name": "giant bench",
@@ -117,7 +128,8 @@
     "tags": ["field", "hills"],
     "image": "giantbench.png",
     "type": "bench",
-    "country": "Germany"
+    "country": "Germany",
+"user": "Dasos"
   },
   {
     "name": "Bench Buchenberg",
@@ -127,7 +139,8 @@
     "tags": ["hill", "field"],
     "image": "benchbuchenberg.png",
     "type": "bench",
-    "country": "Germany"
+    "country": "Germany",
+"user": "Dasos"
   },
   {
     "name": "Viewbench Korreite",
@@ -137,7 +150,8 @@
     "tags": ["date", "hills", "mountain", "viewpoint", "lonely"],
     "image": "viewpointkorreite.png",
     "type": "bench",
-    "country": "Germany"
+    "country": "Germany",
+"user": "Dasos"
   },
   {
     "name": "Bench Isny Bähnle",
@@ -147,7 +161,8 @@
     "tags": ["fields", "lonely", "date"],
     "image": "benchisnybähnle.png",
     "type": "bench",
-    "country": "Germany"
+    "country": "Germany",
+"user": "Dasos"
   },
   {
     "name": "Vier Seen Blick",
@@ -157,7 +172,8 @@
     "tags": ["hill", "mountain", "water", "high", "town", "lonely"],
     "image": "vierseenbench.png",
     "type": "bench",
-    "country": "Germany"
+    "country": "Germany",
+"user": "Dasos"
   },
   {
     "name": "Death scare / Todesangst",
@@ -167,7 +183,8 @@
     "tags": ["high", "mountain", "lonely", "peace", "forest"],
     "image": "deathscarebench.png",
     "type": "bench",
-    "country": "Germany"
+    "country": "Germany",
+"user": "Dasos"
   },
   {
     "name": "Bench \"Schöne Aussicht\"",
@@ -177,7 +194,8 @@
     "tags": ["lonely", "mountain", "train"],
     "image": "viewbench.png",
     "type": "bench",
-    "country": "Germany"
+    "country": "Germany",
+"user": "Dasos"
   },
   {
     "name": "Ightenhill Burnley bench",
@@ -187,7 +205,10 @@
     "tags": ["view", "hill", "not that scenic", "grass land", "farm", "countryside"],
     "image": "ightenhillbench.png",
     "type": "bench",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+"user": "brickingly"
+
+
   },
   {
     "name": "Chimney Banks Bench",
@@ -197,7 +218,8 @@
     "tags": ["countryside", "fields", "UK", "hill", "farm"],
     "image": "chimneybanksbench.png",
     "type": "bench",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+"user": "brickingly"
   },
 
   {
@@ -208,7 +230,9 @@
     "description": "A beautiful bench at the beach with a view to the water",
     "type": "bench",
     "tags": ["water", "beach"],
-    "country": "Sweden"
+    "country": "Sweden",
+"user": "brickingly"
+
   },
   {
     "name": "Strandvägen view rock",
@@ -218,7 +242,8 @@
     "description": "Here you can have a wonderful view on the Sea while siting on this scenic viewpoint",
     "type": "picknick",
     "tags": ["water", "cliff", "lonely", "rock"],
-    "country": "Sweden"
+    "country": "Sweden",
+"user": "Dasos"
   },
   {
     "name": "Rock Garden Bench",
@@ -228,7 +253,8 @@
     "description": "This bench offers a beautiful view on the nearby forest and rockland",
     "type": "bench",
     "tags": ["forest", "rock", "climbing", "lonely", "picknick"],
-    "country": "Sweden"
+    "country": "Sweden",
+"user": "Dasos"
   },
   {
     "name": "Änggarden bench",
@@ -238,7 +264,8 @@
     "description": "A lonely bench in the middle of a forest with a view on a small lake",
     "type": "bench",
     "tags": ["lonely", "water", "forest"],
-    "country": "Sweden"
+    "country": "Sweden",
+"user": "Dasos"
   },
   {
     "name": "Ljungheden forest bench",
@@ -248,7 +275,8 @@
     "description": "Lonely bench in the forest of Ljungheden with a view on a lake",
     "type": "bench",
     "tags": ["water", "lake", "forest", "lonely"],
-    "country": "Sweden"
+    "country": "Sweden",
+"user": "Dasos"
   },
   {
     "name": "Ljungheden forest walk bench",
@@ -258,7 +286,8 @@
     "description": "One of many benches on this walk through the forest with a wonderful view on a swamp",
     "type": "bench",
     "tags": ["forest", "swamp", "lonely"],
-    "country": "Sweden"
+    "country": "Sweden",
+"user": "Dasos"
   },
   {
     "name": "Vindskydd rock beach",
@@ -268,7 +297,8 @@
     "description": "Rocks at the side of a lake. Wonderful place to take a break or to have a picknick",
     "type": "picknick",
     "tags": ["rock", "beach", "lake", "water", "lonely", "forest"],
-    "country": "Sweden"
+    "country": "Sweden",
+"user": "Dasos"
   },
   {
     "name": "Asbotorpsjön lake jetty",
@@ -279,6 +309,8 @@
     "type": "jetty",
     "tags": ["date", "water", "jetty", "lake", "forest", "lonely"],
     "country": "Sweden"
+
+
   },
   {
     "name": "Asbotorpsjön",
@@ -289,6 +321,8 @@
     "type": "picknick",
     "tags": ["water", "lake", "forest", "lonely", "date", "swimming"],
     "country": "Sweden"
+
+
   },
   {
   "name": "Cave in the forest in Filipstad",
@@ -299,6 +333,8 @@
   "image": "cavefillipstad.png",
   "type": "cave",
   "country": "Sweden"
+
+
 },
 {
   "name": "Tilas Stoll",
@@ -309,6 +345,8 @@
   "image": "benchtilasstoll.png",
   "type": "bench",
   "country": "Sweden"
+
+
 },
 {
   "name": "Kifferbank Wedel",
@@ -318,7 +356,8 @@
   "tags": ["Elbe River", "Container ships"],
   "image": "none",
   "type": "bench",
-  "country": "Germany"
+  "country": "Germany" 
+
 },
   {
   "name": "Neroberg",
@@ -329,6 +368,7 @@
   "image": "https://img3.oastatic.com/img2/81549489/834x417r/variant.jpg",
   "type": "view",
   "country": "Germany"
+
 },
 {
   "name": "Leuchtturm Obereversand",
@@ -912,9 +952,9 @@
     "latitude": 54.6821609565192,
     "longitude": 13.403577804565431,
     "image": "",
-    "description": "Sand,Meer,Steine,wenig Menschen,Stabil",
-    "type": "strand",
-    "tags": ["Aufpassen bei Übernachtung (Platzverweis)"],
+    "description": "Aufpassen bei Übernachtung (Platzverweis)",
+    "type": "beach",
+    "tags": ["Sand", "Meer", "Steine", "lonely"],
     "country": "Germany",
     "user": "anonym"
   },
@@ -927,13 +967,6 @@
   "type": "Viewpoint",
   "tags": ["Sightseeing", "view", "water", "lake", "lonely", "scenic"],
   "user": "Dasos"
-}
-
-
-
-
-
-
- 
+  }
 
 ]

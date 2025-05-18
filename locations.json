@@ -580,7 +580,18 @@
     "type": "bench",
     "tags": ["cliff", "water", "scenic", "lonely", "peaceful", "date"],
     "country": "United Kingdom"
-  }
+  },
+  {
+  "name": "Beautiful Beach",
+  "description": "Nice cool beach with a restaurant",
+  "latitude": 43.78879737833591,
+  "longitude": 28.580696582794193,
+  "image": "none",
+  "type": "beach",
+  "tags": ["beach", "restaurant", "relax"],
+  "country": "Romania"
+}
+
  
 
 ]

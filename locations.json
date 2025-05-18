@@ -917,7 +917,18 @@
     "tags": ["Aufpassen bei Übernachtung (Platzverweis)"],
     "country": "Germany",
     "user": "anonym"
-  }
+  },
+  {
+  "name": "Ellipse",
+  "latitude": 55.70268168109694,
+  "longitude": 8.209867123717693,
+  "image": "Ellipse.png",
+  "description": "Great place to take a rest or drink some beer",
+  "type": "Viewpoint",
+  "tags": ["Sightseeing", "view", "water", "lake", "lonely", "scenic"],
+  "user": "Dasos"
+}
+
 
 
 

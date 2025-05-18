@@ -516,7 +516,7 @@
     "description": "A small waterfall to refill your bottles and enjoy the view.",
     "latitude": 46.60817660690947,
     "longitude": 8.055311528404527,
-    "image": "waterfallwithvieh.png",
+    "image": "waterfallwithview.png",
     "type": "waterfall",
     "tags": ["view", "scenic", "waterfall"],
     "country": "Switzerland"

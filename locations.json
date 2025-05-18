@@ -610,7 +610,18 @@
   "type": "urban spot",
   "tags": ["graffiti", "chill", "urban", "streetart"],
   "country": "Denmark"
+},
+  {
+  "name": "Dam Maker Spot",
+  "description": "The name speaks for itself. Nearby is a small river with many rocks where you can build dams and do other cool stuff. There's also a waterfall and a bench close by.",
+  "latitude": 47.57015091646185,
+  "longitude": 8.06460377755027,
+  "image": "none",
+  "type": "natural",
+  "tags": ["dam", "waterfall", "bench", "water", "nature", "river"],
+  "country": "Switzerland"
 }
+
 
 
 

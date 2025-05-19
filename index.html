@@ -85,15 +85,43 @@
     <img class="modal-content" id="modalImg" />
   </div>
 
-<script>
-  // Beim Laden prüfen, ob ein Query-Parameter wie ?loc=paris übergeben wurde
-  const urlParams = new URLSearchParams(window.location.search);
-  const locId = urlParams.get('loc');
+ <script>
+  // Funktion zum Fokussieren der Karte auf eine bestimmte Location
+  function focusLocationFromParam() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const locId = urlParams.get('loc');
 
-  if (locId && typeof focusLocation === 'function') {
-    focusLocation(locId); // Muss in deiner Karte definiert sein
+    if (!locId) return;
+
+    // Warte, bis die Karte aus app.js verfügbar ist
+    const waitForMap = setInterval(() => {
+      if (typeof map !== 'undefined' && map.setView) {
+        clearInterval(waitForMap);
+
+        fetch('locations.json')
+          .then(response => response.json())
+          .then(locations => {
+            const loc = locations.find(l => l.id === locId);
+            if (loc && loc.lat && loc.lng) {
+              map.flyTo([loc.lat, loc.lng], loc.zoom || 13, {
+                animate: true,
+                duration: 2
+              });
+            } else {
+              console.warn('Location nicht gefunden:', locId);
+            }
+          })
+          .catch(err => console.error('Fehler beim Laden von locations.json:', err));
+      }
+    }, 100);
   }
+
+  // Starte nach kurzem Delay, um sicherzugehen, dass app.js initialisiert ist
+  window.addEventListener('load', () => {
+    focusLocationFromParam();
+  });
 </script>
+
 
   
 </body>

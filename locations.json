@@ -1095,7 +1095,158 @@
     "latitude": 48.027973483339395,
     "longitude": 11.576365828514101,
     "user": ""
+  },
+  {
+    "name": "Bench at graveyard",
+    "beschreibung": "",
+    "bild_link": "",
+    "tags": "",
+    "typ": "",
+    "koordinaten": [53.58918953678837, 9.711273852655344],
+    "user": "",
+    "quelle": "SpotScout Map"
+  },
+  {
+    "name": "Lonely bench",
+    "beschreibung": "Very lonely bench surrounded by trees with only one small way to acces",
+    "bild_link": "",
+    "tags": "",
+    "typ": "",
+    "koordinaten": [53.58990729428549, 9.714654609338906],
+    "user": "",
+    "quelle": "SpotScout Map"
+  },
+  {
+    "name": "Bench in auweiden",
+    "beschreibung": "",
+    "bild_link": "",
+    "tags": "",
+    "typ": "",
+    "koordinaten": [53.58929700244136, 9.723061323065297],
+    "user": "",
+    "quelle": "SpotScout Map"
+  },
+  {
+    "name": "Lonely bench",
+    "beschreibung": "",
+    "bild_link": "",
+    "tags": "",
+    "typ": "",
+    "koordinaten": [53.58885360669807, 9.724888577944462],
+    "user": "",
+    "quelle": "SpotScout Map"
+  },
+  {
+    "name": "Another lonely bench sunset",
+    "beschreibung": "",
+    "bild_link": "",
+    "tags": "",
+    "typ": "",
+    "koordinaten": [53.5887302192754, 9.725475311196165],
+    "user": "",
+    "quelle": "SpotScout Map"
+  },
+  {
+    "name": "Bench",
+    "beschreibung": "",
+    "bild_link": "",
+    "tags": "",
+    "typ": "",
+    "koordinaten": [53.58871973810453, 9.72567630954397],
+    "user": "",
+    "quelle": "SpotScout Map"
+  },
+  {
+    "name": "Cliff",
+    "beschreibung": "Perfect view over Naples,vesuv,and sorrento\nAlso a nice spot to go swimming and cliff diving\nNotice the ancient Roman architecture\n!spot is mostly known by local Teenagers",
+    "bild_link": "",
+    "tags": "",
+    "typ": "Cliff,outlook",
+    "koordinaten": [40.633995509506555, 14.351969361305239],
+    "user": "",
+    "quelle": "SpotScout Map"
+  },
+  {
+    "name": "Park",
+    "beschreibung": "MCK Partypark\nKommt alle her für geile stimmung",
+    "bild_link": "",
+    "tags": "",
+    "typ": "Park",
+    "koordinaten": [52.13957712415506, 11.95567846298218],
+    "user": "",
+    "quelle": "SpotScout Map"
+  },
+  {
+    "name": "Au bridge bench",
+    "beschreibung": "",
+    "bild_link": "",
+    "tags": "",
+    "typ": "",
+    "koordinaten": [53.58642907971244, 9.7248987547481],
+    "user": "",
+    "quelle": "SpotScout Map"
+  },
+  {
+    "name": "Viewpoint au",
+    "beschreibung": "",
+    "bild_link": "",
+    "tags": "",
+    "typ": "",
+    "koordinaten": [53.58620166211634, 9.725134118752466],
+    "user": "",
+    "quelle": "SpotScout Map"
+  },
+  {
+    "name": "Viewpoint",
+    "beschreibung": "",
+    "bild_link": "",
+    "tags": "",
+    "typ": "",
+    "koordinaten": [53.58596943102917, 9.725807905087152],
+    "user": "",
+    "quelle": "SpotScout Map"
+  },
+  {
+    "name": "Auweiden Brücke Bench",
+    "beschreibung": "",
+    "bild_link": "",
+    "tags": "",
+    "typ": "",
+    "koordinaten": [53.586134090837284, 9.711019880855513],
+    "user": "",
+    "quelle": "SpotScout Map"
+  },
+  {
+    "name": "10/10 bent",
+    "beschreibung": "",
+    "bild_link": "",
+    "tags": "",
+    "typ": "",
+    "koordinaten": [53.089855423117044, 13.085730671313407],
+    "user": "",
+    "quelle": "SpotScout Map"
+  },
+  {
+    "name": "10/10 bench",
+    "beschreibung": "Nice place to chill",
+    "bild_link": "",
+    "tags": "",
+    "typ": "Bench",
+    "koordinaten": [53.089794211349826, 13.08550536632538],
+    "user": "Luis",
+    "quelle": "SpotScout Map"
+  },
+  {
+    "name": "10/10 bench",
+    "beschreibung": "Nice place to chill",
+    "bild_link": "",
+    "tags": "",
+    "typ": "Bench",
+    "koordinaten": [53.089794211349826, 13.08550536632538],
+    "user": "Luis",
+    "quelle": "SpotScout Map"
   }
+
 
 
 ]

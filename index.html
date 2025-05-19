@@ -33,6 +33,17 @@
     <button id="menuToggle">☰</button>
     <button id="toggleLayer">🛰 Satellit an/aus</button>
     <h1><span id="locationCount">0</span> locations available</h1>
+
+
+    <!-- Cronitor RUM -->
+<!--     Heartbeat tracker -->
+    <script async src="https://rum.cronitor.io/script.js"></script>
+    <script>
+        window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+        cronitor('config', { clientKey: 'c0727f76a75dd33ba25934268bc1857a' });
+    </script>
+
+    
   </header>
 
   <div id="menuOverlay" class="hidden"></div>

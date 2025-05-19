@@ -1187,7 +1187,7 @@
     "quelle": "SpotScout Map"
   },
   {
-    "name": "Viewpoint au",
+    "name": "Viewpoint Au",
     "beschreibung": "",
     "bild_link": "",
     "tags": "",
@@ -1214,26 +1214,6 @@
     "typ": "",
     "koordinaten": [53.586134090837284, 9.711019880855513],
     "user": "",
-    "quelle": "SpotScout Map"
-  },
-  {
-    "name": "10/10 bent",
-    "beschreibung": "",
-    "bild_link": "",
-    "tags": "",
-    "typ": "",
-    "koordinaten": [53.089855423117044, 13.085730671313407],
-    "user": "",
-    "quelle": "SpotScout Map"
-  },
-  {
-    "name": "10/10 bench",
-    "beschreibung": "Nice place to chill",
-    "bild_link": "",
-    "tags": "",
-    "typ": "Bench",
-    "koordinaten": [53.089794211349826, 13.08550536632538],
-    "user": "Luis",
     "quelle": "SpotScout Map"
   },
   {

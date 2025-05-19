@@ -1,4 +1,4 @@
-[
+i[
   {
     "name": "Bench at water Elbe",
     "latitude": 53.5716087,
@@ -974,7 +974,7 @@
   "longitude": 6.133444905281068,
   "image": "https://i.ibb.co/PsHh2mS3/IMG-1205.jpg",
   "description": "Great view of Luxembourg old town a bar with terrace",
-  "type": "viewpoint", "bar",
+  "type": "viewpoint",
   "tags": ["Bar", "Terrace"],
   "user": "anonym"
 }

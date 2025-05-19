@@ -967,6 +967,17 @@
   "type": "Viewpoint",
   "tags": ["Sightseeing", "view", "water", "lake", "lonely", "scenic"],
   "user": "Dasos"
-  }
+  },
+  {
+  "name": "De Gudde Wëllen",
+  "latitude": 49.60927334202265,
+  "longitude": 6.133444905281068,
+  "image": "https://i.ibb.co/PsHh2mS3/IMG-1205.jpg",
+  "description": "Great view of Luxembourg old town a bar with terrace",
+  "type": "viewpoint", "bar",
+  "tags": ["Bar", "Terrace"],
+  "user": "Eingereicht über SpotScout Map"
+}
+
 
 ]

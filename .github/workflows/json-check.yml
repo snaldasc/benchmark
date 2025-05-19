@@ -22,4 +22,4 @@ jobs:
         run: npm install node-fetch@2
 
       - name: Run Cronitor JSON Check
-        run: node scripts/cronitor-json-check.js
+        run: node cronitor-json-check.js

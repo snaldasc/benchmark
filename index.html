@@ -28,15 +28,7 @@
 <body>
   <header>
     <h1>SpotScout</h1>
-     <a href="locations.html">
-      <button>📄 all locations</button>
-    </a>
     <button id="menuToggle">☰</button>
-    <main>
-      <div id="map" style="height: 600px; position: relative;">
-        <button id="toggleLayer" style="position: absolute; top: 10px; right: 10px; z-index: 1000;">🛰 Satellit view</button>
-      </div>
-    </main>
     <h1><span id="locationCount">0</span> locations available</h1>
     <script async src="https://rum.cronitor.io/script.js"></script>
     <script>
@@ -63,10 +55,16 @@
     <a href="https://buymeacoffee.com/spotscout" target="_blank">
       <button>be a supporter</button>
     </a>
-   
+    <a href="locations.html">
+      <button>📄 all locations</button>
+    </a>
   </nav>
 
-  
+  <main>
+    <div id="map" style="height: 600px; position: relative;">
+      <button id="toggleLayer" style="position: absolute; top: 10px; right: 10px; z-index: 1000;">🛰 Satellit an/aus</button>
+    </div>
+  </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="app.js"></script>

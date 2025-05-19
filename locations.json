@@ -485,7 +485,7 @@
     "description": "Beautiful small river in wedel Auweiden, perfect for taking a small bath or to relax with friends",
     "latitude": 53.5859483608103,
     "longitude": 9.726317524830238,
-    "image": "none",
+    "image": "auweiden.png",
     "type": "beach",
     "tags": ["river"],
     "country": "Germany"
@@ -522,8 +522,8 @@
     "country": "Germany"
   },
   {
-    "name": "Sigma",
-    "description": "Sigma sigma sigma spot. Lost my virginity here.",
+    "name": "Lake",
+    "description": "Nice lake to relax.",
     "latitude": 54.987865889156296,
     "longitude": -1.474241633781728,
     "image": "none",

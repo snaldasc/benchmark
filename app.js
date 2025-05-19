@@ -236,7 +236,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function initializeTypeFilter(data) {
     const typeFilter = document.getElementById("typeFilter");
     const allTypes = new Set();
-    data.forEach((loc) => loc.type && allTypes.add(loc.type.toLowerCase()));
+    data.forEach((loc) => {
+      if (loc.type) allTypes.add(loc.type.toLowerCase());
+    });
     allTypes.forEach((type) => {
       const option = document.createElement("option");
       option.value = type;
@@ -265,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("locationCount").textContent = count;
   }
 
-  // Filter-Logik
+  // Filter-Logik & Daten laden
   fetch("https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json")
     .then((res) => res.json())
     .then((data) => {
@@ -324,7 +326,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (marker) {
         marker.openPopup();
       } else {
-        // Falls Marker nicht gefunden, Marker hinzufügen (optional)
         L.marker([loc.latitude, loc.longitude])
           .addTo(map)
           .bindPopup(`<strong>${loc.name}</strong>`)

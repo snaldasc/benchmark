@@ -1,65 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Location Gallery</title>
+  <meta charset="UTF-8" />
+  <title>Locations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       font-family: sans-serif;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 20px;
-      justify-content: center;
+      padding: 1rem;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 800px;
+      margin: 0 auto;
     }
     .location-card {
-      width: 200px;
-      text-align: center;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
       cursor: pointer;
+      aspect-ratio: 1 / 1;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+    .location-card:hover {
+      transform: scale(1.03);
     }
     .location-card img {
       width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
-    .location-card img:hover {
-      transform: scale(1.05);
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
   </style>
 </head>
 <body>
 
-  <div id="gallery"></div>
+  <h1>Locations mit Bildern</h1>
+  <div class="grid" id="locationGrid"></div>
 
   <script>
     fetch('locations.json')
-      .then(response => response.json())
+      .then(res => res.json())
       .then(locations => {
-        const gallery = document.getElementById('gallery');
-
-        locations
-          .filter(loc => loc.image && loc.image.trim() !== "")
-          .forEach(loc => {
+        const grid = document.getElementById('locationGrid');
+        locations.forEach(loc => {
+          if (loc.image) {
             const card = document.createElement('div');
             card.className = 'location-card';
+            card.onclick = () => {
+              window.location.href = `index.html?loc=${loc.id}`;
+            };
 
-            // Gehe zu index.html mit Query-Parametern (z. B. index.html?loc=paris)
-            const link = `index.html?loc=${encodeURIComponent(loc.id)}`;
+            const img = document.createElement('img');
+            img.src = loc.image;
+            img.alt = loc.name || loc.id;
 
-            card.innerHTML = `
-              <a href="${link}">
-                <img src="${loc.image}" alt="${loc.name}">
-                <p>${loc.name}</p>
-              </a>
-            `;
-
-            gallery.appendChild(card);
-          });
+            card.appendChild(img);
+            grid.appendChild(card);
+          }
+        });
       })
-      .catch(error => {
-        console.error('Fehler beim Laden der locations.json:', error);
-        document.getElementById('gallery').textContent = 'Fehler beim Laden der Locations.';
+      .catch(err => {
+        document.getElementById('locationGrid').innerHTML = 'Fehler beim Laden der Locations.';
+        console.error(err);
       });
   </script>
 

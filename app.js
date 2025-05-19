@@ -318,6 +318,14 @@ document.addEventListener("submit", async (e) => {
   });
 });
 
+ const urlParams = new URLSearchParams(window.location.search);
+  const locId = urlParams.get("loc");
+
+  if (locId) {
+    focusLocation(locId);
+  }
+
+
 function focusLocation(id) {
   const locationData = {
     paris: { lat: 48.8566, lng: 2.3522, zoom: 12 },

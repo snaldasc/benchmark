@@ -1,88 +1,175 @@
 <!DOCTYPE html>
+
 <html lang="de">
+
 <head>
+
   <meta charset="UTF-8" />
+
   <title>SpotScout</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   
+
   <!-- Leaflet Stylesheet -->
+
   <link
+
     rel="stylesheet"
+
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+
     crossorigin=""
+
   />
+
+
 
 <!-- Zosia my beautiful lady and lovely wife. I know you wont read this probably you will never but I really really love you. I wanna marry you honey -->
 
+
+
   
+
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
   <link rel="stylesheet" href="styles.css" />
 
+
+
   <!-- PushAlert -->
+
   <script type="text/javascript">
+
     (function(d, t) {
+
       var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+
       g.src = "https://cdn.pushalert.co/integrate_0499cf29ad644996d9398435d3801c7e.js";
+
       s.parentNode.insertBefore(g, s);
+
     })(document, "script");
+
   </script>
+
 </head>
+
 <body>
+
   <header>
+
     <h1>SpotScout</h1>
+
     <button id="menuToggle">☰</button>
+
     <button id="toggleLayer">🛰 Satellit an/aus</button>
+
     <h1><span id="locationCount">0</span> locations available</h1>
 
 
+
+
+
     <!-- Cronitor RUM -->
+
 <!--     Heartbeat tracker -->
+
     <script async src="https://rum.cronitor.io/script.js"></script>
+
     <script>
+
         window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+
         cronitor('config', { clientKey: 'c0727f76a75dd33ba25934268bc1857a' });
+
     </script>
 
+
+
     
+
   </header>
+
+
 
   <div id="menuOverlay" class="hidden"></div>
 
+
+
   <nav id="sideMenu" class="hidden">
+
     <label for="tagFilter">Filter Tags:</label>
+
     <select id="tagFilter"><option value="all">All</option></select>
+
     <br />
+
     <label for="typeFilter">Filter Type:</label>
+
     <select id="typeFilter"><option value="all">All</option></select>
+
     <br />
+
     <label for="countrySelect">Filter Country:</label> 
+
     <select id="countrySelect"><option value="all">All</option></select>
 
+
+
     <ul id="locationList"></ul>
+
     <button id="resetMap">📍 back to your position</button>
+
     <hr />
+
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLJKF-C_VVNV0OK-bEY7d_JMTqMHZUXyd4rtz-PTOwwyyU7w/viewform?usp=dialog">
+
       <button>submit location</button>
+
     </a>
+
     <a href="https://buymeacoffee.com/spotscout" target="_blank">
+
       <button>be a supporter</button>
+
     </a>
+
   </nav>
 
+
+
   <main>
+
     <div id="map" style="height: 600px;"></div>
+
   </main>
 
+
+
   <!-- Leaflet Script -->
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
   
+
   <!-- Dein Script -->
+
   <script src="app.js"></script>
 
+
+
   <!-- Modal für Bildanzeige -->
+
   <div id="imageModal" class="hidden">
+
     <span class="close">&times;</span>
+
     <img class="modal-content" id="modalImg" />
+
   </div>
+
 </body>
+
 </html>

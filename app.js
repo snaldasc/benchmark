@@ -326,12 +326,20 @@ document.addEventListener("submit", async (e) => {
   }
 
 
-function focusLocation(id) {
-  const locationData = {
-    paris: { lat: 48.8566, lng: 2.3522, zoom: 12 },
-    berlin: { lat: 52.52, lng: 13.405, zoom: 12 },
-    // ...weitere Orte
-  };
+function focusLocationFromParam(data) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const locId = urlParams.get("loc");
+
+  if (!locId) return;
+
+  const loc = data.find(l => l.id === locId); // 'id' muss im JSON existieren!
+  if (loc) {
+    map.setView([loc.latitude, loc.longitude], 16);
+    const marker = L.marker([loc.latitude, loc.longitude]).addTo(map);
+    marker.bindPopup(`<strong>${loc.name}</strong>`).openPopup();
+  }
+}
+
 
   const loc = locationData[id];
   if (loc && typeof map !== 'undefined') {

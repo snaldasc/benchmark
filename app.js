@@ -278,6 +278,8 @@ document.addEventListener("submit", async (e) => {
 
     try {
       const response = await fetch(webhookUrl, {
+        // Cronitor heartbeat pingen
+        fetch("https://cronitor.link/p/100dad5c384844918c1cba79db7bd291/xZaC3Q"); 
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

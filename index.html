@@ -14,22 +14,61 @@
       s.parentNode.insertBefore(g, s);
     })(document, "script");
   </script>
-<style>
-  body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: #121212;
-  color: #f1f1f1;
-  height: 100%;
-}
-</style>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #121212;
+      color: #f1f1f1;
+      height: 100%;
+    }
+    #toggleLayer {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: #1f1f1f;
+    }
+    header h1 {
+      margin: 0 10px;
+      font-size: 1.5em;
+    }
+    #headerActions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    #headerActions a button {
+      font-size: 0.9em;
+      padding: 5px 10px;
+    }
+  </style>
   <!-- Zosia my beautiful lady and lovely wife. I know you wont read this probably you will never but I really really love you. I wanna marry you honey -->
 </head>
 <body>
   <header>
     <h1>SpotScout</h1>
-    <button id="menuToggle">☰</button>
-    <h1><span id="locationCount">0</span> locations available</h1>
+    <div id="headerActions">
+      <span><span id="locationCount">0</span> locations available</span>
+      <a href="locations.html">
+        <button>📄 All locations</button>
+      </a>
+      <button id="menuToggle">☰</button>
+    </div>
     <script async src="https://rum.cronitor.io/script.js"></script>
     <script>
       window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
@@ -55,14 +94,11 @@
     <a href="https://buymeacoffee.com/spotscout" target="_blank">
       <button>be a supporter</button>
     </a>
-    <a href="locations.html">
-      <button>📄 all locations</button>
-    </a>
   </nav>
 
   <main>
     <div id="map" style="height: 600px; position: relative;">
-      <button id="toggleLayer" style="position: absolute; top: 10px; right: 10px; z-index: 1000;">🛰 Satellit an/aus</button>
+      <button id="toggleLayer">🛰</button>
     </div>
   </main>
 

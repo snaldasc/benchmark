@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "Bench at water Elbe",
     "latitude": 53.5716087,
     "longitude": 9.6740014,
@@ -11,6 +12,7 @@
     "user": "Dasos"
   },
   {
+    "id": 2,
     "name": "Bench at water Elbe 2",
     "latitude": 53.5715442,
     "longitude": 9.6743027,
@@ -22,6 +24,7 @@
     "user": "Dasos"
   },
   {
+    "id": 3,
     "name": "Bench at small street in the Forest",
     "description": "A bench at a small street infront of an Forest",
     "latitude": 50.7711111,
@@ -33,6 +36,7 @@
     "user": "Z"
   },
   {
+    "id": 4,
     "name": "Fummelfelsen / lovers rock",
     "description": "This cliff is a beautiful place where people enjoy making out. Watch out for the height and the loose dirt",
     "latitude": 50.633646,
@@ -44,6 +48,7 @@
 "user": "Dasos"
   },
   {
+     "id": 5,
     "name": "RockwithView",
     "description": "Rock with a beautiful view on the water - may be a bit difficult to find",
     "latitude": 50.6313953,
@@ -55,6 +60,7 @@
 "user": "Dasos"
   },
   {
+     "id": 6,
     "name": "Bench in forest water view",
     "description": "Beautiful view down a hill in a forest on the water",
     "latitude": 50.6266661,
@@ -66,6 +72,7 @@
 "user": "Dasos"
   },
   {
+     "id": 7,
     "name": "Bench Worbelescheed",
     "description": "Beautiful bench in the middle of nowhere",
     "latitude": 50.5824818,
@@ -977,7 +984,118 @@
   "type": "viewpoint",
   "tags": ["Bar", "Terrace"],
   "user": "anonym"
-}
+},
+  {
+    "name": "Shipwreck",
+    "description": "Only visible on low tide",
+    "image": "https://i.ibb.co/Xrj7MBsL/1000103623.jpg",
+    "tags": ["Shipwreck", "lostplace"],
+    "type": "Lostplace",
+    "latitude": 53.55977399759555,
+    "longitude": 9.78644192211958,
+    "user": "Dasos"
+  },
+  {
+    "name": "Shipwreck",
+    "description": "Only visible at low tide",
+    "image": "https://i.ibb.co/xSGw4qKy/1000103610.jpg",
+    "tags": ["Shipwreck", "lostplace"],
+    "type": "Lostplace",
+    "latitude": 53.55916539509917,
+    "longitude": 9.788378477036447,
+    "user": "Dasos"
+  },
+  {
+    "name": "Königs felsen",
+    "description": "\"Kings view\" on the Eiffel",
+    "image": "https://i.ibb.co/27kSq8Gn/1000021183.jpg",
+    "tags": ["Cliff", "picknick", "water", "lake"],
+    "type": "Cliff",
+    "latitude": 50.63596073431434,
+    "longitude": 6.398720740860982,
+    "user": "Dasos"
+  },
+  {
+    "name": "Beach",
+    "description": "-",
+    "image": "https://i.ibb.co/Txk1DxVL/5208.jpg",
+    "tags": [],
+    "type": "",
+    "latitude": 54.43339104624798,
+    "longitude": 10.168558135429782,
+    "user": ""
+  },
+
+  {
+    "name": "Bbq place",
+    "description": "-",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 56.476106220351774,
+    "longitude": 8.124985098746283,
+    "user": ""
+  },
+  {
+    "name": "Couple of benches with view on the water",
+    "description": "-",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 56.47650618085084,
+    "longitude": 8.123676180732945,
+    "user": ""
+  },
+  {
+    "name": "Monte Mao",
+    "description": "Recommend going at evening and good weather nice downhillbike trails",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 44.24321174438208,
+    "longitude": 8.420119285583498,
+    "user": ""
+  },
+  {
+    "name": "Cliff",
+    "description": "Great outlook over the Sea and Liguria\nPay attention to not trespass the military institution",
+    "image": "https://i.ibb.co/FLkHDsg6/1000016425.jpg",
+    "tags": [],
+    "type": "",
+    "latitude": 44.19345860562955,
+    "longitude": 8.419215695466846,
+    "user": ""
+  },
+  {
+    "name": "NVA Museum",
+    "description": "Entspanntes museum viel su sehen Kampflugzeuge der NVA und des kalten kriegs",
+    "image": "https://i.ibb.co/RGbnnTbL/1000010670.jpg",
+    "tags": [],
+    "type": "Museum",
+    "latitude": 52.83223418813556,
+    "longitude": 13.676884174346926,
+    "user": ""
+  },
+  {
+    "name": "Nice little waterfall",
+    "description": "Great hiking area very beautiful nature",
+    "image": "https://i.ibb.co/d011wLDn/1000017035.jpg",
+    "tags": [],
+    "type": "Hiking spot",
+    "latitude": 44.24255765243044,
+    "longitude": 8.281088165240364,
+    "user": ""
+  },
+  {
+    "name": "Oberhaching sunsett",
+    "description": "Perfect view of sunsett",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 48.027973483339395,
+    "longitude": 11.576365828514101,
+    "user": ""
+  }
 
 
 ]

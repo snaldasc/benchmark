@@ -329,10 +329,9 @@ document.addEventListener("submit", async (e) => {
 function focusLocationFromParam(data) {
   const urlParams = new URLSearchParams(window.location.search);
   const locId = urlParams.get("loc");
-
   if (!locId) return;
 
-  const loc = data.find(l => l.id === locId); // 'id' muss im JSON existieren!
+  const loc = data.find((l) => l.id === locId);
   if (loc) {
     map.setView([loc.latitude, loc.longitude], 16);
     const marker = L.marker([loc.latitude, loc.longitude]).addTo(map);
@@ -340,6 +339,21 @@ function focusLocationFromParam(data) {
   }
 }
 
+// Then call this after you load your data:
+fetch("https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json")
+  .then((res) => res.json())
+  .then((data) => {
+    renderMarkers(data);
+    initializeTagFilter(data);
+    initializeTypeFilter(data);
+    initializeCountryFilter(data);
+    updateLocationCount(data.length);
+
+    // Apply filter event handlers here...
+
+    // Focus location after everything is ready
+    focusLocationFromParam(data);
+  });
 
   const loc = locationData[id];
   if (loc && typeof map !== 'undefined') {

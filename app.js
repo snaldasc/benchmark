@@ -317,3 +317,16 @@ document.addEventListener("submit", async (e) => {
     modalImg.src = "";
   });
 });
+
+function focusLocation(id) {
+  const locationData = {
+    paris: { lat: 48.8566, lng: 2.3522, zoom: 12 },
+    berlin: { lat: 52.52, lng: 13.405, zoom: 12 },
+    // ...weitere Orte
+  };
+
+  const loc = locationData[id];
+  if (loc && typeof map !== 'undefined') {
+    map.setView([loc.lat, loc.lng], loc.zoom);
+  }
+}

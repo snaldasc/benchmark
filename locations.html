@@ -38,19 +38,24 @@
       .then(locations => {
         const gallery = document.getElementById('gallery');
 
-        locations.forEach(loc => {
-          const card = document.createElement('div');
-          card.className = 'location-card';
+        locations
+          .filter(loc => loc.image && loc.image.trim() !== "")
+          .forEach(loc => {
+            const card = document.createElement('div');
+            card.className = 'location-card';
 
-          card.innerHTML = `
-            <a href="index.html#location-${loc.id}">
-              <img src="${loc.image}" alt="${loc.name}">
-              <p>${loc.name}</p>
-            </a>
-          `;
+            // Gehe zu index.html mit Query-Parametern (z. B. index.html?loc=paris)
+            const link = `index.html?loc=${encodeURIComponent(loc.id)}`;
 
-          gallery.appendChild(card);
-        });
+            card.innerHTML = `
+              <a href="${link}">
+                <img src="${loc.image}" alt="${loc.name}">
+                <p>${loc.name}</p>
+              </a>
+            `;
+
+            gallery.appendChild(card);
+          });
       })
       .catch(error => {
         console.error('Fehler beim Laden der locations.json:', error);

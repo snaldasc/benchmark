@@ -84,5 +84,17 @@
     <span class="close">&times;</span>
     <img class="modal-content" id="modalImg" />
   </div>
+
+<script>
+  // Beim Laden prüfen, ob ein Query-Parameter wie ?loc=paris übergeben wurde
+  const urlParams = new URLSearchParams(window.location.search);
+  const locId = urlParams.get('loc');
+
+  if (locId && typeof focusLocation === 'function') {
+    focusLocation(locId); // Muss in deiner Karte definiert sein
+  }
+</script>
+
+  
 </body>
 </html>

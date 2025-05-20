@@ -1225,7 +1225,106 @@
     "latitude": 53.089794211349826,
     "longitude": 13.08550536632538,
     "user": "Luis"
+  },
+  {
+    "name": "Bench at basketball place",
+    "description": "",
+    "image": "https://i.ibb.co/6JbY2mWq/1000119901.jpg",
+    "tags": [],
+    "type": "",
+    "latitude": 53.58666044106215,
+    "longitude": 9.701383709830795,
+    "user": ""
+  },
+  {
+    "name": "Marsch",
+    "description": "View on field",
+    "image": "https://i.ibb.co/1Y4zw2dj/1000039506.jpg",
+    "tags": [],
+    "type": "Chill spot",
+    "latitude": 53.590213543349854,
+    "longitude": 9.683384885962628,
+    "user": "Zappen"
+  },
+  {
+    "name": "Picknick spot",
+    "description": "",
+    "image": "https://i.ibb.co/FkrxXTbC/1000119919.jpg",
+    "tags": [],
+    "type": "",
+    "latitude": 53.61642258666906,
+    "longitude": 9.69125133017733,
+    "user": ""
+  },
+  {
+    "name": "Beach in forest",
+    "description": "Beautiful lonely beach in the forest",
+    "image": "https://i.ibb.co/pjHpkppv/1000119922.jpg",
+    "tags": ["Beach", "forest", "lonely"],
+    "type": "Beach",
+    "latitude": 53.614960116665,
+    "longitude": 9.695091918548219,
+    "user": "Zappen"
+  },
+  {
+    "name": "Bench at lake",
+    "description": "",
+    "image": "https://i.ibb.co/JRrGWdT5/1000119923.jpg",
+    "tags": [],
+    "type": "Bench",
+    "latitude": 53.6158190421305,
+    "longitude": 9.69486108045314,
+    "user": "Dasos"
+  },
+  {
+    "name": "Bench",
+    "description": "",
+    "image": "https://i.ibb.co/b5VYmggw/1000119932.jpg",
+    "tags": [],
+    "type": "",
+    "latitude": 53.61602216916003,
+    "longitude": 9.695143047645734,
+    "user": ""
+  },
+  {
+    "name": "Bench at lake",
+    "description": "Bench at lake",
+    "image": "https://i.ibb.co/v6sB1VvF/1000119938.jpg",
+    "tags": ["Lake", "water"],
+    "type": "Bench",
+    "latitude": 53.6160767958372,
+    "longitude": 9.695128798406348,
+    "user": "Zappen"
+  },
+  {
+    "name": "Holmer Sandberge",
+    "description": "",
+    "image": "https://i.ibb.co/67ZnLG4V/1000039522.jpg",
+    "tags": ["Sand"],
+    "type": "Picknick",
+    "latitude": 53.61729717239774,
+    "longitude": 9.697789516189564,
+    "user": "Zappen"
+  },
+  {
+    "name": "Bank in den Sandbergen",
+    "description": "",
+    "image": "https://i.ibb.co/C5D3LJGw/1000039523.jpg",
+    "tags": ["Bank"],
+    "type": "Bank",
+    "latitude": 53.6166399993981,
+    "longitude": 9.693431792814616,
+    "user": "Zappen"
+  },
+  {
+    "name": "Nice bench by a dock",
+    "description": "A nice plays to sit and relax, it’s Quiet it and peaceful",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 64.61803719666825,
+    "longitude": 21.240917444229126,
+    "user": ""
   }
-
 
 ]

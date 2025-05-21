@@ -254,7 +254,7 @@ document.addEventListener("submit", async (e) => {
       }
     }
 
-    const webhookUrl = "https://discord.com/api/webhooks/1373971200597954570/XG53FMe8oECWmKofjfuPApSHojp22EJwKJkLIttrUjvq8TEpHPVXAiwAD9Jx3b9AG8_I";
+    const webhookUrl = "https://discord.com/api/webhooks/1374824535194472709/Uh8bzWWLB9LSkwB6NUmod7WNIMzVEnxETdOYiOXSt9e5BfuiCRtg-DH4yaFV8wjTr9ot";
 
     const payload = {
       username: "SpotScout locations",

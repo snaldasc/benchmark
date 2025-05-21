@@ -1325,6 +1325,37 @@
     "latitude": 64.61803719666825,
     "longitude": 21.240917444229126,
     "user": ""
-  }
+  },
+{
+  "name": "Sealight",
+  "description": "Best place ever",
+  "image": "",
+  "tags": [],
+  "type": "",
+  "latitude": 37.768238302400164,
+  "longitude": 27.261500358581547,
+  "user": ""
+},
+  {
+  "name": "Waterview",
+  "description": "A beatiful view over the river",
+  "image": "",
+  "tags": [],
+  "type": "",
+  "latitude": 53.59753509019801,
+  "longitude": 9.624924659729004,
+  "user": ""
+},
+{
+  "name": "Bench on a jetty",
+  "description": "Beautifull view on the water",
+  "image": "netherlands.png",
+  "tags": ["Water", "sunset", "jetty"],
+  "type": "Bench",
+  "latitude": 52.0300262,
+  "longitude": 4.6290375,
+  "user": ""
+}
+
 
 ]

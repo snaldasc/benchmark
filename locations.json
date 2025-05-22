@@ -1355,7 +1355,88 @@
   "latitude": 52.0300262,
   "longitude": 4.6290375,
   "user": ""
-}
+},
+  {
+    "name": "Oker",
+    "description": "A few benches next to the water, a lot of nature and a very calm vibe",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 52.234684595479486,
+    "longitude": 10.518171361181885,
+    "user": "may"
+  },
+  {
+    "name": "BBQ",
+    "description": "Perfect place for a BBQ with a sand and a lake to swim in.",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 52.22635866912459,
+    "longitude": 10.550864660181107,
+    "user": "may"
+  },
+  {
+    "name": "Grinsekatz",
+    "description": "Beach bar, a lot of fun when you're out with friends (for free)",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 52.25193439375549,
+    "longitude": 10.521141488570722,
+    "user": "may"
+  },
+  {
+    "name": "Fireplace",
+    "description": "A little fireplace area in the woods",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 52.24353938177338,
+    "longitude": 10.808131346711889,
+    "user": "may"
+  },
+  {
+    "name": "Park",
+    "description": "Best food trucks and benches right next to Gosford Park",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 54.30544623505774,
+    "longitude": -6.518550084438175,
+    "user": "may"
+  },
+  {
+    "name": "Beach",
+    "description": "Incredible beach",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 44.06627731968991,
+    "longitude": 12.587432437576355,
+    "user": "may"
+  },
+  {
+    "name": "Urban air",
+    "description": "Super fun jumping park",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 39.94328017597587,
+    "longitude": -82.8262495994568,
+    "user": ""
+  },
+  {
+    "name": "View Bench",
+    "description": "Beautifull view",
+    "image": "https://i.ibb.co/gLJ80NF0/1000032837.jpg",
+    "tags": [],
+    "type": "Bench",
+    "latitude": 52.131417032727676,
+    "longitude": 4.3185803368210305,
+    "user": "Anoymous"
+  }
+
 
 
 ]

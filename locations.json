@@ -1435,6 +1435,126 @@
     "latitude": 52.131417032727676,
     "longitude": 4.3185803368210305,
     "user": "Anoymous"
+  },
+  {
+    "name": "bench",
+    "description": "Bench right next to the hospital, cool area to hang out with a friend when you get bored",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 52.23275802393754,
+    "longitude": 10.528940755175428,
+    "user": "may"
+  },
+  {
+    "name": "park",
+    "description": "Small park but a great place to make memories",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 52.259409115792636,
+    "longitude": 10.526178939035164,
+    "user": "may"
+  },
+  {
+    "name": "hinterm schloss",
+    "description": "Benches, playground, right behind the mall",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 52.26440382870829,
+    "longitude": 10.530116558074951,
+    "user": "may"
+  },
+  {
+    "name": "Great outlook at the edge of the skiarea",
+    "description": "At the edge of the slope for the best view without people or other slopes",
+    "image": "https://i.ibb.co/0pFwYcmY/1000023492.jpg",
+    "tags": [],
+    "type": "Ski slope",
+    "latitude": 47.01191729549149,
+    "longitude": 10.47018217854202,
+    "user": ""
+  },
+  {
+    "name": "vv",
+    "description": "",
+    "image": "",
+    "tags": [],
+    "type": "",
+    "latitude": 46.85737385116763,
+    "longitude": 8.655853271484377,
+    "user": ""
+  },
+  {
+    "name": "Lake Štěpán",
+    "description": "A small bit pretty lake. Close to the city and very pretty",
+    "image": "",
+    "tags": ["Lake"],
+    "type": "Lake",
+    "latitude": 49.86335148767228,
+    "longitude": 18.193903693616022,
+    "user": "Adamikoss"
+  },
+  {
+    "name": "Bench with View on the lake",
+    "description": "",
+    "image": "https://i.ibb.co/1fntzStQ/1000121849.jpg",
+    "tags": ["Bench", "lake", "view", "water"],
+    "type": "Bench",
+    "latitude": 53.62367505110365,
+    "longitude": 11.419901847763459,
+    "user": "Dasos"
+  },
+  {
+    "name": "Liebesinsel Schwerin",
+    "description": "Traumhafter Blick auf den Schweriner See",
+    "image": "https://i.ibb.co/LzqHtPVn/1000025559.jpg",
+    "tags": ["View"],
+    "type": "Bench",
+    "latitude": 53.623685161273706,
+    "longitude": 11.420255899429321,
+    "user": "Sönke"
+  },
+  {
+    "name": "View Rock benches",
+    "description": "",
+    "image": "https://i.ibb.co/4w4QJsQt/1000121856.jpg",
+    "tags": ["View", "lake"],
+    "type": "Bench",
+    "latitude": 53.62446261301956,
+    "longitude": 11.420232597531871,
+    "user": "Dasos"
+  },
+  {
+    "name": "Außenmühlenteich Harburg",
+    "description": "",
+    "image": "https://i.ibb.co/4ZW9LVbk/1000025679.jpg",
+    "tags": ["View"],
+    "type": "Bench",
+    "latitude": 53.4503617174319,
+    "longitude": 9.978407621383669,
+    "user": "Sönke"
+  },
+  {
+    "name": "Stein am Außenmühlenteich",
+    "description": "Rock with nice view to the lake.",
+    "image": "https://i.ibb.co/RpHGXbRp/1000025683.jpg",
+    "tags": ["View and the rock"],
+    "type": "Rock",
+    "latitude": 53.450419220423115,
+    "longitude": 9.980907440185549,
+    "user": "Sönke"
+  },
+  {
+    "name": "Alter Friedhof Harburg",
+    "description": "",
+    "image": "https://i.ibb.co/pNpfFjP/1000025690.jpg",
+    "tags": ["Bench and view"],
+    "type": "Bench",
+    "latitude": 53.45541139010241,
+    "longitude": 9.980727553329416,
+    "user": "Sönke"
   }
 
 

@@ -254,8 +254,10 @@ document.addEventListener("submit", async (e) => {
       }
     }
 
-    const webhookUrl = "https://discord.com/api/webhooks/1396407634927812638/0HbT8gtJq9vYwBQMl7uvya4DAsyB1IVmOq2C7_ibAvMQlB77GfnM_Nuy2njN_UPLFlkY";
-
+    const webhookUrl = "https://discord.com/api/webhooks/1448311454771056822/sjpsso-WxPDvyRs72Z1tiyX39Z85a8EzoWHuoiUryTUIeE6T4DzFhi_mPlXnzig2CPMO
+";
+  
+// https://discord.com/api/webhooks/1396407634927812638/0HbT8gtJq9vYwBQMl7uvya4DAsyB1IVmOq2C7_ibAvMQlB77GfnM_Nuy2njN_UPLFlkY old one
     const payload = {
       username: "SpotScout locations",
       embeds: [

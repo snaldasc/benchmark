@@ -211,8 +211,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <img id="imagePreview" src="" 
           style="display:none; width: 90px; height: auto; margin-top: 6px; border-radius: 4px; border: 1px solid #aaa;" />
 
-        <input name="tags" placeholder="Tags" style="width: 100%; margin: 4px 0;" /><br />
-        <input name="type" placeholder="Type" style="width: 100%; margin: 4px 0;" /><br />
+        <input name="tags" placeholder="Tags (water,Skate,etc)" style="width: 100%; margin: 4px 0;" /><br />
+        <input name="type" placeholder="Type (bench, picknick,etc)" style="width: 100%; margin: 4px 0;" /><br />
         <input name="user" placeholder="your name (optional)" style="width: 100%; margin: 4px 0;"><br />
 
         <input type="hidden" name="lat" value="${lat}" />

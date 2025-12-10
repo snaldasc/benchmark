@@ -199,13 +199,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const popupForm = `
       <form id="spotForm">
         <strong>📌 Submit new Spot</strong><br>
-        <input name="title" placeholder="Location Name" required style="width: 100%; margin: 4px 0;" /><br />
+
+        <input name="title" placeholder="Name" required style="width: 100%; margin: 4px 0;" /><br />
         <textarea name="description" placeholder="Description" style="width: 100%; margin: 4px 0;"></textarea><br />
 
-        <input id="imageUploadField" type="file" name="imageFile" accept="image/*" style="width: 100%; margin: 4px 0;" />
+        <!-- 🔥 NEW: file input with ID -->
+        <input id="imageUploadField" type="file" name="imageFile" accept="image/*" 
+          style="width: 100%; margin: 4px 0;" />
 
-        <input name="tags" placeholder="Tags (z. B. view description, water, Skate, Lostplace, parkour)" style="width: 100%; margin: 4px 0;" /><br />
-        <input name="type" placeholder="location type (bench, picknick, viewpoint etc.)" style="width: 100%; margin: 4px 0;" /><br />
+        <!-- 🔥 NEW: thumbnail preview -->
+        <img id="imagePreview" src="" 
+          style="display:none; width: 90px; height: auto; margin-top: 6px; border-radius: 4px; border: 1px solid #aaa;" />
+
+        <input name="tags" placeholder="Tags" style="width: 100%; margin: 4px 0;" /><br />
+        <input name="type" placeholder="Type" style="width: 100%; margin: 4px 0;" /><br />
         <input name="user" placeholder="your name (optional)" style="width: 100%; margin: 4px 0;"><br />
 
         <input type="hidden" name="lat" value="${lat}" />
@@ -216,17 +223,32 @@ document.addEventListener("DOMContentLoaded", function () {
     L.popup().setLatLng([lat, lng]).setContent(popupForm).openOn(map);
   });
 
-  // 🔥 NEW CODE — visual feedback when picture is selected
+  // 🔥 NEW — Thumbnail preview + button feedback
   document.addEventListener("change", function (e) {
     if (e.target.id === "imageUploadField") {
       const fileInput = e.target;
+      const preview = document.getElementById("imagePreview");
 
-      if (fileInput.files && fileInput.files.length > 0) {
+      if (fileInput.files && fileInput.files[0]) {
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function (ev) {
+          preview.src = ev.target.result;
+          preview.style.display = "block";
+        };
+
+        reader.readAsDataURL(file);
+
+        // Visual feedback
         fileInput.style.border = "2px solid #00c851";
         fileInput.style.background = "#ccffdd";
         fileInput.style.color = "#006622";
         fileInput.title = "Image selected";
       } else {
+        preview.src = "";
+        preview.style.display = "none";
+
         fileInput.style.border = "";
         fileInput.style.background = "";
         fileInput.style.color = "";
@@ -236,85 +258,85 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Neuen Spot via Discord Webhook absenden
-document.addEventListener("submit", async (e) => {
-  if (e.target.id === "spotForm") {
-    e.preventDefault();
-    const formData = new FormData(e.target);
+  document.addEventListener("submit", async (e) => {
+    if (e.target.id === "spotForm") {
+      e.preventDefault();
+      const formData = new FormData(e.target);
 
-    const title = formData.get("title");
-    const description = formData.get("description");
-    const tags = formData.get("tags");
-    const type = formData.get("type");
-    const user = formData.get("user") || "-";
-    const lat = formData.get("lat");
-    const lng = formData.get("lng");
+      const title = formData.get("title");
+      const description = formData.get("description");
+      const tags = formData.get("tags");
+      const type = formData.get("type");
+      const user = formData.get("user") || "-";
+      const lat = formData.get("lat");
+      const lng = formData.get("lng");
 
-    let imageUrl = "-";
-    const imageFile = formData.get("imageFile");
+      let imageUrl = "-";
+      const imageFile = formData.get("imageFile");
 
-    if (imageFile && imageFile.size > 0) {
-      const uploadForm = new FormData();
-      uploadForm.append("image", imageFile);
+      if (imageFile && imageFile.size > 0) {
+        const uploadForm = new FormData();
+        uploadForm.append("image", imageFile);
+
+        try {
+          const uploadResponse = await fetch("https://api.imgbb.com/1/upload?key=f64bb7ebe09ca4cc1cb5fa32b550cf26", {
+            method: "POST",
+            body: uploadForm,
+          });
+
+          const uploadResult = await uploadResponse.json();
+          if (uploadResult.success) {
+            imageUrl = uploadResult.data.url;
+          } else {
+            alert("⚠️ Bild konnte nicht hochgeladen werden.");
+          }
+        } catch (err) {
+          alert("❌ Fehler beim Hochladen des Bildes.");
+          return;
+        }
+      }
+
+      const webhookUrl = "https://discord.com/api/webhooks/1448311454771056822/sjpsso-WxPDvyRs72Z1tiyX39Z85a8EzoWHuoiUryTUIeE6T4DzFhi_mPlXnzig2CPMO";
+
+      const payload = {
+        username: "SpotScout locations",
+        embeds: [
+          {
+            title: "📍 Neuer Spot eingereicht",
+            color: 0x00b0f4,
+            fields: [
+              { name: "Name", value: title || "-" },
+              { name: "Beschreibung", value: description || "-" },
+              { name: "Bild-Link", value: imageUrl },
+              { name: "Tags", value: tags || "-" },
+              { name: "Typ", value: type || "-" },
+              { name: "Koordinaten", value: `${lat}, ${lng}` },
+              { name: "User", value: user },
+            ],
+            footer: { text: "Eingereicht über SpotScout Map" },
+          },
+        ],
+      };
 
       try {
-        const uploadResponse = await fetch("https://api.imgbb.com/1/upload?key=f64bb7ebe09ca4cc1cb5fa32b550cf26", {
+        const response = await fetch(webhookUrl, {
           method: "POST",
-          body: uploadForm,
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
         });
 
-        const uploadResult = await uploadResponse.json();
-        if (uploadResult.success) {
-          imageUrl = uploadResult.data.url;
+        if (response.ok) {
+          alert("🎉 Danke! Dein Spot wurde gesendet.");
         } else {
-          alert("⚠️ Bild konnte nicht hochgeladen werden.");
+          alert("❌ Fehler beim Senden. Bitte erneut versuchen.");
         }
       } catch (err) {
-        alert("❌ Fehler beim Hochladen des Bildes.");
-        return;
+        alert("❌ Verbindung fehlgeschlagen.");
       }
+
+      map.closePopup();
     }
-
-    const webhookUrl = "https://discord.com/api/webhooks/1448311454771056822/sjpsso-WxPDvyRs72Z1tiyX39Z85a8EzoWHuoiUryTUIeE6T4DzFhi_mPlXnzig2CPMO";
-
-    const payload = {
-      username: "SpotScout locations",
-      embeds: [
-        {
-          title: "📍 Neuer Spot eingereicht",
-          color: 0x00b0f4,
-          fields: [
-            { name: "Name", value: title || "-" },
-            { name: "Beschreibung", value: description || "-" },
-            { name: "Bild-Link", value: imageUrl },
-            { name: "Tags", value: tags || "-" },
-            { name: "Typ", value: type || "-" },
-            { name: "Koordinaten", value: `${lat}, ${lng}` },
-            { name: "User", value: user },
-          ],
-          footer: { text: "Eingereicht über SpotScout Map" },
-        },
-      ],
-    };
-
-    try {
-      const response = await fetch(webhookUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (response.ok) {
-        alert("🎉 Danke! Dein Spot wurde gesendet.");
-      } else {
-        alert("❌ Fehler beim Senden. Bitte erneut versuchen.");
-      }
-    } catch (err) {
-      alert("❌ Verbindung fehlgeschlagen.");
-    }
-
-    map.closePopup();
-  }
-});
+  });
 
   // Modal Bildanzeige
   const modal = document.getElementById("imageModal");

@@ -1,3 +1,4 @@
+// https://discord.gg/Rs2DNEEH discord server backup
 document.addEventListener("DOMContentLoaded", function () {
   const map = L.map("map").setView([53.5716, 9.6740], 14);
 

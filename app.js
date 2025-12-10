@@ -199,14 +199,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const popupForm = `
       <form id="spotForm">
         <strong>📌 Submit new Spot</strong><br>
-        <input name="title" placeholder="Name" required style="width: 100%; margin: 4px 0;" /><br />
+        <input name="title" placeholder="Location Name" required style="width: 100%; margin: 4px 0;" /><br />
         <textarea name="description" placeholder="Description" style="width: 100%; margin: 4px 0;"></textarea><br />
 
-        <!-- 🔥 NEW ID ADDED -->
         <input id="imageUploadField" type="file" name="imageFile" accept="image/*" style="width: 100%; margin: 4px 0;" />
 
         <input name="tags" placeholder="Tags (z. B. view description, water, Skate, Lostplace, parkour)" style="width: 100%; margin: 4px 0;" /><br />
-        <input name="type" placeholder="Type of location (z. B. bench, picknick, viewpoint etc.)" style="width: 100%; margin: 4px 0;" /><br />
+        <input name="type" placeholder="location type (bench, picknick, viewpoint etc.)" style="width: 100%; margin: 4px 0;" /><br />
         <input name="user" placeholder="your name (optional)" style="width: 100%; margin: 4px 0;"><br />
 
         <input type="hidden" name="lat" value="${lat}" />

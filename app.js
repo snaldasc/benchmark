@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const countryMatch =
             selectedCountry === "all" ||
             (loc.country && loc.country.toLowerCase() === selectedCountry);
+
           return tagMatch && typeMatch && countryMatch;
         });
 
@@ -200,12 +201,13 @@ document.addEventListener("DOMContentLoaded", function () {
         <strong>📌 Submit new Spot</strong><br>
         <input name="title" placeholder="Name" required style="width: 100%; margin: 4px 0;" /><br />
         <textarea name="description" placeholder="Description" style="width: 100%; margin: 4px 0;"></textarea><br />
-        <input type="file" name="imageFile" accept="image/*" style="width: 100%; margin: 4px 0;" />
 
-        <input name="tags" placeholder="Tags (z. B. view description, water, Skate, Lostplace, parkour)" style="width: 100%; margin: 4px 0;" /><br />
-        <input name="type" placeholder="Type of location (z. B. bench, picknick, viewpoint etc.)" style="width: 100%; margin: 4px 0;" /><br />
- <input name="user" placeholder="your name (optional)" style="width: 100%; margin: 4px 0;"></textarea><br />
+        <!-- 🔥 NEW ID ADDED -->
+        <input id="imageUploadField" type="file" name="imageFile" accept="image/*" style="width: 100%; margin: 4px 0;" />
 
+        <input name="tags" placeholder="Tags (z. B. view description, water, Skate, Lostplace, parkour)" style="width: 100%; margin: 4px 0;" /><br />
+        <input name="type" placeholder="Type of location (z. B. bench, picknick, viewpoint etc.)" style="width: 100%; margin: 4px 0;" /><br />
+        <input name="user" placeholder="your name (optional)" style="width: 100%; margin: 4px 0;"><br />
 
         <input type="hidden" name="lat" value="${lat}" />
         <input type="hidden" name="lng" value="${lng}" />
@@ -213,6 +215,25 @@ document.addEventListener("DOMContentLoaded", function () {
       </form>
     `;
     L.popup().setLatLng([lat, lng]).setContent(popupForm).openOn(map);
+  });
+
+  // 🔥 NEW CODE — visual feedback when picture is selected
+  document.addEventListener("change", function (e) {
+    if (e.target.id === "imageUploadField") {
+      const fileInput = e.target;
+
+      if (fileInput.files && fileInput.files.length > 0) {
+        fileInput.style.border = "2px solid #00c851";
+        fileInput.style.background = "#ccffdd";
+        fileInput.style.color = "#006622";
+        fileInput.title = "Image selected";
+      } else {
+        fileInput.style.border = "";
+        fileInput.style.background = "";
+        fileInput.style.color = "";
+        fileInput.title = "";
+      }
+    }
   });
 
   // Neuen Spot via Discord Webhook absenden
@@ -255,8 +276,7 @@ document.addEventListener("submit", async (e) => {
     }
 
     const webhookUrl = "https://discord.com/api/webhooks/1448311454771056822/sjpsso-WxPDvyRs72Z1tiyX39Z85a8EzoWHuoiUryTUIeE6T4DzFhi_mPlXnzig2CPMO";
-  
-// https://discord.com/api/webhooks/1396407634927812638/0HbT8gtJq9vYwBQMl7uvya4DAsyB1IVmOq2C7_ibAvMQlB77GfnM_Nuy2njN_UPLFlkY old one
+
     const payload = {
       username: "SpotScout locations",
       embeds: [
@@ -279,7 +299,6 @@ document.addEventListener("submit", async (e) => {
 
     try {
       const response = await fetch(webhookUrl, {
-        // Cronitor heartbeat pingen
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -297,7 +316,6 @@ document.addEventListener("submit", async (e) => {
     map.closePopup();
   }
 });
-
 
   // Modal Bildanzeige
   const modal = document.getElementById("imageModal");

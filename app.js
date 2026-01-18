@@ -1,4 +1,4 @@
-// https://discord.gg/Rs2DNEEH discord server backup
+// https://discord.gg/m9X98E2z discord server backup
 document.addEventListener("DOMContentLoaded", function () {
   const map = L.map("map").setView([53.5716, 9.6740], 14);
 
@@ -297,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
 
-      const webhookUrl = "https://discord.com/api/webhooks/1448311454771056822/sjpsso-WxPDvyRs72Z1tiyX39Z85a8EzoWHuoiUryTUIeE6T4DzFhi_mPlXnzig2CPMO";
+      const webhookUrl = "https://discord.com/api/webhooks/1462500180204064809/46nzOHR7FxgSEJRIPd1E7g7Wv5maOM2avt3NZhEIzs_olyiYlkFs3IR_wnH3Yqr7BBkL";
 
       const payload = {
         username: "SpotScout locations",

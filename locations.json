@@ -1555,8 +1555,38 @@
     "latitude": 53.45541139010241,
     "longitude": 9.980727553329416,
     "user": "Sönke"
+  },
+
+  [
+  {
+    "name": "Bench in the woods",
+    "description": "",
+    "image": "https://i.ibb.co/208cWBSs/1000167843.jpg",
+    "tags": [],
+    "type": "",
+    "latitude": 50.7512323993455,
+    "longitude": 6.120629143072166,
+    "user": "Dasos"
+  },
+  {
+    "name": "House of the witch",
+    "description": "Small \"house\" from trees near an abondend bunker",
+    "image": "https://i.ibb.co/67Xx3czd/1000167844.jpg",
+    "tags": [],
+    "type": "",
+    "latitude": 50.75426594925847,
+    "longitude": 6.118805408322588,
+    "user": "Dasos"
+  },
+  {
+    "name": "Lonely bench at a small river",
+    "description": "Military Facility do not enter Mo-Fri 7-17!",
+    "image": "https://i.ibb.co/qMtsZS2Z/1000167931.jpg",
+    "tags": [],
+    "type": "",
+    "latitude": 50.757810511822555,
+    "longitude": 6.193810701296499,
+    "user": "Dasos"
   }
-
-
 
 ]

@@ -1585,6 +1585,16 @@
     "latitude": 50.757810511822555,
     "longitude": 6.193810701296499,
     "user": "Dasos"
-  }
+  },
+  {
+  "name": "Bench with a lovely view at a graveyard",
+  "description": "Very silent bench at a graveyard",
+  "image": "https://i.ibb.co/JwZB8y9m/1000167962.jpg",
+  "tags": ["Graveyard", "peaceful", "lonely"],
+  "type": "Bench",
+  "latitude": 50.759814913743845,
+  "longitude": 6.1294147185965295,
+  "user": "Dasos"
+}
 
 ]

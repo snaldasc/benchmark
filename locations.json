@@ -1595,6 +1595,26 @@
   "latitude": 50.759814913743845,
   "longitude": 6.1294147185965295,
   "user": "Dasos"
-}
+},
+    {
+    "name": "Bench at border of Germany, Belgium and Netherlands",
+    "description": "",
+    "image": "https://i.ibb.co/DfLM8Hf1/1000168216.jpg",
+    "tags": [],
+    "type": "Bench",
+    "latitude": 50.753275999556706,
+    "longitude": 6.021019396871626,
+    "user": "Dasos"
+  },
+  {
+    "name": "Lonely bench in forest",
+    "description": "",
+    "image": "https://i.ibb.co/DHZhwx5W/1000168220.jpg",
+    "tags": [],
+    "type": "Bench",
+    "latitude": 50.7473896326865,
+    "longitude": 6.0247027872560475,
+    "user": "Dasos"
+  }
 
 ]

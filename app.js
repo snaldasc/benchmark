@@ -23,7 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Toggle für Layer
   let isSatellite = false;
-  document.getElementById("toggleLayer").addEventListener("click", () => {
+  const toggleLayerButton = document.getElementById("toggleLayer");
+
+L.DomEvent.disableClickPropagation(toggleLayerButton);
+L.DomEvent.disableScrollPropagation(toggleLayerButton);
+
+toggleLayerButton.addEventListener("click", (event) => {
+  event.stopPropagation();", () => {
     if (isSatellite) {
       map.removeLayer(esriSatLayer);
       map.addLayer(osmLayer);

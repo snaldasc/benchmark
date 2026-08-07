@@ -204,11 +204,11 @@ document.addEventListener("DOMContentLoaded", function () {
         <input name="title" placeholder="Name" required style="width: 100%; margin: 4px 0;" /><br />
         <textarea name="description" placeholder="Description" style="width: 100%; margin: 4px 0;"></textarea><br />
 
-        <!-- 🔥 NEW: file input with ID -->
+        <!-- file input with ID -->
         <input id="imageUploadField" type="file" name="imageFile" accept="image/*" 
           style="width: 100%; margin: 4px 0;" />
 
-        <!-- 🔥 NEW: thumbnail preview -->
+        <!-- thumbnail preview -->
         <img id="imagePreview" src="" 
           style="display:none; width: 90px; height: auto; margin-top: 6px; border-radius: 4px; border: 1px solid #aaa;" />
 
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
     L.popup().setLatLng([lat, lng]).setContent(popupForm).openOn(map);
   });
 
-  // 🔥 NEW — Thumbnail preview + button feedback
+  // Thumbnail preview + button feedback
   document.addEventListener("change", function (e) {
     if (e.target.id === "imageUploadField") {
       const fileInput = e.target;

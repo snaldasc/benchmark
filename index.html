@@ -36,36 +36,51 @@
       font-size: 18px;
       cursor: pointer;
     }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-      background-color: #1f1f1f;
-    }
-    header h1 {
-      margin: 0 10px;
-      font-size: 1.5em;
-    }
-    header h2 {
-      font-size: 5px;
-    }
-    #headerActions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    #headerActions a button {
-      font-size: 0.9em;
-      padding: 5px 10px;
-    }
-  </style>
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #1f1f1f;
+  }
+
+  .headerTitle {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .headerTitle h1 {
+    margin: 0 10px;
+    font-size: 1.5em;
+  }
+
+  .headerTitle h2 {
+    margin: 0 10px;
+    font-size: 0.55em;
+    font-weight: normal;
+    opacity: 0.6;
+  }
+
+  #headerActions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #headerActions a button {
+    font-size: 0.9em;
+    padding: 5px 10px;
+  }
+</style>
 </head>
+
 <body>
   <header>
-    <h1>SpotScout</h1>
-    <br>
-    <h2>built & operated by snaldasc</h2>
+    <div class="headerTitle">
+      <h1>SpotScout</h1>
+      <h2>built &amp; operated by snaldasc</h2>
+    </div>
     <div id="headerActions">
       <span><span id="locationCount">0</span> locations available</span>
       <a href="locations.html">

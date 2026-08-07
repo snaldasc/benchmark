@@ -352,7 +352,7 @@ document.addEventListener("DOMContentLoaded", function () {
           data-share-url="${shareUrl}"
           type="button"
         >
-          ↗ Spot teilen
+          ↗ share Spot
         </button>
       `;
 
@@ -416,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function () {
       try {
         await navigator.share({
           title: "SpotScout",
-          text: "Schau dir diesen Spot auf SpotScout an!",
+          text: "Look what I just found on Spotscout!",
           url: shareUrl
         });
 
@@ -851,9 +851,6 @@ document.addEventListener("DOMContentLoaded", function () {
       // --------------------------------------------------------
       // DISCORD WEBHOOK
       // --------------------------------------------------------
-      //
-      // HIER DEINE BISHERIGE WEBHOOK-URL EINSETZEN.
-      //
       // Wichtig: Diese URL ist momentan öffentlich in deinem
       // Frontend-Code sichtbar und sollte langfristig durch
       // einen Server/Serverless-Endpoint ersetzt werden.

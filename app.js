@@ -126,26 +126,36 @@ navigator.geolocation.getCurrentPosition(
       });
 
 //link url erstellen zum teilen
-      const shareUrl = `${window.location.origin}${window.location.pathname}?spot=${encodeURIComponent(location.id)}`;
+      const shareUrl = `${window.location.origin}${window.location.pathname}?spot=${encodeURIComponent(loc.id)}`;
       //neue funktion ende
 
       
       const marker = L.marker([loc.latitude, loc.longitude], { icon: redIcon }).addTo(map);
 
-      const popupContent = `
-        <strong>${loc.name}</strong><br>
-        <img src="${loc.image}" alt="${loc.name}" class="popup-img" style="width:100%;max-width:200px;cursor:pointer;"><br>
-        <p>${loc.description}</p>
-        <p>Submitted by:</p><p>${loc.user}</p>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=${loc.latitude},${loc.longitude}" target="_blank" style="color:blue;font-weight:bold;text-decoration:underline;">
-          ➤ Route in Google Maps
-        </a>
-        
-        <button class="shareSpotButton" onclick="shareSpot('${location.id}')">
-  ↗ Spot teilen
-</button>
+const popupContent = `
+  <strong>${loc.name}</strong><br>
 
-      `;
+  <img src="${loc.image}" alt="${loc.name}" class="popup-img" style="width:100%;max-width:200px;cursor:pointer;"><br>
+
+  <p>${loc.description}</p>
+
+  <p>Submitted by:</p>
+  <p>${loc.user}</p>
+
+  <a href="https://www.google.com/maps/dir/?api=1&destination=${loc.latitude},${loc.longitude}"
+     target="_blank"
+     style="color:blue;font-weight:bold;text-decoration:underline;">
+    ➤ Route in Google Maps
+  </a>
+
+  <br><br>
+
+  <button class="shareSpotButton" onclick="shareSpot('${loc.id}')">
+    ↗ Spot teilen
+  </button>
+`;
+
+    
 
       
 

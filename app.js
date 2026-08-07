@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (userLatLng) {
       map.setView(userLatLng, 14);
     } else {
-      map.setView([40, 10], 14);
+      map.setView([51.1657, 10.4515], 6);
     }
   });
 

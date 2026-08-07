@@ -125,6 +125,11 @@ navigator.geolocation.getCurrentPosition(
         shadowSize: [41, 41],
       });
 
+//link url erstellen zum teilen
+      const shareUrl = `${window.location.origin}${window.location.pathname}?spot=${encodeURIComponent(location.id)}`;
+      //neue funktion ende
+
+      
       const marker = L.marker([loc.latitude, loc.longitude], { icon: redIcon }).addTo(map);
 
       const popupContent = `
@@ -135,7 +140,16 @@ navigator.geolocation.getCurrentPosition(
         <a href="https://www.google.com/maps/dir/?api=1&destination=${loc.latitude},${loc.longitude}" target="_blank" style="color:blue;font-weight:bold;text-decoration:underline;">
           ➤ Route in Google Maps
         </a>
+        
+        <button class="shareSpotButton" onclick="shareSpot('${location.id}')">
+  ↗ Spot teilen
+</button>
+
       `;
+
+      
+
+
       marker.bindPopup(popupContent);
       markers.push(marker);
 

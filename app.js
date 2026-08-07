@@ -1,6 +1,6 @@
 // https://discord.gg/m9X98E2z discord server backup
 document.addEventListener("DOMContentLoaded", function () {
-  const map = L.map("map").setView([51.1657, 10.4515], 6);
+  const map = L.map("map").setView([51.1657, 10.4515], 4);
 
   let userLatLng = null;
   let markers = [];

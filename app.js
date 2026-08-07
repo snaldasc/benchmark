@@ -23,25 +23,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Toggle für Layer
   let isSatellite = false;
-  const toggleLayerButton = document.getElementById("toggleLayer");
-
-L.DomEvent.disableClickPropagation(toggleLayerButton);
-L.DomEvent.disableScrollPropagation(toggleLayerButton);
-
-toggleLayerButton.addEventListener("click", (event) => {
-  event.stopPropagation();", () => {
-    if (isSatellite) {
-      map.removeLayer(esriSatLayer);
-      map.addLayer(osmLayer);
-    } else {
-      map.removeLayer(osmLayer);
-      map.addLayer(esriSatLayer);
-    }
-    isSatellite = !isSatellite;
-  });
-
-  document.getElementById("menuToggle").addEventListener("click", () => {
-    document.getElementById("sideMenu").classList.toggle("hidden");
+  document.getElementById("toggleLayer").addEventListener("click", () => {     
+    if (isSatellite) {       
+      map.removeLayer(esriSatLayer);       
+      map.addLayer(osmLayer);     
+    } else {       
+      map.removeLayer(osmLayer);      
+      map.addLayer(esriSatLayer);    
+    }    
+    isSatellite = !isSatellite;  
+  });  
+  document.getElementById("menuToggle").addEventListener("click", () => {   
+    document.getElementById("sideMenu").classList.toggle("hidden"); 
   });
 
   // Benutzerposition

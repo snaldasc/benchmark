@@ -38,26 +38,33 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("sideMenu").classList.toggle("hidden");
   });
 
-  // Benutzerposition
-  navigator.geolocation.getCurrentPosition(
-    (pos) => {
-      userLatLng = [pos.coords.latitude, pos.coords.longitude];
-      map.setView(userLatLng, 14);
-      userMarker = L.marker(userLatLng, {
-        icon: L.icon({
-          iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-          iconSize: [25, 41],
-          iconAnchor: [12, 41],
-          popupAnchor: [1, -34],
-          shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-        }),
-      })
-        .addTo(map)
-        .bindPopup("You are here")
-        .openPopup();
-    },
-    () => console.log("Position not available")
-  );
+// Benutzerposition
+navigator.geolocation.getCurrentPosition(
+  (pos) => {
+    userLatLng = [pos.coords.latitude, pos.coords.longitude];
+
+    // Langsam von Deutschland zum Standort des Nutzers fliegen
+    map.flyTo(userLatLng, 14, {
+      animate: true,
+      duration: 5
+    });
+
+    userMarker = L.marker(userLatLng, {
+      icon: L.icon({
+        iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+      }),
+    })
+      .addTo(map)
+      .bindPopup("You are here");
+  },
+  () => {
+    console.log("Position not available");
+  }
+);
 
   fetch("https://raw.githubusercontent.com/snaldasc/benchmark/main/locations.json")
     .then((res) => res.json())

@@ -46,7 +46,7 @@ navigator.geolocation.getCurrentPosition(
     // Langsam von Deutschland zum Standort des Nutzers fliegen
     map.flyTo(userLatLng, 14, {
       animate: true,
-      duration: 5
+      duration: 8
     });
 
     userMarker = L.marker(userLatLng, {

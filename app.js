@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ------------------------------------------------------------
 
   const GERMANY_CENTER = [51.1657, 10.4515];
-  const GERMANY_ZOOM = 6;
+  const GERMANY_ZOOM = 5;
   const USER_ZOOM = 14;
   const SHARED_SPOT_ZOOM = 16;
 

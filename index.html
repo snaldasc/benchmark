@@ -14,6 +14,8 @@
       s.parentNode.insertBefore(g, s);
     })(document, "script");
     
+    import cronitor
+    cronitor.api_key = '9d51679e460247409ec3154d9046dc95'
     monitor = cronitor.Monitor('important-heartbeat')
       //send a heartbeat event with a message
     monitor.ping(message="Alive!")

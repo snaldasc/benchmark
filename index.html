@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html lang="de">
+
+  # Maven
+<dependency>
+    <groupId>io.cronitor</groupId>
+    <artifactId>client</artifactId>
+    <version>1.6.0</version>
+</dependency>
+
+# Gradle
+compile "io.cronitor:client:1.6.0"
+
+
+  
 <head>
   <meta charset="UTF-8" />
   <title>SpotScout</title>
@@ -13,14 +26,13 @@
       g.src = "https://cdn.pushalert.co/integrate_0499cf29ad644996d9398435d3801c7e.js";
       s.parentNode.insertBefore(g, s);
     })(document, "script");
+
+
     
-    import cronitor
-    cronitor.api_key = '9d51679e460247409ec3154d9046dc95'
-    monitor = cronitor.Monitor('important-heartbeat')
-      //send a heartbeat event with a message
-    monitor.ping(message="Alive!")
-    //include counts & error counts
-    monitor.ping(metrics={'count': 100, 'error_count': 3}) 
+    CronitorClient cronitorClient = new CronitorClient('9d51679e460247409ec3154d9046dc95');
+
+// send a heartbeat event with a (optional) message
+cronitorClient.tick('important-heartbeat', 'Alive!');
     
   </script>
 

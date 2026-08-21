@@ -1741,7 +1741,7 @@
     "description": "-",
     "image": "-",
     "tags": ["water", "sunny", "cruise"],
-    "type": "-",
+    "type": "bench",
     "latitude": 43.69332147644692,
     "longitude": 7.315349578857422,
     "user": "-"

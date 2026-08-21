@@ -1616,7 +1616,6 @@
     "longitude": 6.0247027872560475,
     "user": "Dasos"
   },
-  [
   {
     "name": "Bench at border of Germany, Belgium and Netherlands",
     "description": "-",
@@ -1857,16 +1856,7 @@
     "longitude": -21.536476258286054,
     "user": "Dasos"
   },
-  {
-    "name": "Hill view bench",
-    "description": "-",
-    "image": "https://i.ibb.co/YTRBc6Ns/1000185583.jpg",
-    "tags": ["Hills"],
-    "type": "Bench",
-    "latitude": 64.77174710820776,
-    "longitude": -21.536476258286054,
-    "user": "Dasos"
-  },
+
   {
     "name": "Crater view bench",
     "description": "-",
@@ -1888,16 +1878,6 @@
     "user": "Dasos"
   },
   {
-    "name": "Test",
-    "description": "-",
-    "image": "-",
-    "tags": [],
-    "type": "-",
-    "latitude": 50.31086106369162,
-    "longitude": 11.777343309950126,
-    "user": "-"
-  },
-  {
     "name": "Dami",
     "description": "-",
     "image": "-",
@@ -1905,36 +1885,6 @@
     "type": "-",
     "latitude": 46.487401580939135,
     "longitude": 10.561408996582047,
-    "user": "-"
-  },
-  {
-    "name": "Dami",
-    "description": "-",
-    "image": "-",
-    "tags": [],
-    "type": "-",
-    "latitude": 46.487401580939135,
-    "longitude": 10.561408996582047,
-    "user": "-"
-  },
-  {
-    "name": "Dami",
-    "description": "-",
-    "image": "-",
-    "tags": [],
-    "type": "-",
-    "latitude": 46.487401580939135,
-    "longitude": 10.561408996582047,
-    "user": "-"
-  },
-  {
-    "name": "Harbours bench",
-    "description": "-",
-    "image": "https://i.ibb.co/ycb828bX/1000218868.jpg",
-    "tags": [],
-    "type": "-",
-    "latitude": 64.1561709418066,
-    "longitude": -21.936054755631318,
     "user": "-"
   },
   {

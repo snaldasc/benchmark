@@ -1615,6 +1615,428 @@
     "latitude": 50.7473896326865,
     "longitude": 6.0247027872560475,
     "user": "Dasos"
+  },
+  [
+  {
+    "name": "Bench at border of Germany, Belgium and Netherlands",
+    "description": "-",
+    "image": "https://i.ibb.co/DfLM8Hf1/1000168216.jpg",
+    "tags": [],
+    "type": "Bench",
+    "latitude": 50.753275999556706,
+    "longitude": 6.021019396871626,
+    "user": "Dasos"
+  },
+  {
+    "name": "Lonely bench in forest",
+    "description": "-",
+    "image": "https://i.ibb.co/DHZhwx5W/1000168220.jpg",
+    "tags": [],
+    "type": "Bench",
+    "latitude": 50.7473896326865,
+    "longitude": 6.0247027872560475,
+    "user": "Dasos"
+  },
+  {
+    "name": "City view bench",
+    "description": "Small hike for a perfect view on the city",
+    "image": "https://i.ibb.co/5WSWfXDt/1000168567.jpg",
+    "tags": [],
+    "type": "Bench",
+    "latitude": 50.78625321580546,
+    "longitude": 6.079661250024073,
+    "user": "Dasos"
+  },
+  {
+    "name": "Land view",
+    "description": "Very silent in the middle of nature at a nice hiking trail",
+    "image": "https://i.ibb.co/h1dzDrrH/1000168573.jpg",
+    "tags": [],
+    "type": "Bench",
+    "latitude": 50.78739994135988,
+    "longitude": 6.08223617071714,
+    "user": "Dasos"
+  },
+  {
+    "name": "Bench",
+    "description": "-",
+    "image": "https://i.ibb.co/1fkmcP7c/1000168672.jpg",
+    "tags": [],
+    "type": "Bench",
+    "latitude": 53.804438351887335,
+    "longitude": 9.629275202673142,
+    "user": "Dasos"
+  },
+  {
+    "name": "Bench at a Lake",
+    "description": "-",
+    "image": "https://i.ibb.co/Fk95gQCZ/1000171262.jpg",
+    "tags": [],
+    "type": "Bench",
+    "latitude": 53.93947150287167,
+    "longitude": 10.324788093459022,
+    "user": "Dasos"
+  },
+  {
+    "name": "Lovely bench with view on lake",
+    "description": "-",
+    "image": "https://i.ibb.co/nsgkbfBB/1000173521.jpg",
+    "tags": ["Water"],
+    "type": "Bench",
+    "latitude": 53.86095946900694,
+    "longitude": 10.68105686451093,
+    "user": "Dasos"
+  },
+  {
+    "name": "Noone there bench",
+    "description": "-",
+    "image": "https://i.ibb.co/gLJ0Y1WC/1000173824.jpg",
+    "tags": [],
+    "type": "Bench",
+    "latitude": 54.653094434365556,
+    "longitude": 11.356961131017432,
+    "user": "Dasos"
+  },
+  {
+    "name": "Bench in moor",
+    "description": "-",
+    "image": "https://i.ibb.co/8Lm4g5Ct/1000173827.jpg",
+    "tags": [],
+    "type": "Bench",
+    "latitude": 54.651567506825735,
+    "longitude": 11.356097459705682,
+    "user": "Dasos"
+  },
+  {
+    "name": "Sundown bench",
+    "description": "-",
+    "image": "https://i.ibb.co/bg0BKhS4/1000173972.jpg",
+    "tags": [],
+    "type": "Bench",
+    "latitude": 53.80778816192595,
+    "longitude": 9.629866629754012,
+    "user": "Dasos"
+  },
+  {
+    "name": "Bench near Boat rental",
+    "description": "Bench at a lake with boat rental, perfect date idea",
+    "image": "https://i.ibb.co/9H8YSwMw/1000181663.jpg",
+    "tags": ["Water", "boatrental"],
+    "type": "Bench",
+    "latitude": 53.784684885017974,
+    "longitude": 9.760467410027475,
+    "user": "Dasos"
+  },
+  {
+    "name": "Quiet place in a very small town",
+    "description": "-",
+    "image": "https://i.ibb.co/xKX0PqM1/1000181668.jpg",
+    "tags": ["Water", "lake"],
+    "type": "Bench",
+    "latitude": 53.78328715071423,
+    "longitude": 9.760719537651015,
+    "user": "Dasos"
+  },
+  {
+    "name": "Krish",
+    "description": "-",
+    "image": "-",
+    "tags": ["water", "sunny", "cruise"],
+    "type": "-",
+    "latitude": 43.69332147644692,
+    "longitude": 7.315349578857422,
+    "user": "-"
+  },
+  {
+    "name": "Lonely bench",
+    "description": "Far apart from people",
+    "image": "https://i.ibb.co/XZC4yBTP/1000182238.jpg",
+    "tags": [],
+    "type": "Bench",
+    "latitude": 53.765939962159536,
+    "longitude": 12.184588909064319,
+    "user": "Dasos"
+  },
+  {
+    "name": "Swimming and chill spot",
+    "description": "Far away from eyes and people",
+    "image": "https://i.ibb.co/ZzzQx5kq/1000182243.jpg",
+    "tags": ["Water", "lake"],
+    "type": "Beach",
+    "latitude": 53.766592487104774,
+    "longitude": 12.16983323903052,
+    "user": "Dasos"
+  },
+  {
+    "name": "Swimm and chill spot",
+    "description": "-",
+    "image": "https://i.ibb.co/mCvZyzgN/1000182244.jpg",
+    "tags": ["Water", "lake"],
+    "type": "Bench beach",
+    "latitude": 53.76613613033173,
+    "longitude": 12.169044836595743,
+    "user": "Dasos"
+  },
+  {
+    "name": "Very secret chill and fire spot",
+    "description": "Be careful not to burn down the area",
+    "image": "https://i.ibb.co/jk8k7bwB/1000182245.jpg",
+    "tags": ["Water", "lake", "fire"],
+    "type": "Beach",
+    "latitude": 53.765930449693364,
+    "longitude": 12.168087959224325,
+    "user": "Dasos"
+  },
+  {
+    "name": "Beautiful bench at atlantic",
+    "description": "-",
+    "image": "https://i.ibb.co/GQRbMhpS/1000184952.jpg",
+    "tags": ["Water", "sea", "atlantic", "ocean"],
+    "type": "Bench",
+    "latitude": 64.7686767822681,
+    "longitude": -23.61813783662257,
+    "user": "Dasos"
+  },
+  {
+    "name": "Bench near a beach",
+    "description": "-",
+    "image": "https://i.ibb.co/N2Rqzw8t/1000185030.jpg",
+    "tags": ["Beach", "hills"],
+    "type": "Bench",
+    "latitude": 64.75364997586081,
+    "longitude": -23.895955681888676,
+    "user": "Dasos"
+  },
+  {
+    "name": "Bench near a beach",
+    "description": "-",
+    "image": "https://i.ibb.co/N2Rqzw8t/1000185030.jpg",
+    "tags": ["Beach", "hills"],
+    "type": "Bench",
+    "latitude": 64.75364997586081,
+    "longitude": -23.895955681888676,
+    "user": "Dasos"
+  },
+  {
+    "name": "Glacier Bench",
+    "description": "Small bench with view on the glacier that explodes every few minutes",
+    "image": "https://i.ibb.co/qLrLQ3dv/1000185307.jpg",
+    "tags": ["Glacier"],
+    "type": "Bench",
+    "latitude": 64.31008634277364,
+    "longitude": -20.301038883738194,
+    "user": "Dasos"
+  },
+  {
+    "name": "Lake bench",
+    "description": "-",
+    "image": "https://i.ibb.co/TqHwHDqr/1000185556.jpg",
+    "tags": ["Water", "lake"],
+    "type": "Bench",
+    "latitude": 65.65902524948396,
+    "longitude": -20.2684503794535,
+    "user": "Dasos"
+  },
+  {
+    "name": "Lonely bench on island",
+    "description": "-",
+    "image": "https://i.ibb.co/twfnVR36/1000185563.jpg",
+    "tags": ["Lonely", "peaceful", "waterfall"],
+    "type": "Bench",
+    "latitude": 65.65584559201199,
+    "longitude": -20.270408392041627,
+    "user": "Dasos"
+  },
+  {
+    "name": "Hill view bench",
+    "description": "-",
+    "image": "https://i.ibb.co/VYhwxSbN/1000185583.jpg",
+    "tags": ["Hills"],
+    "type": "Bench",
+    "latitude": 64.77174710820776,
+    "longitude": -21.536476258286054,
+    "user": "Dasos"
+  },
+  {
+    "name": "Hill view bench",
+    "description": "-",
+    "image": "https://i.ibb.co/YTRBc6Ns/1000185583.jpg",
+    "tags": ["Hills"],
+    "type": "Bench",
+    "latitude": 64.77174710820776,
+    "longitude": -21.536476258286054,
+    "user": "Dasos"
+  },
+  {
+    "name": "Crater view bench",
+    "description": "-",
+    "image": "https://i.ibb.co/7xVNHT6D/1000185588.jpg",
+    "tags": ["Crater"],
+    "type": "Bench",
+    "latitude": 64.77090501419582,
+    "longitude": -21.537526846004493,
+    "user": "Dasos"
+  },
+  {
+    "name": "Waterfall chillspot",
+    "description": "-",
+    "image": "https://i.ibb.co/ZzGtmTdV/1000185371.jpg",
+    "tags": ["Beach", "waterfall", "chillspot"],
+    "type": "Beach",
+    "latitude": 64.22539247694657,
+    "longitude": -20.336179006627116,
+    "user": "Dasos"
+  },
+  {
+    "name": "Test",
+    "description": "-",
+    "image": "-",
+    "tags": [],
+    "type": "-",
+    "latitude": 50.31086106369162,
+    "longitude": 11.777343309950126,
+    "user": "-"
+  },
+  {
+    "name": "Dami",
+    "description": "-",
+    "image": "-",
+    "tags": [],
+    "type": "-",
+    "latitude": 46.487401580939135,
+    "longitude": 10.561408996582047,
+    "user": "-"
+  },
+  {
+    "name": "Dami",
+    "description": "-",
+    "image": "-",
+    "tags": [],
+    "type": "-",
+    "latitude": 46.487401580939135,
+    "longitude": 10.561408996582047,
+    "user": "-"
+  },
+  {
+    "name": "Dami",
+    "description": "-",
+    "image": "-",
+    "tags": [],
+    "type": "-",
+    "latitude": 46.487401580939135,
+    "longitude": 10.561408996582047,
+    "user": "-"
+  },
+  {
+    "name": "Harbours bench",
+    "description": "-",
+    "image": "https://i.ibb.co/ycb828bX/1000218868.jpg",
+    "tags": [],
+    "type": "-",
+    "latitude": 64.1561709418066,
+    "longitude": -21.936054755631318,
+    "user": "-"
+  },
+  {
+    "name": "Harbours bench",
+    "description": "-",
+    "image": "https://i.ibb.co/ycb828bX/1000218868.jpg",
+    "tags": [],
+    "type": "-",
+    "latitude": 64.1561709418066,
+    "longitude": -21.936054755631318,
+    "user": "Dasos"
+  },
+  {
+    "name": "City Ocean view point",
+    "description": "-",
+    "image": "https://i.ibb.co/rf5XWHY0/20260808-160046.jpg",
+    "tags": [],
+    "type": "Bench",
+    "latitude": 64.1544627719592,
+    "longitude": -21.93375885486603,
+    "user": "Dasos"
+  },
+  {
+    "name": "Naturpark dobratsch",
+    "description": "The way to Dobratsch is beautiful and leads through nature. At the top, you have a great view, and the hike takes about 2–4 hours.",
+    "image": "-",
+    "tags": ["Austria", "mountains", "hiking", "nature", "view", "forest", "adventure"],
+    "type": "Bench, trail, mountain, forest, lake, viewpoint, bridge",
+    "latitude": 46.59272603533415,
+    "longitude": 13.724670410156252,
+    "user": "Emely"
+  },
+  {
+    "name": "Waterfall bench",
+    "description": "-",
+    "image": "https://i.ibb.co/whPtSH1j/1000186844.jpg",
+    "tags": ["Waterfall"],
+    "type": "Bench",
+    "latitude": 63.61693633274437,
+    "longitude": -19.98880930253444,
+    "user": "Dasos"
+  },
+  {
+    "name": "Waterfall bench",
+    "description": "-",
+    "image": "https://i.ibb.co/SwcXVHD4/1000186902.jpg",
+    "tags": ["Waterfall"],
+    "type": "Bench",
+    "latitude": 63.529602678396486,
+    "longitude": -19.512722734884928,
+    "user": "Dasos"
+  },
+  {
+    "name": "GOT Waterfall bench",
+    "description": "-",
+    "image": "https://i.ibb.co/mFcXStyZ/1000186903.jpg",
+    "tags": ["Waterfall", "movie"],
+    "type": "Bench",
+    "latitude": 63.529612641208054,
+    "longitude": -19.512104988175306,
+    "user": "Dasos"
+  },
+  {
+    "name": "Puffins Rock",
+    "description": "It is possible to see the legendary puffins flying and sitting all over this place be careful to not fall",
+    "image": "https://i.ibb.co/ZzQ1hZW6/1000186929.jpg",
+    "tags": ["Puffins", "water", "cliff"],
+    "type": "Block",
+    "latitude": 63.40283089674757,
+    "longitude": -19.13079293462391,
+    "user": "Dasos"
+  },
+  {
+    "name": "Puffins cliff",
+    "description": "The puffins are really close to this seating place. Be careful not to fall",
+    "image": "-",
+    "tags": ["Puffins", "water", "cliff"],
+    "type": "Cliff",
+    "latitude": 63.40268128861726,
+    "longitude": -19.131252765736097,
+    "user": "Dasos"
+  },
+  {
+    "name": "Mountain Waterfall Bench",
+    "description": "After 4 kilometers hike you arrive at this bench",
+    "image": "https://i.ibb.co/PvPsHpMh/1000187173.jpg",
+    "tags": ["Waterfall", "mountain", "hike"],
+    "type": "Bench",
+    "latitude": 64.38737499585262,
+    "longitude": -21.256855130264686,
+    "user": "Dasos"
+  },
+  {
+    "name": "Waterfall seat 320m high",
+    "description": "-",
+    "image": "https://i.ibb.co/mCkttwg0/1000187181.jpg",
+    "tags": ["Waterfall", "mountain", "hike"],
+    "type": "Bench",
+    "latitude": 64.38798023632624,
+    "longitude": -21.25528872022259,
+    "user": "Dasos"
   }
+]
 
 ]
